@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">محاميك - محامي</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+
+    <!-- Sign In -->
+    <string name="dontHaveAnAcc">ليس لديك حساب؟ </string>
+    <string name="id">رقم العضوية</string>
+    <string name="password">كلمة المرور</string>
+    <string name="signIn">تسجيل الدخول</string>
+    <string name="signUp">انشاء حساب</string>
+    <string name="termsAndConditions">الشروط  و الاحكام</string>
+    <string name="languageBtn">اللغة</string>
+    <string name="doForgetPassword">هل نسيت كلمة المرور ؟</string>
+    <string name="logo">logo</string>
+    <string name="backBtn">backBtn</string>
+
+    <!-- Sign Up -->
+    <string name="yourId">رقم العضوية</string>
+    <string name="firstName">الاسم الاول</string>
+    <string name="middleName">الاسم الوسط</string>
+    <string name="lastName">الاسم الاخير</string>
+    <string name="email">البريد الالكتروني</string>
+    <string name="subscribe">الاشتراك</string>
+    <string name="subscribe_purpose1">لكى يتم الاشتراك عليك ملئ البيانات </string>
+    <string name="subscribe_purpose2">"جميع البيانات يتم المراجعه عليها لضمان صحتها"</string>
+    <string name="uploadCard">اضافة صورة الكارنيه</string>
+    <string name="card_purpose">"ضع صورة واضحة لبطاقه العضوية الخاصة بك "</string>
+    <string name="email_purpose">من فضلت ضع بريد الكترونى سليم لكى يتم التواصل من خلاله</string>
+    <string name="name_purpose">اكتب اسمك كاملاً كما هو موجود في كارنيه العضوية.</string>
+
+    <!-- Change Password Screen  -->
+    <string name="changePassword">تغيير كلمة المرور</string>
+    <string name="changePassword_purpose1">لاسباب أمنية من فضلك</string>
+    <string name="changePassword_purpose2">ليك تغيير كلمة المرور الخاصة بك</string>
+    <string name="confirmPassword">تأكيد كلمة المرور</string>
+    <string name="next"> التالي</string>
+
+
+
+    <!-- Forget Password Screen  -->
+    <string name="forgetPassword">نسيت كلمة المرور</string>
+    <string name="forgetPassword_purpose1">اكتب بالاسفل البريد الالكترونى الخاص بك </string>
+    <string name="forgetPassword_purpose2">وانتظر رمز إعادة التعيين</string>
+    <string name="emailDoseNotExist">*البريد الالكترونى غير موجود</string>
+
+
+    <!-- Reset Password Screen  -->
+    <string name="resetPassword">إعادة تعيين كلمة المرور</string>
+    <string name="resetPassword_purpose1">اكتب الرمز الذي </string>
+    <string name="resetPassword_purpose2">تلقيته في بريدك الوارد</string>
+    <string name="codeIsNotCorrect">*الرمز غير صحيح</string>
+
+    <!-- Success Password Screen  -->
+    <string name="yourPassHasBeenReset">تم اعادة تعيين كلمة المرور الخاصة بك بنجاح</string>
+    <string name="sendCode">ارسل الكود</string>
+
+
+
+
+    <!-- Add Profile Pic Screen  -->
+    <string name="addYourProfilePic">اضف صورتك الشخصية</string>
+    <string name="addYourProfilePic_purpose1">اختر صورتك واضحة</string>
+    <string name="addYourProfilePic_purpose2">لتجنب التناقض</string>
+    <string name="briefSummary">نبذة مختصرة...</string>
+    <string name="max">الحد الاقصى 300 حرف.</string>
+    <string name="selectYourSpecialty">اختر التخصص الخاص بك</string>
+
+
+
+    <!-- Add Location Screen -->
+    <string name="selectLocation">اختر الموقع على الخريطة</string>
+    <string name="updateLocation">تحديث الموقع على الخريطة</string>
+    <string name="country">البلد</string>
+    <string name="state">State</string>
+    <string name="city">المدينة</string>
+    <string name="area">المنطقة</string>
+    <string name="building">مبني</string>
+    <string name="floor">طابق</string>
+    <string name="unit">اسم الشقة / الرقم</string>
+    <string name="address">العنوان تفصيليا</string>
+    <string name="addWorkLocation">مكان العمل</string>
+    <string name="save">حفظ</string>
+    <string name="workLocation_purpose1">اولاً , اختر مكان العمل علي الخريطة "</string>
+    <string name="workLocation_purpose2">"ثم اكتب عنوان العمل تفصيلياً "</string>
+    <string name="addressInDetails">عنوان المكتب تفصلياً</string>
+    <string name="governorate">المحافظة</string>
+    <string name="street">اسم الشارع</string>
+    <string name="buildingNumber">رقم العمارة</string>
+    <string name="unitNumber">رقم المكتب</string>
+    <string name="addressInDetails_purpose1">اختر المحافظة اولا, ثم املاء عنوان مكان العمل بعناية</string>
+    <string name="zone">اسم المنطقة</string>
+    <string name="floorNumber">رقم الدور</string>
+
+</resources>

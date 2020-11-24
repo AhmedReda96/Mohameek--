@@ -1,0 +1,90 @@
+<resources>
+    <string name="app_name">محاميك - محامي</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_map">Map</string>
+
+    <!-- Sign In -->
+    <string name="password">Password</string>
+    <string name="signIn">Sign In</string>
+    <string name="dontHaveAnAcc">Don\'t have an Account? </string>
+    <string name="signUp">Sign Up</string>
+    <string name="id">Id</string>
+    <string name="termsAndConditions">Terms And Conditions</string>
+    <string name="languageBtn">lang</string>
+    <string name="doForgetPassword">Forget Password ?</string>
+
+    <!-- Sign Up -->
+    <string name="backBtn">backBtn</string>
+    <string name="yourId">Your id number</string>
+    <string name="firstName">First name</string>
+    <string name="middleName">Middle name</string>
+    <string name="lastName">Last name</string>
+    <string name="email">Email</string>
+    <string name="subscribe">Subscription</string>
+    <string name="subscribe_purpose1">To subscribe in the application should fill info</string>
+    <string name="subscribe_purpose2">All data is reviewed to ensure the validity of this data.</string>
+    <string name="uploadCard">Upload card image</string>
+    <string name="card_purpose">"put clear image for your card "</string>
+    <string name="email_purpose">Please put valid email to communicate through it.</string>
+    <string name="logo">logo</string>
+    <string name="name_purpose">Write your full name as it appears on the membership card.</string>
+
+
+    <!-- Change Password Screen  -->
+    <string name="changePassword">Change Password</string>
+    <string name="changePassword_purpose1">For Security reasons please</string>
+    <string name="changePassword_purpose2">change your password</string>
+    <string name="confirmPassword">Confirm Password</string>
+    <string name="next">Next </string>
+
+    <!-- Forget Password Screen  -->
+    <string name="forgetPassword">Forget Password</string>
+    <string name="forgetPassword_purpose1">Write down your email and </string>
+    <string name="forgetPassword_purpose2">wait for reset code</string>
+    <string name="emailDoseNotExist">*Email dose not exist</string>
+
+
+    <!-- Reset Password Screen  -->
+    <string name="resetPassword">Reset Password</string>
+    <string name="resetPassword_purpose1">Write down the code you have </string>
+    <string name="resetPassword_purpose2">received in your inbox</string>
+    <string name="codeIsNotCorrect">*Code is not correct</string>
+
+    <!-- Success Password Screen  -->
+    <string name="yourPassHasBeenReset">Your Password Has Been Reset Successfully</string>
+    <string name="sendCode">Send Code</string>
+
+
+    <!-- Add Profile Pic Screen  -->
+    <string name="addYourProfilePic">Add your profile picture</string>
+    <string name="addYourProfilePic_purpose1">Select a clear picture for your self</string>
+    <string name="addYourProfilePic_purpose2">to avoid conflicts</string>
+    <string name="briefSummary">Brief summary...</string>
+    <string name="max">Maximum of 300 characters.</string>
+    <string name="selectYourSpecialty">Select your specialty :</string>
+
+
+    <!-- Add Location Screen -->
+    <string name="selectLocation">Select location on map</string>
+    <string name="updateLocation">Update location on map</string>
+    <string name="country">Country</string>
+    <string name="state">State</string>
+    <string name="city">City</string>
+    <string name="area">Area</string>
+    <string name="building">Building</string>
+    <string name="floor">Floor</string>
+    <string name="unit">Unit  name / No.</string>
+    <string name="address">Address</string>
+    <string name="addWorkLocation">Work Location</string>
+    <string name="workLocation_purpose1">"First, Select work location on map "</string>
+    <string name="workLocation_purpose2">"then write the The address is detailed  "</string>
+    <string name="save">Save</string>
+    <string name="addressInDetails">Office Address in Details</string>
+    <string name="governorate">Governorate</string>
+    <string name="street">Street name</string>
+    <string name="buildingNumber">Building number</string>
+    <string name="floorNumber">Floor number</string>
+    <string name="unitNumber">Office number</string>
+    <string name="addressInDetails_purpose1">Choose the governorate first, then Carefully fill in the address of the workplace</string>
+    <string name="zone">Zone name</string>
+</resources>

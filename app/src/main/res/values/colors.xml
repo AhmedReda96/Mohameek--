@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#fff</color>
+    <color name="colorPrimaryDark">#fff</color>
+    <color name="colorAccent">#fff</color>
+
+
+
+    <!-- Sign In -->
+    <color name="grayBg">#88F0F2F5</color>
+    <color name="etTextColor">#333333</color>
+    <color name="btnColor">#eabf4e</color>
+
+
+    <!-- Add Location -->
+    <color name="darkTransparentColor">#39000000</color>
+
+    <color name="transparent">#00000000</color>
+
+</resources>

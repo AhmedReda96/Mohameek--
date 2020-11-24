@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="mfl.com">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:excludeFromRecents="true"
+        android:fullBackupContent="true"
+        android:icon="@mipmap/location_ic"
+        android:label="@string/app_name"
+        android:noHistory="true"
+        android:roundIcon="@mipmap/location_ic"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        tools:ignore="LockedOrientationActivity">
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <activity
+            android:name=".ui.start.signIn.signInSteps.addLocation.Map"
+            android:label="@string/title_activity_map" />
+        <activity
+            android:name=".ui.start.signIn.signInSteps.stepsHome.SignInStepsHome"
+            android:screenOrientation="userPortrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".ui.start.signIn.resetPassword.ResetPasswordScreen"
+            android:screenOrientation="userPortrait"
+            android:windowSoftInputMode="stateVisible|stateAlwaysHidden|adjustResize" />
+        <activity
+            android:name=".ui.start.signUp.SignUpScreen"
+            android:screenOrientation="userPortrait"
+            android:windowSoftInputMode="stateVisible|stateAlwaysHidden|adjustResize" />
+        <activity
+            android:name=".ui.start.signIn.forgetPassword.ForgetPasswordScreen"
+            android:screenOrientation="userPortrait"
+            android:windowSoftInputMode="stateVisible|stateAlwaysHidden|adjustResize" />
+        <activity
+            android:name=".ui.start.signIn.mainSignIn.SignInScreen"
+            android:screenOrientation="userPortrait"
+            android:windowSoftInputMode="stateVisible|stateAlwaysHidden|adjustResize" />
+        <activity
+            android:name=".ui.home.HomeActivity"
+            android:screenOrientation="userPortrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".ui.splash.SplashScreen"
+            android:screenOrientation="userPortrait"
+            android:windowSoftInputMode="stateAlwaysHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+
+</manifest>

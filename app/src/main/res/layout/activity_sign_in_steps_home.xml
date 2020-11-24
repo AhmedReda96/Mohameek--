@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        tools:context=".ui.start.signIn.signInSteps.stepsHome.SignInStepsHome">
+
+
+        <ImageButton
+            android:id="@+id/backBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:background="@mipmap/back_btn_ic"
+            android:contentDescription="@string/backBtn" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/backBtn"
+            android:layout_margin="@dimen/_10sdp"
+            android:backgroundTint="@color/etTextColor"
+            app:cardCornerRadius="@dimen/_5sdp"
+            app:cardElevation="@dimen/_6sdp">
+
+            <com.shuhart.stepview.StepView
+
+                android:id="@+id/stepView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_5sdp"
+                app:sv_animationType="All"
+                app:sv_doneCircleColor="@android:color/holo_green_dark"
+                app:sv_doneStepLineColor="@android:color/holo_green_dark"
+                app:sv_doneStepMarkColor="@android:color/white"
+                app:sv_nextStepCircleColor="@color/grayBg"
+                app:sv_nextStepCircleEnabled="true"
+                app:sv_selectedStepNumberColor="@android:color/black"
+                app:sv_stepNumberTextSize="@dimen/_12sdp"
+                app:sv_stepPadding="@dimen/_5sdp"
+                app:sv_stepsNumber="4" />
+
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/card" />
+
+    </RelativeLayout>
+</layout>
