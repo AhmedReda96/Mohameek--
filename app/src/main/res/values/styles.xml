@@ -8,6 +8,17 @@
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:statusBarColor">@android:color/black</item>
         <item name="colorControlActivated">@android:color/black</item>
+        <item name="pinViewStyle">@style/PinWidget.PinView</item>
+    </style>
+
+
+    <style name="SCBSwitch" parent="Theme.AppCompat.Light">
+        <!-- active thumb & track color (30% transparency) -->
+        <item name="colorControlActivated">@android:color/holo_green_dark</item>
+        <!-- inactive thumb color -->
+        <item name="colorSwitchThumbNormal">#673AB7</item>
+        <!-- inactive track color (30% transparency) -->
+        <item name="android:colorForeground">@android:color/darker_gray</item>
     </style>
 
 </resources>

@@ -3,18 +3,24 @@
     <color name="colorPrimary">#fff</color>
     <color name="colorPrimaryDark">#fff</color>
     <color name="colorAccent">#fff</color>
+    <color name="mainColor">#eabf4e</color>
 
 
 
     <!-- Sign In -->
-    <color name="grayBg">#88F0F2F5</color>
+    <color name="grayBg">#F0F2F5</color>
+    <color name="spinnerGrayBg">#88AAACAC</color>
     <color name="etTextColor">#333333</color>
     <color name="btnColor">#eabf4e</color>
 
 
     <!-- Add Location -->
     <color name="darkTransparentColor">#39000000</color>
-
     <color name="transparent">#00000000</color>
+
+
+    <!-- News -->
+    <color name="shadowColor">#6f000000</color>
+
 
 </resources>

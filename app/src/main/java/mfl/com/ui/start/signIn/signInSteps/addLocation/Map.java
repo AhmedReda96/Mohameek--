@@ -41,7 +41,6 @@ import mfl.com.session.GeneralMethods;
 
 public class Map extends FragmentActivity implements OnMapReadyCallback, View.OnClickListener {
     private final String TAG = Map.class.getSimpleName();
-
     private static final int REQUEST_PERMISSIONS_REQUEST_CODE = 44;
     private ActivityMapBinding binding;
     private GoogleMap mMap;
@@ -57,6 +56,14 @@ public class Map extends FragmentActivity implements OnMapReadyCallback, View.On
     private CameraUpdate zoom;
 
     @Override
+    protected void onStart() {
+        super.onStart();
+
+        init();
+
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_map);
@@ -67,14 +74,15 @@ public class Map extends FragmentActivity implements OnMapReadyCallback, View.On
         binding.saveBtn.setOnClickListener(this::onClick);
         binding.backBtn.setOnClickListener(this::onClick);
 
-        init();
+
     }
 
     private void init() {
         generalMethods = new GeneralMethods(this);
         generalMethods.changeLanguage();
-        Locale loc = new Locale("ar");
-        geocoder = new Geocoder(this, loc);
+        generalMethods.setDirection(binding.mainLin);
+
+        geocoder = new Geocoder(this, new Locale("ar"));
 
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
         binding.locationBtn.setOnClickListener(this::onClick);
@@ -109,6 +117,8 @@ public class Map extends FragmentActivity implements OnMapReadyCallback, View.On
                 binding.pin.setBackgroundResource(R.drawable.pin);
                 binding.progress.setVisibility(View.VISIBLE);
                 binding.addressTv.setVisibility(View.GONE);
+                binding.saveBtn.setVisibility(View.GONE);
+
                 selectedAddress = null;
             }
         });
@@ -138,24 +148,18 @@ public class Map extends FragmentActivity implements OnMapReadyCallback, View.On
         }
 
         String address = addresses.get(0).getAddressLine(0); // If any additional address line present than only, check with max available address lines by getMaxAddressLineIndex()
-        String city = addresses.get(0).getLocality();
-        String state = addresses.get(0).getAdminArea();
-        String country = addresses.get(0).getCountryName();
-        String postalCode = addresses.get(0).getPostalCode();
-        String knownName = addresses.get(0).getFeatureName(); // Only if available else return NULL
 
         binding.progress.setVisibility(View.GONE);
         selectedAddress = address;
         binding.addressTv.setText(selectedAddress);
         binding.addressTv.setVisibility(View.VISIBLE);
+        binding.saveBtn.setVisibility(View.VISIBLE);
 
     }
 
     @Override
     public void onClick(View view) {
         if (binding.locationBtn.equals(view)) {
-
-
             if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) ==
                     PackageManager.PERMISSION_GRANTED) {
                 getCurrentLocation();
@@ -172,7 +176,7 @@ public class Map extends FragmentActivity implements OnMapReadyCallback, View.On
             Intent intent = new Intent();
             intent.putExtra("address", binding.addressTv.getText().toString());
             intent.putExtra("latitude", String.valueOf(latitude));
-            intent.putExtra("longitude",String.valueOf(longitude));
+            intent.putExtra("longitude", String.valueOf(longitude));
             setResult(RESULT_OK, intent);
             finish();
 

@@ -4,8 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
+
+import com.bumptech.glide.Glide;
+import com.theartofdev.edmodo.cropper.CropImage;
+import com.theartofdev.edmodo.cropper.CropImageView;
 
 import mfl.com.R;
 import mfl.com.databinding.ActivitySignUpScreenBinding;
@@ -17,6 +23,8 @@ public class SignUpScreen extends AppCompatActivity implements View.OnClickListe
     private ActivitySignUpScreenBinding binding;
     private StoreLanguageData storeLanguageData;
     private GeneralMethods generalMethods;
+    private Uri imageUri = null;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +41,10 @@ public class SignUpScreen extends AppCompatActivity implements View.OnClickListe
         checkLanguage();
 
         binding.signUpBtn.setOnClickListener(this::onClick);
+        binding.cardImg.setOnClickListener(this::onClick);
+        binding.addCardBtn.setOnClickListener(this::onClick);
+
+
     }
 
     private void checkLanguage() {
@@ -50,5 +62,48 @@ public class SignUpScreen extends AppCompatActivity implements View.OnClickListe
             startActivity(new Intent(this, HomeActivity.class));
 
         }
+        if (binding.cardImg.equals(v)) {
+            CropImage.activity().setGuidelines(CropImageView.Guidelines.ON).start(SignUpScreen.this);
+
+        }
+        if (binding.addCardBtn.equals(v)) {
+            CropImage.activity().setGuidelines(CropImageView.Guidelines.ON).start(SignUpScreen.this);
+
+        }
     }
+
+
+    public void onActivityResult(int requestCode, int resultCode, Intent imageReturnedIntent) {
+
+        super.onActivityResult(requestCode, resultCode, imageReturnedIntent);
+
+        try {
+
+            if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
+
+                CropImage.ActivityResult result = CropImage.getActivityResult(imageReturnedIntent);
+
+                if (resultCode == RESULT_OK) {
+                    binding.cardImg.setPadding(0, 0, 0, 0);
+                    imageUri = result.getUri();
+                    Glide.with(getApplicationContext()).load(imageUri).into(binding.cardImg);
+                    binding.cardImg.setScaleType(ImageView.ScaleType.FIT_XY);
+
+                } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
+
+                    Exception error = result.getError();
+                    error.printStackTrace();
+
+                }
+            }
+
+
+        } catch (Exception e) {
+
+            e.printStackTrace();
+        }
+
+
+    }
+
 }

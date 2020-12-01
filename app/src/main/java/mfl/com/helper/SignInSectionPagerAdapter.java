@@ -7,11 +7,12 @@ import androidx.viewpager2.adapter.FragmentStateAdapter;
 
 import mfl.com.ui.start.signIn.signInSteps.addImage.AddImageFragment;
 import mfl.com.ui.start.signIn.signInSteps.addLocation.AddLocationFragment;
+import mfl.com.ui.start.signIn.signInSteps.addTime.AddTime;
 import mfl.com.ui.start.signIn.signInSteps.changePassword.ChangePasswordFragment;
 import mfl.com.ui.start.signIn.signInSteps.payment.PaymentFragment;
 
-public class SectionPagerAdapter extends FragmentStateAdapter {
-    public SectionPagerAdapter(FragmentActivity fm) {
+public class SignInSectionPagerAdapter extends FragmentStateAdapter {
+    public SignInSectionPagerAdapter(FragmentActivity fm) {
         super(fm);
     }
 
@@ -29,8 +30,9 @@ public class SectionPagerAdapter extends FragmentStateAdapter {
 
             case 2:
                 return new AddLocationFragment();
-
             case 3:
+                return new AddTime();
+            case 4:
                 return new PaymentFragment();
             default:
                 return null;
@@ -40,6 +42,6 @@ public class SectionPagerAdapter extends FragmentStateAdapter {
 
     @Override
     public int getItemCount() {
-        return 4;
+        return 5;
     }
 }

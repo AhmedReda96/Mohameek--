@@ -28,6 +28,7 @@
     <string name="email_purpose">Please put valid email to communicate through it.</string>
     <string name="logo">logo</string>
     <string name="name_purpose">Write your full name as it appears on the membership card.</string>
+    <string name="phone">Phone number</string>
 
 
     <!-- Change Password Screen  -->
@@ -61,7 +62,7 @@
     <string name="addYourProfilePic_purpose2">to avoid conflicts</string>
     <string name="briefSummary">Brief summary...</string>
     <string name="max">Maximum of 300 characters.</string>
-    <string name="selectYourSpecialty">Select your specialty :</string>
+    <string name="selectYourSpecialty">Select your specialty</string>
 
 
     <!-- Add Location Screen -->
@@ -75,7 +76,7 @@
     <string name="floor">Floor</string>
     <string name="unit">Unit  name / No.</string>
     <string name="address">Address</string>
-    <string name="addWorkLocation">Work Location</string>
+    <string name="addWorkLocation">Office Location</string>
     <string name="workLocation_purpose1">"First, Select work location on map "</string>
     <string name="workLocation_purpose2">"then write the The address is detailed  "</string>
     <string name="save">Save</string>
@@ -87,4 +88,24 @@
     <string name="unitNumber">Office number</string>
     <string name="addressInDetails_purpose1">Choose the governorate first, then Carefully fill in the address of the workplace</string>
     <string name="zone">Zone name</string>
+    <string name="profile">Profile</string>
+    <string name="officeTime">Office time</string>
+    <string name="payment">Payment</string>
+    <string name="officeTime_purpose1">These are the times that will appear to the customer and during which they will be booked</string>
+    <string name="officeTime_purpose2">So choose the official working hours for your office carefully</string>
+    <string name="saturday">Saturday</string>
+    <string name="from">from :</string>
+    <string name="to">To :</string>
+    <string name="durationOfTheConsultation">Duration of the consultation</string>
+    <string name="sunday">Sunday</string>
+    <string name="monday">Monday</string>
+    <string name="tuesday">Tuesday</string>
+    <string name="wednesday">Wednesday</string>
+    <string name="thursday">Thursday</string>
+    <string name="friday">Friday</string>
+    <string name="payment_purpose1">Choose your payment method</string>
+    <string name="payment_purpose2">Pay now to activate the account</string>
+    <string name="verify">Verify Code</string>
+    <string name="news">News</string>
+    <string name="offer">Offers</string>
 </resources>

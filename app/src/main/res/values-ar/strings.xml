@@ -2,6 +2,7 @@
 <resources>
     <string name="app_name">محاميك - محامي</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_map">Map</string>
 
 
 
@@ -30,11 +31,12 @@
     <string name="card_purpose">"ضع صورة واضحة لبطاقه العضوية الخاصة بك "</string>
     <string name="email_purpose">من فضلت ضع بريد الكترونى سليم لكى يتم التواصل من خلاله</string>
     <string name="name_purpose">اكتب اسمك كاملاً كما هو موجود في كارنيه العضوية.</string>
+    <string name="phone">رقم التليفون</string>
 
     <!-- Change Password Screen  -->
     <string name="changePassword">تغيير كلمة المرور</string>
     <string name="changePassword_purpose1">لاسباب أمنية من فضلك</string>
-    <string name="changePassword_purpose2">ليك تغيير كلمة المرور الخاصة بك</string>
+    <string name="changePassword_purpose2">قم بتغيير كلمة المرور الخاصة بك</string>
     <string name="confirmPassword">تأكيد كلمة المرور</string>
     <string name="next"> التالي</string>
 
@@ -75,23 +77,47 @@
     <string name="updateLocation">تحديث الموقع على الخريطة</string>
     <string name="country">البلد</string>
     <string name="state">State</string>
-    <string name="city">المدينة</string>
+    <string name="city">اختر المدينة</string>
     <string name="area">المنطقة</string>
     <string name="building">مبني</string>
     <string name="floor">طابق</string>
     <string name="unit">اسم الشقة / الرقم</string>
     <string name="address">العنوان تفصيليا</string>
-    <string name="addWorkLocation">مكان العمل</string>
+    <string name="addWorkLocation">عنوان المكتب</string>
     <string name="save">حفظ</string>
-    <string name="workLocation_purpose1">اولاً , اختر مكان العمل علي الخريطة "</string>
-    <string name="workLocation_purpose2">"ثم اكتب عنوان العمل تفصيلياً "</string>
+    <string name="workLocation_purpose1">اولاً , اختر مكان المكتب علي الخريطة "</string>
+    <string name="workLocation_purpose2">"ثم اكتب عنوان المكتب تفصيلياً "</string>
     <string name="addressInDetails">عنوان المكتب تفصلياً</string>
-    <string name="governorate">المحافظة</string>
+    <string name="governorate">اختر المحافظة</string>
     <string name="street">اسم الشارع</string>
     <string name="buildingNumber">رقم العمارة</string>
     <string name="unitNumber">رقم المكتب</string>
     <string name="addressInDetails_purpose1">اختر المحافظة اولا, ثم املاء عنوان مكان العمل بعناية</string>
     <string name="zone">اسم المنطقة</string>
     <string name="floorNumber">رقم الدور</string>
+    <string name="profile">الصفحة الشخصية</string>
+    <string name="officeTime">مواعيد المكتب</string>
+    <string name="payment">الدفع</string>
+    <string name="officeTime_purpose1">هذة المواعيد التي سوف تظهر للعميل وسوف يتم الحجز خلالها</string>
+    <string name="officeTime_purpose2">لذلك اختر مواعيد العمل الرسمية لمكتبك بعناية</string>
+    <string name="saturday">السبت</string>
+    <string name="from">من</string>
+    <string name="to">الى</string>
+    <string name="durationOfTheConsultation">فترة الاسستشارة</string>
+    <string name="sunday">الاحد</string>
+    <string name="monday">الاثنين</string>
+    <string name="tuesday">الثلاثاء</string>
+    <string name="wednesday">الاربعاء</string>
+    <string name="thursday">الخميس</string>
+    <string name="friday">الجمعه</string>
+    <string name="payment_purpose1">اختر طريقة الدفع المناسبة لك</string>
+    <string name="payment_purpose2">ادفع الان لتفعيل الحساب</string>
+    <string name="verify">التحقق من الكود</string>
+
+
+    <!-- Home Screen -->
+
+    <string name="news">الأخبار</string>
+    <string name="offer">العروض</string>
 
 </resources>

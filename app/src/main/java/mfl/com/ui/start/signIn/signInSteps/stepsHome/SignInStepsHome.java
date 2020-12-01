@@ -9,7 +9,7 @@ import android.view.View;
 
 import mfl.com.R;
 import mfl.com.databinding.ActivitySignInStepsHomeBinding;
-import mfl.com.helper.SectionPagerAdapter;
+import mfl.com.helper.SignInSectionPagerAdapter;
 
 public class SignInStepsHome extends AppCompatActivity implements View.OnClickListener {
     private ActivitySignInStepsHomeBinding binding;
@@ -25,8 +25,7 @@ public class SignInStepsHome extends AppCompatActivity implements View.OnClickLi
         binding = DataBindingUtil.setContentView(this, R.layout.activity_sign_in_steps_home);
         binding.setLifecycleOwner(this);
 
-        binding.viewPager.setAdapter(new SectionPagerAdapter(this));
-
+        binding.viewPager.setAdapter(new SignInSectionPagerAdapter(this));
 
         binding.viewPager.setUserInputEnabled(false);
         binding.viewPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {

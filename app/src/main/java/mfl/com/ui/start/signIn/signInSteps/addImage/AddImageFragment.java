@@ -1,7 +1,9 @@
 package mfl.com.ui.start.signIn.signInSteps.addImage;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -12,9 +14,14 @@ import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.google.android.material.snackbar.Snackbar;
 import com.jaredrummler.materialspinner.MaterialSpinner;
+import com.theartofdev.edmodo.cropper.CropImage;
+import com.theartofdev.edmodo.cropper.CropImageView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,13 +30,15 @@ import mfl.com.R;
 import mfl.com.databinding.FragmentAddImageBinding;
 import mfl.com.session.GeneralMethods;
 import mfl.com.ui.start.signIn.signInSteps.stepsHome.SignInStepsHome;
+import mfl.com.ui.start.signUp.SignUpScreen;
+
+import static android.app.Activity.RESULT_OK;
 
 
 public class AddImageFragment extends Fragment implements View.OnClickListener {
     private FragmentAddImageBinding binding;
     private GeneralMethods generalMethods;
-    private List<String> list=new ArrayList<>();
-
+    private Uri imageUri = null;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -50,23 +59,11 @@ public class AddImageFragment extends Fragment implements View.OnClickListener {
         generalMethods = new GeneralMethods(getActivity());
         generalMethods.changeLanguage();
         binding.nextBtn.setOnClickListener(this::onClick);
+        binding.lawyerImg.setOnClickListener(this::onClick);
 
+
+        binding.lawyerImg.setOnClickListener(this::onClick);
         generalMethods.setDirection(binding.mainLin);
-        list.add("adsd");
-        list.add("adsd");
-        list.add("adsd");
-        list.add("adsd");
-
-        binding.spinner.setItems(list);
-        binding.spinner.setOnItemSelectedListener(new MaterialSpinner.OnItemSelectedListener<String>() {
-
-            @Override
-            public void onItemSelected(MaterialSpinner view, int position, long id, String item) {
-                Snackbar.make(view, "Clicked " + item, Snackbar.LENGTH_LONG).show();
-            }
-        });
-
-
         binding.bio.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -75,10 +72,11 @@ public class AddImageFragment extends Fragment implements View.OnClickListener {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if (s.length() == 150) {
+                if (s.length() == 300) {
                     binding.maxInfo.setTextColor(getResources().getColor(android.R.color.holo_red_light));
                 } else {
                     binding.maxInfo.setTextColor(getResources().getColor(android.R.color.darker_gray));
+
 
                 }
             }
@@ -86,9 +84,9 @@ public class AddImageFragment extends Fragment implements View.OnClickListener {
             @Override
             public void afterTextChanged(Editable s) {
 
-
             }
         });
+
 
     }
 
@@ -98,5 +96,46 @@ public class AddImageFragment extends Fragment implements View.OnClickListener {
             ((SignInStepsHome) getActivity()).selectIndex(2);
 
         }
+
+        if (binding.lawyerImg.equals(v)) {
+            CropImage.activity().setGuidelines(CropImageView.Guidelines.ON).start(getActivity());
+
+        }
+
+
     }
+
+    public void onActivityResult(int requestCode, int resultCode, Intent imageReturnedIntent) {
+
+        super.onActivityResult(requestCode, resultCode, imageReturnedIntent);
+
+        try {
+
+            if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
+
+                CropImage.ActivityResult result = CropImage.getActivityResult(imageReturnedIntent);
+
+                if (resultCode == RESULT_OK) {
+                    binding.lawyerImg.setPadding(0, 0, 0, 0);
+                    imageUri = result.getUri();
+                    Glide.with(getActivity()).load(imageUri).into(binding.lawyerImg);
+                    binding.lawyerImg.setScaleType(ImageView.ScaleType.FIT_XY);
+
+                } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
+
+                    Exception error = result.getError();
+                    error.printStackTrace();
+
+                }
+            }
+
+
+        } catch (Exception e) {
+
+            e.printStackTrace();
+        }
+
+
+    }
+
 }

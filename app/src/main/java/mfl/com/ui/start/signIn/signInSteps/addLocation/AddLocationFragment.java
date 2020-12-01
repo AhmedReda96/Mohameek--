@@ -1,5 +1,6 @@
 package mfl.com.ui.start.signIn.signInSteps.addLocation;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -13,16 +14,15 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.google.android.material.snackbar.Snackbar;
 import com.jaredrummler.materialspinner.MaterialSpinner;
 
 import java.util.ArrayList;
@@ -30,15 +30,14 @@ import java.util.List;
 
 import mfl.com.R;
 import mfl.com.databinding.FragmentAddLocationBinding;
-import mfl.com.databinding.FragmentChangePasswordBinding;
 import mfl.com.session.GeneralMethods;
-import mfl.com.ui.home.HomeActivity;
+import mfl.com.ui.start.signIn.signInSteps.stepsHome.SignInStepsHome;
 
 import static android.app.Activity.RESULT_OK;
 
-/**
- * A simple {@link Fragment} subclass.
- */
+/*
+المدني جنائي  عسكر اداري اسرة
+*/
 public class AddLocationFragment extends Fragment implements View.OnClickListener {
     private final String TAG = AddLocationFragment.class.getSimpleName();
     private FragmentAddLocationBinding binding;
@@ -46,7 +45,7 @@ public class AddLocationFragment extends Fragment implements View.OnClickListene
     private GoogleMap mMap;
     private double latitude = 31.2357;
     private double longitude = 31.2357;
-    private String address = null, getLat, getLong,governorateName="",cityName="",zoneName="",streetName="",buildNumber="",floorNumber="",unitNumber="";
+    private String address = null, getLat, getLong, governorateName = "", cityName = "", zoneName = "", streetName = "", buildNumber = "", floorNumber = "", unitNumber = "";
     private CameraUpdate center;
     private CameraUpdate zoom;
     private List<String> governorate = new ArrayList<>();
@@ -56,7 +55,6 @@ public class AddLocationFragment extends Fragment implements View.OnClickListene
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         binding = FragmentAddLocationBinding.inflate(inflater, container, false);
         binding.setLifecycleOwner(getActivity());
         return binding.getRoot();
@@ -79,13 +77,9 @@ public class AddLocationFragment extends Fragment implements View.OnClickListene
         binding.mapLin.setOnClickListener(this::onClick);
 
         setupSpinners();
-
-
         addressListener();
 
-
-
-}
+    }
 
     private void addressListener() {
         binding.governorateSpinner.setOnItemSelectedListener(new MaterialSpinner.OnItemSelectedListener<String>() {
@@ -93,8 +87,8 @@ public class AddLocationFragment extends Fragment implements View.OnClickListene
             @Override
             public void onItemSelected(MaterialSpinner view, int position, long id, String item) {
                 //Snackbar.make(view, "Clicked " + String.valueOf(position+1), Snackbar.LENGTH_LONG).show();
-                governorateName=item;
-                binding.address.setText(governorateName+cityName+streetName+buildNumber+floorNumber+unitNumber);
+                governorateName = item;
+                binding.address.setText(governorateName + cityName + streetName + buildNumber + floorNumber + unitNumber);
                 binding.zoneLin.setVisibility(View.VISIBLE);
             }
         });
@@ -104,8 +98,8 @@ public class AddLocationFragment extends Fragment implements View.OnClickListene
             @Override
             public void onItemSelected(MaterialSpinner view, int position, long id, String item) {
                 //Snackbar.make(view, "Clicked " + String.valueOf(position+1), Snackbar.LENGTH_LONG).show();
-                cityName=" -"+item;
-                binding.address.setText(governorateName+cityName+zoneName+streetName+buildNumber+floorNumber+unitNumber);
+                cityName = " -" + item;
+                binding.address.setText(governorateName + cityName + zoneName + streetName + buildNumber + floorNumber + unitNumber);
 
             }
         });
@@ -118,8 +112,8 @@ public class AddLocationFragment extends Fragment implements View.OnClickListene
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                zoneName=" -"+s;
-                binding.address.setText(governorateName+cityName+zoneName+streetName+buildNumber+floorNumber+unitNumber);
+                zoneName = " -" + s;
+                binding.address.setText(governorateName + cityName + zoneName + streetName + buildNumber + floorNumber + unitNumber);
 
             }
 
@@ -136,8 +130,8 @@ public class AddLocationFragment extends Fragment implements View.OnClickListene
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                streetName=" -شارع "+s;
-                binding.address.setText(governorateName+cityName+zoneName+streetName+buildNumber+floorNumber+unitNumber);
+                streetName = " -شارع " + s;
+                binding.address.setText(governorateName + cityName + zoneName + streetName + buildNumber + floorNumber + unitNumber);
 
             }
 
@@ -155,8 +149,8 @@ public class AddLocationFragment extends Fragment implements View.OnClickListene
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                buildNumber=" -عمارة رقم "+s;
-                binding.address.setText(governorateName+cityName+zoneName+streetName+buildNumber+floorNumber+unitNumber);
+                buildNumber = " -عمارة رقم " + s;
+                binding.address.setText(governorateName + cityName + zoneName + streetName + buildNumber + floorNumber + unitNumber);
 
             }
 
@@ -173,8 +167,8 @@ public class AddLocationFragment extends Fragment implements View.OnClickListene
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                floorNumber=" -رقم الدور "+s;
-                binding.address.setText(governorateName+cityName+zoneName+streetName+buildNumber+floorNumber+unitNumber);
+                floorNumber = " -رقم الدور " + s;
+                binding.address.setText(governorateName + cityName + zoneName + streetName + buildNumber + floorNumber + unitNumber);
 
             }
 
@@ -191,8 +185,8 @@ public class AddLocationFragment extends Fragment implements View.OnClickListene
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                unitNumber=" -رقم المكتب "+s;
-                binding.address.setText(governorateName+cityName+zoneName+streetName+buildNumber+floorNumber+unitNumber);
+                unitNumber = " -رقم المكتب " + s;
+                binding.address.setText(governorateName + cityName + zoneName + streetName + buildNumber + floorNumber + unitNumber);
 
             }
 
@@ -256,24 +250,21 @@ public class AddLocationFragment extends Fragment implements View.OnClickListene
         binding.citySpinner.setItems(cities);
 
 
-
-
-
-
-
     }
 
 
     @Override
     public void onClick(View v) {
-        if (binding.selectLocationBtn.equals(v)||binding.mapLin.equals(v)) {
+        if (binding.selectLocationBtn.equals(v)) {
             Intent i = new Intent(getActivity(), Map.class);
             startActivityForResult(i, 1);
 
         }
-        if (binding.mapLin.equals(v)) {
-            Intent i = new Intent(getActivity(), Map.class);
-            startActivityForResult(i, 1);
+
+
+
+        if (binding.nextBtn.equals(v)) {
+            ((SignInStepsHome) getActivity()).selectIndex(3);
 
         }
 
@@ -286,12 +277,12 @@ public class AddLocationFragment extends Fragment implements View.OnClickListene
         if (requestCode == 1) {
             if (resultCode == RESULT_OK) {
 
-                FragmentTransaction transaction =
-                        getActivity().getSupportFragmentManager().beginTransaction();
+                FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
                 SupportMapFragment fragment = new SupportMapFragment();
                 transaction.add(R.id.map, fragment);
                 transaction.commit();
 
+                binding.scroll.scrollTo(0, binding.scroll.getBottom());
 
                 fragment.getMapAsync(new OnMapReadyCallback() {
                     @Override
@@ -308,6 +299,7 @@ public class AddLocationFragment extends Fragment implements View.OnClickListene
                         getLong = data.getStringExtra("longitude");
 
                         setMapData();
+
                     }
                 });
 
@@ -337,23 +329,7 @@ public class AddLocationFragment extends Fragment implements View.OnClickListene
         binding.mapAddress.setText(address);
         Log.d(TAG, "Mohameek setMapData:" + address + "," + String.valueOf(getLat + "+" + getLong));
 
-    }
-/*
-    @Override
-    public void onMapReady(GoogleMap googleMap) {
-        mMap = googleMap;
 
-
-        if (address != null) {
-            setMapData();
-        } else {
-            binding.mapLin.setVisibility(View.VISIBLE);
-            LatLng sydney = new LatLng(-34, 151);
-            mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-            mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
-        }
     }
 
-
- */
 }

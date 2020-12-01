@@ -49,7 +49,7 @@
                 app:sv_selectedStepNumberColor="@android:color/black"
                 app:sv_stepNumberTextSize="@dimen/_12sdp"
                 app:sv_stepPadding="@dimen/_5sdp"
-                app:sv_stepsNumber="4" />
+                app:sv_stepsNumber="5" />
 
 
         </androidx.cardview.widget.CardView>
