@@ -10,11 +10,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import mfl.com.R;
-import mfl.com.databinding.FragmentChangePasswordBinding;
 import mfl.com.databinding.FragmentPaymentBinding;
 import mfl.com.session.GeneralMethods;
-import mfl.com.ui.home.HomeActivity;
+import mfl.com.ui.home.mainHome.HomeActivity;
 
 
 public class PaymentFragment extends Fragment implements View.OnClickListener {

@@ -5,9 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.util.Log;
 
 import mfl.com.R;
+import mfl.com.ui.home.fragment.news.details.NewsDetailsScreen;
+import mfl.com.ui.home.mainHome.HomeActivity;
 import mfl.com.ui.start.signIn.mainSignIn.SignInScreen;
 
 public class SplashScreen extends AppCompatActivity {
@@ -24,7 +25,7 @@ public class SplashScreen extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                startActivity(new Intent(SplashScreen.this, SignInScreen.class));
+                startActivity(new Intent(SplashScreen.this, HomeActivity.class));
                 finish();
             }
         }, 3000);

@@ -2,16 +2,21 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="mfl.com">
-
+    <!--
+         The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
+         Google Maps Android API v2, but you must specify either coarse or fine
+         location permissions for the 'MyLocation' functionality.
+    -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
+        tools:replace="android:icon"
         android:allowBackup="true"
         android:excludeFromRecents="true"
         android:fullBackupContent="true"
@@ -24,19 +29,58 @@
         android:usesCleartextTraffic="true"
         tools:ignore="LockedOrientationActivity"
         tools:targetApi="m">
+        <activity android:name=".ui.home.fragment.schedule.orderDetails.OrderDetailsScreen"></activity>
+        <activity android:name=".ui.home.fragment.offer.offerDetails.OfferDetailsScreen" />
+        <activity android:name=".ui.home.fragment.offer.payment.PaymentScreen" />
+        <activity android:name=".ui.home.fragment.offer.addOffer.AddOfferScreen" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
         <activity
+            android:name=".ui.home.fragment.setting.changeLanguage.ChangeLanguageScreen"
+            android:screenOrientation="userPortrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".ui.home.fragment.setting.accountSetting.mainAccountSetting.MainAccountSetting"
+            android:screenOrientation="userPortrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".ui.home.fragment.setting.accountSetting.editStatus.EditAccountStatus"
+            android:screenOrientation="userPortrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".ui.home.fragment.setting.accountSetting.editPassword.EditPassword"
+            android:screenOrientation="userPortrait"
+            android:windowSoftInputMode="stateVisible|stateAlwaysHidden|adjustResize" />
+        <activity
+            android:name=".ui.home.fragment.setting.accountSetting.editBookingPrice.EditBookingPrice"
+            android:screenOrientation="userPortrait"
+            android:windowSoftInputMode="stateVisible|stateAlwaysHidden|adjustResize" />
+        <activity
+            android:name=".ui.home.fragment.setting.accountSetting.editOfficeLocation.EditOfficeLocation"
+            android:screenOrientation="userPortrait"
+            android:windowSoftInputMode="stateVisible|stateAlwaysHidden|adjustResize" />
+        <activity
+            android:name=".ui.home.fragment.setting.accountSetting.editOfficeWorkingHours.EditOfficeWorkingHours"
+            android:screenOrientation="userPortrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".ui.home.fragment.setting.accountSetting.editProfileInfo.EditProfileInformation"
+            android:screenOrientation="userPortrait"
+            android:windowSoftInputMode="stateVisible|stateAlwaysHidden|adjustResize" />
+        <activity
+            android:name=".ui.home.fragment.news.details.NewsDetailsScreen"
+            android:screenOrientation="userPortrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
             android:name=".ui.start.signIn.signInSteps.addLocation.Map"
             android:label="@string/title_activity_map" />
         <activity
             android:name=".ui.start.signIn.signInSteps.stepsHome.SignInStepsHome"
             android:screenOrientation="userPortrait"
-            android:windowSoftInputMode="stateVisible|stateAlwaysHidden|adjustResize"
-           />
+            android:windowSoftInputMode="stateVisible|stateAlwaysHidden|adjustResize" />
         <activity
             android:name=".ui.start.signIn.resetPassword.ResetPasswordScreen"
             android:screenOrientation="userPortrait"
@@ -52,9 +96,9 @@
         <activity
             android:name=".ui.start.signIn.mainSignIn.SignInScreen"
             android:screenOrientation="userPortrait"
-            android:windowSoftInputMode="adjustResize"/>
+            android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".ui.home.HomeActivity"
+            android:name=".ui.home.mainHome.HomeActivity"
             android:screenOrientation="userPortrait"
             android:windowSoftInputMode="stateAlwaysHidden" />
         <activity
@@ -67,7 +111,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
             android:theme="@style/Base.Theme.AppCompat" />

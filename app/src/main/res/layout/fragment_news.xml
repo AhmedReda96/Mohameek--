@@ -1,34 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:background="@android:color/white"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".ui.home.fragment.news.NewsFragment">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <FrameLayout
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/mainLin"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@color/mainColor">
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent"
+        android:orientation="vertical"
+        tools:context=".ui.home.fragment.news.NewsFragment">
 
-        <TextView
+        <FrameLayout
+            android:id="@+id/bar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/mainColor">
 
-            android:layout_width="wrap_content"
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/cairo_semibold"
+                android:text="@string/news"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/_16sdp"
+                android:textStyle="bold" />
+
+
+        </FrameLayout>
+
+        <com.google.android.material.tabs.TabLayout
+            android:layout_below="@+id/bar"
+            android:id="@+id/tab"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:fontFamily="@font/actor"
-            android:text="@string/news"
-            android:textColor="@android:color/black"
-            android:textSize="@dimen/_20sdp"
-            android:textStyle="bold" />
+            android:background="@drawable/top_tab_curves_bg"
+            app:tabIndicatorColor="@android:color/black">
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/newTab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/favoriteTab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.tabs.TabLayout>
 
 
-    </FrameLayout>
+        <androidx.viewpager2.widget.ViewPager2
+            android:layout_below="@+id/tab"
+            android:id="@+id/newsViewPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/newsRV"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-</LinearLayout>
+    </RelativeLayout>
+</layout>

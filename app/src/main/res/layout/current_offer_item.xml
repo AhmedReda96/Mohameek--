@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/mainLin"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_margin="@dimen/_5sdp"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            app:cardCornerRadius="@dimen/_5sdp"
+            app:cardElevation="@dimen/_6sdp">
+
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:padding="@dimen/_5sdp"
+                        android:id="@+id/days"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/cairo_semibold"
+                        android:text="16"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/_20sdp" />
+
+                    <TextView
+                        android:layout_gravity="bottom"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/cairo_semibold"
+                        android:text="@string/days"
+                        android:textColor="@android:color/darker_gray"
+                        android:textSize="@dimen/_14sdp" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:padding="@dimen/_5sdp"
+                        android:id="@+id/price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/cairo_semibold"
+                        android:text="20"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/_20sdp" />
+
+                    <TextView
+                        android:layout_gravity="bottom"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/cairo_semibold"
+                        android:text="@string/le"
+                        android:textColor="@android:color/darker_gray"
+                        android:textSize="@dimen/_14sdp" />
+
+
+                </LinearLayout>
+
+                <TextView
+
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/cairo_semibold"
+                    android:text="- 03:00:45"
+                    android:textColor="@color/mainColor"
+                    android:textSize="@dimen/_14sdp" />
+
+
+                <Button
+                    android:layout_margin="@dimen/_10sdp"
+                    android:id="@+id/subscribeNowBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:background="@drawable/curves_yellow_bg"
+                    android:contentDescription="@string/signIn"
+                    android:fontFamily="@font/cairo_semibold"
+                    android:padding="@dimen/_7sdp"
+                    android:text="@string/subscribeNow"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/_14sdp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+
+    </RelativeLayout>
+</layout>

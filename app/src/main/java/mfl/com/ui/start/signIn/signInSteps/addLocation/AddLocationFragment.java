@@ -282,8 +282,6 @@ public class AddLocationFragment extends Fragment implements View.OnClickListene
                 transaction.add(R.id.map, fragment);
                 transaction.commit();
 
-                binding.scroll.scrollTo(0, binding.scroll.getBottom());
-
                 fragment.getMapAsync(new OnMapReadyCallback() {
                     @Override
                     public void onMapReady(GoogleMap map) {

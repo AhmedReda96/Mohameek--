@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/mainLin"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        tools:context=".ui.home.fragment.news.details.NewsDetailsScreen">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_5sdp">
+
+                    <ImageButton
+                        android:id="@+id/backBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_gravity="left"
+                        android:background="@mipmap/back_btn_ic"
+                        android:contentDescription="@string/backBtn" />
+
+
+                    <ImageButton
+                        android:layout_centerVertical="true"
+                        android:id="@+id/favoriteBtn"
+                        android:layout_width="@dimen/_25sdp"
+                        android:layout_height="@dimen/_25sdp"
+                        android:layout_alignParentRight="true"
+                        android:background="@color/transparent"
+                        android:contentDescription="@string/backBtn"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/ic_empty_favorite" />
+
+                </RelativeLayout>
+
+                <TextView
+
+                    android:id="@+id/newsTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:fontFamily="@font/cairo_semibold"
+                    android:gravity="start"
+                    android:padding="@dimen/_2sdp"
+                    android:text=" بعد اعتراضات كبيرة.. الحكومة الفرنسية تسعى إلى تعديل مقترح قانون الأمن الشامل "
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/_14sdp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/newsImg"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_200sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:src="@android:color/holo_green_dark" />
+
+
+                <TextView
+                    android:id="@+id/newsDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:fontFamily="@font/cairo_semibold"
+                    android:gravity="start"
+                    android:padding="@dimen/_2sdp"
+                    android:text=" اقترح وزير الداخلية الفرنسي جيرالد دارمانين، الخميس، إدراج تعديل يضمن حرية الصحافة في قانون الأمن الشامل المقترح والذي تم بحثه في الجمعية الوطنية بحسب ما أعلن عنه مصدر في دائرة الوزير ومن المنتظر أن يحضر الاجتماع كريستوف كاستانير، وزير الداخلية السابق والذي يشغل حاليا منصب رئيس مجموعة الجمهورية إلى الأمام، الحزب الحاكم، في الجمعية الوطنية ويائيل براون بيفيه، رئيسة لجنة القوانين في المجلس وباتريك مينيولا، رئيس مجموعة حزب مودام في الجمعية المؤيد للحزب الحاكم. ومن المنتظر أن يحضر الاجتماع كريستوف كاستانير، وزير الداخلية السابق والذي يشغل حاليا منصب رئيس مجموعة الجمهورية إلى الأمام، الحزب الحاكم، في الجمعية الوطنية ويائيل براون بيفيه، رئيسة لجنة القوانين في المجلس وباتريك مينيولا، رئيس مجموعة حزب مودام في الجمعية المؤيد للحزب الحاكم. ومن المنتظر أن يحضر الاجتماع كريستوف كاستانير، وزير الداخلية السابق والذي يشغل حاليا منصب رئيس مجموعة الجمهورية إلى الأمام، الحزب الحاكم، في الجمعية الوطنية ويائيل براون بيفيه، رئيسة لجنة القوانين في المجلس وباتريك مينيولا، رئيس مجموعة حزب مودام في الجمعية المؤيد للحزب الحاكم. ومن المنتظر أن يحضر الاجتماع كريستوف كاستانير، وزير الداخلية السابق والذي يشغل حاليا منصب رئيس مجموعة الجمهورية إلى الأمام، الحزب الحاكم، في الجمعية الوطنية ويائيل براون بيفيه، رئيسة لجنة القوانين في المجلس وباتريك مينيولا، رئيس مجموعة حزب مودام في الجمعية المؤيد للحزب الحاكم. ومن المنتظر أن يحضر الاجتماع كريستوف كاستانير، وزير الداخلية السابق والذي يشغل حاليا منصب رئيس مجموعة الجمهورية إلى الأمام، الحزب الحاكم، في الجمعية الوطنية ويائيل براون بيفيه، رئيسة لجنة القوانين في المجلس وباتريك مينيولا، رئيس مجموعة حزب مودام في الجمعية المؤيد للحزب الحاكم. ومن المنتظر أن يحضر الاجتماع كريستوف كاستانير، وزير الداخلية السابق والذي يشغل حاليا منصب رئيس مجموعة الجمهورية إلى الأمام، الحزب الحاكم، في الجمعية الوطنية ويائيل براون بيفيه، رئيسة لجنة القوانين في المجلس وباتريك مينيولا، رئيس مجموعة حزب مودام في الجمعية المؤيد للحزب الحاكم. ومن المنتظر أن يحضر الاجتماع كريستوف كاستانير، وزير الداخلية السابق والذي يشغل حاليا منصب رئيس مجموعة الجمهورية إلى الأمام، الحزب الحاكم، في الجمعية الوطنية ويائيل براون بيفيه، رئيسة لجنة القوانين في المجلس وباتريك مينيولا، رئيس مجموعة حزب مودام في الجمعية المؤيد للحزب الحاكم. ومن المنتظر أن يحضر الاجتماع كريستوف كاستانير، وزير الداخلية السابق والذي يشغل حاليا منصب رئيس مجموعة الجمهورية إلى الأمام، الحزب الحاكم، في الجمعية الوطنية ويائيل براون بيفيه، رئيسة لجنة القوانين في المجلس وباتريك مينيولا، رئيس مجموعة حزب مودام في الجمعية المؤيد للحزب الحاكم."
+                    android:textColor="@color/etTextColor"
+                    android:textSize="@dimen/_12sdp"
+
+                    android:textStyle="bold" />
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:fontFamily="@font/cairo_semibold"
+                        android:gravity="start"
+                        android:padding="@dimen/_2sdp"
+                        android:text="@string/source"
+                        android:textColor="@android:color/darker_gray"
+                        android:textSize="@dimen/_10sdp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/newsSource"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:fontFamily="@font/cairo_semibold"
+                        android:gravity="start"
+                        android:padding="@dimen/_2sdp"
+                        android:text="محاميك"
+                        android:textColor="@android:color/darker_gray"
+                        android:textSize="@dimen/_10sdp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:fontFamily="@font/cairo_semibold"
+                        android:gravity="start"
+                        android:padding="@dimen/_2sdp"
+                        android:text="@string/date"
+                        android:textColor="@android:color/darker_gray"
+                        android:textSize="@dimen/_10sdp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/newsDate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:fontFamily="@font/cairo_semibold"
+                        android:gravity="start"
+                        android:padding="@dimen/_2sdp"
+                        android:text="12-12-2020 01:30 pm"
+                        android:textColor="@android:color/darker_gray"
+                        android:textSize="@dimen/_10sdp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+
+    </RelativeLayout>
+</layout>

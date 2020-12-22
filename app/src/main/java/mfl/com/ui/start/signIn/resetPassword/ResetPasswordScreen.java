@@ -10,6 +10,7 @@ import android.view.View;
 import mfl.com.R;
 import mfl.com.databinding.ActivityResetPasswordScreenBinding;
 import mfl.com.session.GeneralMethods;
+import mfl.com.ui.start.signIn.mainSignIn.SignInScreen;
 
 public class ResetPasswordScreen extends AppCompatActivity implements View.OnClickListener {
 
@@ -33,15 +34,24 @@ public class ResetPasswordScreen extends AppCompatActivity implements View.OnCli
 
 
         binding.resetPassword.setOnClickListener(this::onClick);
+        binding.backBtn.setOnClickListener(this::onClick);
+
     }
 
     @Override
     public void onClick(View v) {
         if (binding.backBtn.equals(v)) {
+            onBackPressed();
 
         }
         if (binding.resetPassword.equals(v)) {
-            // startActivity(new Intent(this, ResetPasswordScreen.class));
+            startActivity(new Intent(this, SignInScreen.class));
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
     }
 }

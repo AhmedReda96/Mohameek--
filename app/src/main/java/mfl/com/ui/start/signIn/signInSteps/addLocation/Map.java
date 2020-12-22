@@ -30,6 +30,7 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.libraries.places.api.Places;
 
 import java.io.IOException;
 import java.util.List;
@@ -81,7 +82,7 @@ public class Map extends FragmentActivity implements OnMapReadyCallback, View.On
         generalMethods = new GeneralMethods(this);
         generalMethods.changeLanguage();
         generalMethods.setDirection(binding.mainLin);
-
+        Places.initialize(getApplicationContext(),getApplicationContext().getResources().getString(R.string.google_maps_key));
         geocoder = new Geocoder(this, new Locale("ar"));
 
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);

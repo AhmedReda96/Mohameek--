@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/mainLin"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        tools:context=".ui.home.fragment.offer.addOffer.AddOfferScreen">
+
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/backBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_gravity="left"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:background="@mipmap/back_btn_ic"
+                    android:contentDescription="@string/backBtn" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:fontFamily="@font/cairo_semibold"
+                        android:text="@string/addOffer"
+                        android:textColor="@android:color/black"
+                        android:textSize="26sp"
+                        android:textStyle="bold" />
+
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_150sdp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:elevation="@dimen/_100sdp"
+                        android:focusable="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        app:cardCornerRadius="@dimen/_4sdp">
+
+
+                        <ImageView
+                            android:id="@+id/offerImg"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@android:color/darker_gray"
+                            android:contentDescription="@string/logo"
+                            android:padding="@dimen/_50sdp"
+                            android:src="@drawable/add_img_gray_ic" />
+
+
+                    </androidx.cardview.widget.CardView>
+
+                    <Button
+                        android:id="@+id/chooseImgBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:background="@drawable/curves_yellow_bg"
+                        android:contentDescription="@string/signUp"
+                        android:fontFamily="@font/cairo_semibold"
+                        android:paddingStart="@dimen/_5sdp"
+                        android:paddingEnd="@dimen/_5sdp"
+                        android:text="@string/chooseImage"
+                        android:textAllCaps="false"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/_14sdp"
+                        android:textStyle="bold" />
+
+
+                    <EditText
+                        android:drawableStart="@drawable/title_ic"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:id="@+id/offerTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:autofillHints="@string/offerTitle"
+                        android:background="@drawable/curves_gray_bg"
+                        android:fontFamily="@font/cairo_semibold"
+                        android:hint="@string/offerTitle"
+                        android:inputType="text"
+                        android:padding="@dimen/_10sdp"
+                        android:singleLine="true"
+                        android:text=""
+                        android:textColor="@color/etTextColor"
+                        android:textSize="@dimen/_14sdp" />
+
+
+                    <EditText
+                        android:id="@+id/offerDescription"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_120sdp"
+                        android:autofillHints="@string/offerDescription"
+                        android:background="@drawable/curves_gray_bg"
+                        android:drawableStart="@drawable/info_ic"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:fontFamily="@font/cairo_semibold"
+                        android:foregroundGravity="top"
+                        android:gravity="top"
+                        android:hint="@string/offerDescription"
+                        android:inputType="textMultiLine"
+                        android:maxEms="300"
+                        android:maxLength="300"
+                        android:padding="@dimen/_10sdp"
+                        android:scrollbarStyle="insideOverlay"
+                        android:scrollbars="vertical"
+                        android:selectAllOnFocus="true"
+                        android:text=""
+                        android:textColor="@color/etTextColor"
+                        android:textSize="@dimen/_14sdp" />
+
+
+                    <TextView
+                        android:id="@+id/maxInfo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:fontFamily="@font/cairo_semibold"
+                        android:text="@string/max"
+                        android:textColor="@android:color/darker_gray"
+                        android:textSize="@dimen/_10sdp" />
+
+
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/cairo_semibold"
+                        android:text="@string/putOldPrice"
+                        android:textColor="@android:color/darker_gray"
+                        android:textSize="@dimen/_10sdp" />
+
+                    <LinearLayout
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:background="@drawable/curves_gray_bg"
+                        android:orientation="horizontal"
+                        android:paddingStart="@dimen/_5sdp"
+                        android:paddingEnd="@dimen/_5sdp">
+
+
+                        <EditText
+                            android:id="@+id/price"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:autofillHints="@string/price"
+                            android:backgroundTint="@color/grayBg"
+                            android:drawableStart="@drawable/price_ic"
+                            android:drawablePadding="@dimen/_5sdp"
+                            android:fontFamily="@font/cairo_semibold"
+                            android:hint="@string/price"
+                            android:inputType="numberSigned"
+                            android:padding="@dimen/_10sdp"
+                            android:text=""
+                            android:textColor="@color/etTextColor"
+                            android:textSize="@dimen/_14sdp" />
+
+                        <TextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/cairo_semibold"
+                            android:text="@string/le"
+                            android:textColor="@android:color/darker_gray"
+                            android:textSize="@dimen/_14sdp" />
+
+
+                    </LinearLayout>
+
+
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/cairo_semibold"
+                        android:text="@string/putDiscount"
+                        android:textColor="@android:color/darker_gray"
+                        android:textSize="@dimen/_10sdp" />
+
+                    <LinearLayout
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:background="@drawable/curves_gray_bg"
+                        android:orientation="horizontal"
+                        android:paddingStart="@dimen/_5sdp"
+                        android:paddingEnd="@dimen/_5sdp">
+
+
+                        <EditText
+                            android:id="@+id/discount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:autofillHints="@string/price"
+                            android:backgroundTint="@color/grayBg"
+                            android:drawablePadding="@dimen/_5sdp"
+                            android:fontFamily="@font/cairo_semibold"
+                            android:hint="@string/discountEx"
+                            android:inputType="numberSigned"
+                            android:padding="@dimen/_10sdp"
+                            android:text=""
+                            android:textColor="@color/etTextColor"
+                            android:textSize="@dimen/_14sdp" />
+
+                        <TextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/cairo_semibold"
+                            android:text="@string/percentage"
+                            android:textColor="@android:color/darker_gray"
+                            android:textSize="@dimen/_14sdp" />
+
+
+                    </LinearLayout>
+
+
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/cairo_semibold"
+                        android:text="@string/priceAfterDiscount"
+                        android:textColor="@android:color/darker_gray"
+                        android:textSize="@dimen/_10sdp" />
+
+                    <LinearLayout
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:background="@drawable/curves_white_bg"
+                        android:orientation="horizontal"
+                        android:paddingStart="@dimen/_5sdp"
+                        android:paddingEnd="@dimen/_5sdp">
+
+
+                        <TextView
+                            android:id="@+id/newPrice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:autofillHints="@string/price"
+                            android:backgroundTint="@color/grayBg"
+                            android:drawableStart="@drawable/price_ic"
+                            android:drawablePadding="@dimen/_5sdp"
+                            android:fontFamily="@font/cairo_semibold"
+                            android:inputType="numberSigned"
+                            android:padding="@dimen/_10sdp"
+                            android:text="0"
+                            android:textColor="@color/etTextColor"
+                            android:textSize="@dimen/_14sdp" />
+
+                        <TextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/cairo_semibold"
+                            android:text="@string/le"
+                            android:textColor="@android:color/darker_gray"
+                            android:textSize="@dimen/_14sdp" />
+
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/error"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:fontFamily="@font/cairo_semibold"
+                        android:gravity="center"
+                        android:text="Error"
+                        android:textColor="@android:color/holo_red_light"
+                        android:textSize="@dimen/_10sdp"
+                        android:visibility="visible" />
+
+                    <Button
+                        android:id="@+id/nextBtn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:background="@drawable/curves_yellow_bg"
+                        android:contentDescription="@string/next"
+                        android:fontFamily="@font/cairo_semibold"
+                        android:text="@string/next"
+                        android:textAllCaps="false"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/_16sdp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+        </androidx.core.widget.NestedScrollView>
+
+    </RelativeLayout>
+</layout>

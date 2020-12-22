@@ -5,7 +5,6 @@
     <string name="title_activity_map">Map</string>
 
 
-
     <!-- Sign In -->
     <string name="dontHaveAnAcc">ليس لديك حساب؟ </string>
     <string name="id">رقم العضوية</string>
@@ -29,9 +28,17 @@
     <string name="subscribe_purpose2">"جميع البيانات يتم المراجعه عليها لضمان صحتها"</string>
     <string name="uploadCard">اضافة صورة الكارنيه</string>
     <string name="card_purpose">"ضع صورة واضحة لبطاقه العضوية الخاصة بك "</string>
-    <string name="email_purpose">من فضلت ضع بريد الكترونى سليم لكى يتم التواصل من خلاله</string>
+    <string name="phone_purpose">من فضلت ضع رقم صحيح لكى يتم التواصل من خلاله</string>
     <string name="name_purpose">اكتب اسمك كاملاً كما هو موجود في كارنيه العضوية.</string>
     <string name="phone">رقم التليفون</string>
+    <string name="invalidFN">الاسم الاول غير صحيح</string>
+    <string name="invalidLN">الاسم الاخير غير صحيح </string>
+    <string name="invalidEmail">البريد الالكترونى غير صحيح</string>
+    <string name="invalidPhone">رقم التليفون غير صحيح</string>
+    <string name="invalidId">رقم العضوية غير صحيح</string>
+    <string name="invalidCardImage">لايوجد صورة كارينه</string>
+    <string name="loading">انتظار…</string>
+
 
     <!-- Change Password Screen  -->
     <string name="changePassword">تغيير كلمة المرور</string>
@@ -41,42 +48,52 @@
     <string name="next"> التالي</string>
 
 
-
     <!-- Forget Password Screen  -->
     <string name="forgetPassword">نسيت كلمة المرور</string>
-    <string name="forgetPassword_purpose1">اكتب بالاسفل البريد الالكترونى الخاص بك </string>
+    <string name="forgetPassword_purpose1">اكتب بالاسفل رقم التليفون الخاص بك </string>
     <string name="forgetPassword_purpose2">وانتظر رمز إعادة التعيين</string>
-    <string name="emailDoseNotExist">*البريد الالكترونى غير موجود</string>
+    <string name="emailDoseNotExist">خطأ</string>
+    <string name="sendCode">ارسل الكود</string>
 
 
     <!-- Reset Password Screen  -->
     <string name="resetPassword">إعادة تعيين كلمة المرور</string>
     <string name="resetPassword_purpose1">اكتب الرمز الذي </string>
-    <string name="resetPassword_purpose2">تلقيته في بريدك الوارد</string>
+    <string name="resetPassword_purpose2">تلقيته في الرسالة النصية</string>
     <string name="codeIsNotCorrect">*الرمز غير صحيح</string>
 
-    <!-- Success Password Screen  -->
-    <string name="yourPassHasBeenReset">تم اعادة تعيين كلمة المرور الخاصة بك بنجاح</string>
-    <string name="sendCode">ارسل الكود</string>
 
-
-
-
-    <!-- Add Profile Pic Screen  -->
+    <!-- Add Profile Info Screen  -->
     <string name="addYourProfilePic">اضف صورتك الشخصية</string>
     <string name="addYourProfilePic_purpose1">اختر صورتك واضحة</string>
     <string name="addYourProfilePic_purpose2">لتجنب التناقض</string>
-    <string name="briefSummary">نبذة مختصرة...</string>
+    <string name="briefSummary">نبذة مختصرة…</string>
     <string name="max">الحد الاقصى 300 حرف.</string>
     <string name="selectYourSpecialty">اختر التخصص الخاص بك</string>
-
+    <string name="gender">النوع : </string>
+    <string name="source">المصدر : </string>
+    <string name="date">التاريخ : </string>
+    <string name="aqarat">عقارات</string>
+    <string name="aam">عام</string>
+    <string name="meras">ميراث</string>
+    <string name="genyat">جنايات</string>
+    <string name="zawagWTalaq">زواج و طلاق</string>
+    <string name="hadana">حضانة واستشارات اسرية</string>
+    <string name="estsharatQanonya">استشارات قانونية</string>
+    <string name="sharekat">شركات</string>
+    <string name="defaa">دفاع</string>
+    <string name="sharaay">شرعى</string>
+    <string name="qadayaAllamaya">قضايا عالمية</string>
+    <string name="qadayaBenook">قضايا بنوك</string>
+    <string name="hegra">هجرة</string>
+    <string name="darayeb">ضرايب</string>
+    <string name="dawlyCB">دولى</string>
 
 
     <!-- Add Location Screen -->
     <string name="selectLocation">اختر الموقع على الخريطة</string>
     <string name="updateLocation">تحديث الموقع على الخريطة</string>
     <string name="country">البلد</string>
-    <string name="state">State</string>
     <string name="city">اختر المدينة</string>
     <string name="area">المنطقة</string>
     <string name="building">مبني</string>
@@ -95,9 +112,10 @@
     <string name="addressInDetails_purpose1">اختر المحافظة اولا, ثم املاء عنوان مكان العمل بعناية</string>
     <string name="zone">اسم المنطقة</string>
     <string name="floorNumber">رقم الدور</string>
-    <string name="profile">الصفحة الشخصية</string>
-    <string name="officeTime">مواعيد المكتب</string>
-    <string name="payment">الدفع</string>
+
+
+    <!-- Add Time Screen -->
+    <string name="officeTime">مواعيد عمل المكتب</string>
     <string name="officeTime_purpose1">هذة المواعيد التي سوف تظهر للعميل وسوف يتم الحجز خلالها</string>
     <string name="officeTime_purpose2">لذلك اختر مواعيد العمل الرسمية لمكتبك بعناية</string>
     <string name="saturday">السبت</string>
@@ -110,14 +128,114 @@
     <string name="wednesday">الاربعاء</string>
     <string name="thursday">الخميس</string>
     <string name="friday">الجمعه</string>
-    <string name="payment_purpose1">اختر طريقة الدفع المناسبة لك</string>
-    <string name="payment_purpose2">ادفع الان لتفعيل الحساب</string>
     <string name="verify">التحقق من الكود</string>
 
+    <!-- Booking Price Screen -->
+    <string name="bookingPrice">سعر الحجز</string>
+    <string name="bookingPrice_purpose1">ضع السعر الثابت لحجز موعد معك</string>
+    <string name="price">مثال : 100</string>
+    <string name="le">ج.م</string>.
+    <string name="priceOfPhoneService">مثال : 20</string>
+    <string name="bookingVoiceCall">حجز مكالمة هاتفية</string>
+    <string name="bookingVoiceCall_purpose1">يمكن للعميل حجز موعد للاستشارة ويضع الرقم الخاص بيه وعليك الاتصال بيه في الموعد المحدد . يدفع العميل رسوم المكالمة الكترونياً ويتم اضافة المبلغ الى حسابك البنكي</string>
+    <string name="cardNum">رقم الحساب البنكى…</string>
+
+
+    <!-- Payment Screen -->
+    <string name="payment">الدفع</string>
+    <string name="payment_purpose1">اختر طريقة الدفع المناسبة لك</string>
+    <string name="payment_purpose2">ادفع الان لتفعيل الحساب</string>
 
     <!-- Home Screen -->
-
     <string name="news">الأخبار</string>
     <string name="offer">العروض</string>
+    <string name="timesSchedule">جدول المواعيد</string>
+    <string name="profile">الصفحة الشخصية</string>
+    <string name="setting">الضبط</string>
+    <string name="appointments">مواعيد</string>
+    <string name="archive">ارشيف</string>
+
+
+    <!-- Profile Screen -->
+    <string name="personalInfo">المعلومات الشخصية</string>
+    <string name="addressOnMap">العنوان علي الخريطة</string>
+    <string name="bookingInOffice">حجز في المكتب :</string>
+
+    <!-- Setting Screen -->
+    <string name="accountSetting">اعدادات الحساب</string>
+    <string name="helpCenter">مركز المساعدة</string>
+    <string name="logout">الخروج</string>
+
+    <!-- Main Account Setting Screen -->
+    <string name="editYourProfilePic">تعديل صورة الصفحة الشخصية</string>
+    <string name="editOfficeTime">تعديل مواعيد عمل المكتب</string>
+    <string name="editWorkLocation">تعديل مكان المكتب</string>
+    <string name="editAddressInDetails_purpose1">املاء عنوان مكان العمل بعناية</string>
+    <string name="editBookingPrice">تعديل سعر الحجز</string>
+    <string name="editPassword">تعديل كلمة المرور</string>
+
+    <!-- Edit Password Screen -->
+    <string name="oldPass">كلمة المرور القديمة</string>
+    <string name="newPass">كلمة المرور الجديدة</string>
+
+    <!-- Edit Profile Screen -->
+    <string name="editAccountInfo">"تعديل الصفحة الشخصية"</string>
+    <string name="chooseImage">اختيار صورة</string>
+
+
+    <!-- Disable Account Screen -->
+    <string name="disableAccount">تعطيل الحساب</string>
+    <string name="disableAccount_purpose1"> عند تعطيل الحساب لن يتمكن العميل من حجز موعد حتي تعود لتفعيل الحساب مرة اخرى  </string>
+    <string name="rateApp">تقييم التطبيق</string>
+    <string name="shareApp">مشاركة التطبيق</string>
+    <string name="changeLanguage">تغيير اللغة</string>
+
+    <!-- Change language Screen -->
+    <string name="arabic">العربية</string>
+    <string name="english">الانجليزية</string>
+
+
+    <!-- Offer Screen -->
+    <string name="currentOffer">العروض الحالية</string>
+    <string name="myOffer">عروضى</string>
+    <string name="days">يوم</string>
+    <string name="subscribeNow">إشترك الان</string>
+    <string name="addOffer">اضافة عرض</string>
+    <string name="offerTitle">عنوان العرض</string>
+    <string name="offerDescription">تفاصيل العرض…</string>
+    <string name="putOldPrice">ضع السعر قبل الخصم</string>
+    <string name="putDiscount">ضع نسبة الخصم</string>
+    <string name="percentage">%</string>
+    <string name="discountEx">مثال : 40</string>
+    <string name="priceAfterDiscount">السعر بعد الخصم سيتم حسابه تلقائياً</string>
+    <string name="paymentValue">قيمة الدفع =</string>
+    <string name="offerDetails">معلومات العرض</string>
+    <string name="offerPrice">سعر العرض</string>
+    <string name="priceBefor">السعر قبل</string>
+    <string name="percentageValue">قيمة الخصم</string>
+    <string name="priceAfter">السعر بعد</string>
+    <string name="numOfClients">"عدد العملاء:"</string>
+    <string name="deleteOffer">مسح العرض</string>
+    <string name="offerTime">وقت العرض:</string>
+    <string name="clientName">اسم العميل :</string>
+    <string name="typeOfCounseling">نوع الاستشارة :</string>
+    <string name="clientPhone">رقم العميل :</string>
+    <string name="orderDetails">تفاصيل الطلب</string>
+    <string name="orderInfo">البيانات</string>
+    <string name="orderTime">وقت الطلب :</string>
+    <string name="orderDate">تاريخ الطلب :</string>
+    <string name="orderStatus">حالة الطلب :</string>
+    <string name="finished">انتهاء</string>
+    <string name="male">ذكر</string>
+    <string name="clientRate">تقييم العميل :</string>
+    <string name="paymentType">نوع الدفع :</string>
+    <string name="visa">دفع الكترونى</string>
+    <string name="ok">موافق</string>
+
+    <string name="applicationSuccessfully">تم إرسال الطلب بنجاح</string>
+    <string name="applicationSuccessfully_purpose1"> في حالة الموافقة على طلبك سوف تصلك رسالة في خلال ٤٨ ساعة تحتوى على الرقم الخاص بك وكلمة المرور لكي تستطيع الدخول الى حسابك.</string>
+
+
 
 </resources>
+

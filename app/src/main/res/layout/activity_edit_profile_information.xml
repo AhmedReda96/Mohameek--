@@ -1,0 +1,458 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/mainLin"
+        android:layout_width="match_parent"
+        android:background="@android:color/white"
+        android:layout_height="match_parent"
+        tools:context=".ui.home.fragment.setting.accountSetting.editProfileInfo.EditProfileInformation">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:layout_margin="@dimen/_5sdp"
+                    android:id="@+id/backBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_gravity="left"
+                    android:background="@mipmap/back_btn_ic"
+                    android:contentDescription="@string/backBtn" />
+
+                <LinearLayout
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:fontFamily="@font/cairo_semibold"
+                        android:text="@string/editYourProfilePic"
+                        android:textColor="@android:color/black"
+                        android:textSize="26sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/cairo_semibold"
+                        android:text="@string/addYourProfilePic_purpose1"
+                        android:textColor="@android:color/darker_gray"
+                        android:textSize="13sp" />
+
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/cairo_semibold"
+                        android:text="@string/addYourProfilePic_purpose2"
+                        android:textColor="@android:color/darker_gray"
+                        android:textSize="13sp" />
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="@dimen/_150sdp"
+                        android:layout_height="@dimen/_150sdp"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/_10sdp"
+                        android:elevation="@dimen/_100sdp"
+                        android:focusable="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        app:cardCornerRadius="@dimen/_4sdp">
+
+
+                        <ImageView
+                            android:id="@+id/lawyerImg"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@android:color/darker_gray"
+                            android:contentDescription="@string/logo"
+                            android:padding="@dimen/_50sdp"
+                            android:src="@drawable/add_img_gray_ic" />
+
+
+
+
+                    </androidx.cardview.widget.CardView>
+
+                    <Button
+
+                        android:id="@+id/chooseImgBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@drawable/curves_yellow_bg"
+                        android:contentDescription="@string/signUp"
+                        android:fontFamily="@font/cairo_semibold"
+                        android:padding="@dimen/_7sdp"
+                        android:text="@string/chooseImage"
+                        android:textAllCaps="false"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/_14sdp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:fontFamily="@font/cairo_semibold"
+                        android:text="المستشار / عبد الغنى محمد عبدالحكم "
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/_12sdp"
+                        android:textStyle="bold" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_gravity="start"
+                            android:layout_marginBottom="@dimen/_10sdp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:drawableStart="@drawable/ic_type"
+                                android:drawablePadding="@dimen/_5sdp"
+                                android:fontFamily="@font/cairo_semibold"
+                                android:text="@string/gender"
+                                android:textColor="@android:color/black"
+                                android:textSize="@dimen/_14sdp" />
+
+                            <TextView
+                                android:id="@+id/gender"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="start"
+                                android:fontFamily="@font/cairo_semibold"
+                                android:gravity="start"
+                                android:text="ذكر "
+                                android:textColor="@android:color/black"
+                                android:textSize="@dimen/_14sdp" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/phone"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_gravity="end"
+                            android:autofillHints="@string/phone"
+                            android:backgroundTint="@android:color/white"
+                            android:drawableStart="@drawable/phone_ic"
+                            android:drawablePadding="@dimen/_5sdp"
+                            android:fontFamily="@font/cairo_semibold"
+                            android:hint="@string/phone"
+                            android:inputType="phone"
+                            android:maxEms="11"
+                            android:maxLength="11"
+                            android:text="01124948662"
+                            android:textColor="@color/etTextColor"
+                            android:textSize="@dimen/_14sdp" />
+
+                    </RelativeLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:background="@drawable/curves_gray_bg"
+                        android:orientation="vertical"
+                        android:padding="@dimen/_5sdp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/cairo_semibold"
+                            android:text="@string/selectYourSpecialty"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/_14sdp"
+                            android:textStyle="bold" />
+
+                        <androidx.appcompat.widget.AppCompatCheckBox
+                            android:id="@+id/aamCB"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/_2sdp"
+                            android:fontFamily="@font/cairo_semibold"
+                            android:paddingLeft="@dimen/_3sdp"
+                            android:text="@string/aam"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/_14sdp"
+                            android:textStyle="bold" />
+
+                        <androidx.appcompat.widget.AppCompatCheckBox
+                            android:id="@+id/aqaratCB"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/_2sdp"
+                            android:fontFamily="@font/cairo_semibold"
+                            android:paddingLeft="@dimen/_3sdp"
+                            android:text="@string/aqarat"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/_14sdp"
+                            android:textStyle="bold" />
+
+
+                        <androidx.appcompat.widget.AppCompatCheckBox
+                            android:id="@+id/merasCB"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/_2sdp"
+                            android:fontFamily="@font/cairo_semibold"
+                            android:paddingLeft="@dimen/_3sdp"
+                            android:text="@string/meras"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/_14sdp"
+                            android:textStyle="bold" />
+
+                        <androidx.appcompat.widget.AppCompatCheckBox
+                            android:id="@+id/genyatCB"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/_2sdp"
+                            android:fontFamily="@font/cairo_semibold"
+                            android:paddingLeft="@dimen/_3sdp"
+                            android:text="@string/genyat"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/_14sdp"
+                            android:textStyle="bold" />
+
+                        <androidx.appcompat.widget.AppCompatCheckBox
+                            android:id="@+id/zawagWTalaqCB"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/_2sdp"
+                            android:fontFamily="@font/cairo_semibold"
+                            android:paddingLeft="@dimen/_3sdp"
+                            android:text="@string/zawagWTalaq"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/_14sdp"
+                            android:textStyle="bold" />
+
+                        <androidx.appcompat.widget.AppCompatCheckBox
+                            android:id="@+id/hadanaCB"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/_2sdp"
+                            android:fontFamily="@font/cairo_semibold"
+                            android:paddingLeft="@dimen/_3sdp"
+                            android:text="@string/hadana"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/_14sdp"
+                            android:textStyle="bold" />
+
+                        <androidx.appcompat.widget.AppCompatCheckBox
+                            android:id="@+id/estsharatQanonyaCB"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/_2sdp"
+                            android:fontFamily="@font/cairo_semibold"
+                            android:paddingLeft="@dimen/_3sdp"
+                            android:text="@string/estsharatQanonya"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/_14sdp"
+                            android:textStyle="bold" />
+
+                        <androidx.appcompat.widget.AppCompatCheckBox
+                            android:id="@+id/sharekatCB"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/_2sdp"
+                            android:fontFamily="@font/cairo_semibold"
+                            android:paddingLeft="@dimen/_3sdp"
+                            android:text="@string/sharekat"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/_14sdp"
+                            android:textStyle="bold" />
+
+                        <androidx.appcompat.widget.AppCompatCheckBox
+                            android:id="@+id/defaaCB"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/_2sdp"
+                            android:fontFamily="@font/cairo_semibold"
+                            android:paddingLeft="@dimen/_3sdp"
+                            android:text="@string/defaa"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/_14sdp"
+                            android:textStyle="bold" />
+
+                        <androidx.appcompat.widget.AppCompatCheckBox
+                            android:id="@+id/sharaayCB"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/_2sdp"
+                            android:fontFamily="@font/cairo_semibold"
+                            android:paddingLeft="@dimen/_3sdp"
+                            android:text="@string/sharaay"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/_14sdp"
+                            android:textStyle="bold" />
+
+                        <androidx.appcompat.widget.AppCompatCheckBox
+                            android:id="@+id/qadayaAllamayaCB"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/_2sdp"
+                            android:fontFamily="@font/cairo_semibold"
+                            android:paddingLeft="@dimen/_3sdp"
+                            android:text="@string/qadayaAllamaya"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/_14sdp"
+                            android:textStyle="bold" />
+
+                        <androidx.appcompat.widget.AppCompatCheckBox
+                            android:id="@+id/qadayaBenookCB"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/_2sdp"
+                            android:fontFamily="@font/cairo_semibold"
+                            android:paddingLeft="@dimen/_3sdp"
+                            android:text="@string/qadayaBenook"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/_14sdp"
+                            android:textStyle="bold" />
+
+                        <androidx.appcompat.widget.AppCompatCheckBox
+                            android:id="@+id/hegraCB"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/_2sdp"
+                            android:fontFamily="@font/cairo_semibold"
+                            android:paddingLeft="@dimen/_3sdp"
+                            android:text="@string/hegra"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/_14sdp"
+                            android:textStyle="bold" />
+
+                        <androidx.appcompat.widget.AppCompatCheckBox
+                            android:id="@+id/darayebCB"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/_2sdp"
+                            android:fontFamily="@font/cairo_semibold"
+                            android:paddingLeft="@dimen/_3sdp"
+                            android:text="@string/darayeb"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/_14sdp"
+                            android:textStyle="bold" />
+
+                        <androidx.appcompat.widget.AppCompatCheckBox
+                            android:id="@+id/dawlyCB"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/_2sdp"
+                            android:fontFamily="@font/cairo_semibold"
+                            android:paddingLeft="@dimen/_3sdp"
+                            android:text="@string/dawlyCB"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/_14sdp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+
+                    <EditText
+                        android:id="@+id/bio"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_120sdp"
+                        android:autofillHints="@string/address"
+                        android:background="@drawable/curves_gray_bg"
+                        android:drawableStart="@drawable/info_ic"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:fontFamily="@font/cairo_semibold"
+                        android:foregroundGravity="top"
+                        android:gravity="top"
+                        android:hint="@string/briefSummary"
+                        android:inputType="textMultiLine"
+                        android:maxEms="300"
+                        android:maxLength="300"
+                        android:padding="@dimen/_10sdp"
+                        android:scrollbarStyle="insideOverlay"
+                        android:scrollbars="vertical"
+                        android:selectAllOnFocus="true"
+                        android:text=""
+                        android:textColor="@color/etTextColor"
+                        android:textSize="@dimen/_14sdp" />
+
+
+                    <TextView
+                        android:id="@+id/maxInfo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:fontFamily="@font/cairo_semibold"
+                        android:text="@string/max"
+                        android:textColor="@android:color/darker_gray"
+                        android:textSize="@dimen/_10sdp" />
+
+                    <TextView
+                        android:id="@+id/error"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:fontFamily="@font/cairo_semibold"
+                        android:gravity="center"
+                        android:text="Error"
+                        android:textColor="@android:color/holo_red_light"
+                        android:textSize="@dimen/_10sdp"
+                        android:visibility="visible" />
+
+                    <Button
+                        android:id="@+id/saveBtn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:background="@drawable/curves_yellow_bg"
+                        android:contentDescription="@string/next"
+                        android:fontFamily="@font/cairo_semibold"
+                        android:text="@string/save"
+                        android:textAllCaps="false"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/_16sdp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+        </androidx.core.widget.NestedScrollView>
+
+
+    </RelativeLayout>
+</layout>

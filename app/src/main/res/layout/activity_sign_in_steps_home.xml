@@ -8,6 +8,7 @@
     </data>
 
     <RelativeLayout
+        android:id="@+id/mainLin"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@android:color/white"
@@ -44,12 +45,11 @@
                 app:sv_doneCircleColor="@android:color/holo_green_dark"
                 app:sv_doneStepLineColor="@android:color/holo_green_dark"
                 app:sv_doneStepMarkColor="@android:color/white"
-                app:sv_nextStepCircleColor="@color/grayBg"
                 app:sv_nextStepCircleEnabled="true"
                 app:sv_selectedStepNumberColor="@android:color/black"
                 app:sv_stepNumberTextSize="@dimen/_12sdp"
                 app:sv_stepPadding="@dimen/_5sdp"
-                app:sv_stepsNumber="5" />
+                app:sv_stepsNumber="6" />
 
 
         </androidx.cardview.widget.CardView>

@@ -1,30 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    android:layout_marginBottom="@dimen/_10sdp"
-    android:orientation="vertical"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <RelativeLayout
+    <data>
 
+    </data>
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_200sdp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:layout_marginEnd="@dimen/_5sdp"
+
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:background="@android:color/white"
         android:orientation="vertical">
 
-        <ImageView
-            id
+        <RelativeLayout
+
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/newImg"/>
+            android:layout_height="@dimen/_150sdp"
+            android:orientation="vertical">
 
-        <FrameLayout
-            android:layout_alignParentBottom="true"
+            <ImageView
+                android:id="@+id/newsImg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@android:color/holo_green_dark" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_70sdp"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/bottom_shadow" />
+
+        </RelativeLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:background="@color/shadowColor"
-            android:layout_height="@dimen/_100sdp"/>
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    </RelativeLayout>
+            <TextView
+                android:id="@+id/newsTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:ellipsize="end"
+                android:fontFamily="@font/cairo_semibold"
+                android:gravity="start"
+                android:maxLines="1"
+                android:padding="@dimen/_2sdp"
+                android:text=" بعد اعتراضات كبيرة.. الحكومة الفرنسية تسعى إلى تعديل مقترح قانون الأمن الشامل "
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/_10sdp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/newsDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:ellipsize="end"
+                android:fontFamily="@font/cairo_semibold"
+                android:gravity="start"
+                android:maxLines="2"
+                android:padding="@dimen/_2sdp"
+                android:text="اقترح وزير الداخلية الفرنسي جيرالد دارمانين، الخميس، إدراج تعديل يضمن حرية الصحافة في قانون الأمن الشامل المقترح والذي تم بحثه في الجمعية الوطنية بحسب ما أعلن عنه مصدر في دائرة الوزير"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="@dimen/_8sdp"
+                android:textStyle="bold" />
 
 
-</LinearLayout>
+            <TextView
+                android:id="@+id/newsDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_margin="@dimen/_3sdp"
+                android:ellipsize="end"
+                android:fontFamily="@font/cairo_semibold"
+                android:gravity="end"
+                android:padding="@dimen/_2sdp"
+                android:text="21-12-2020 01:30 pm"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="@dimen/_8sdp"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</layout>

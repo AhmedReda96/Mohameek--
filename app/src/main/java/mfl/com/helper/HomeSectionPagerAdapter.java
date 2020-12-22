@@ -6,10 +6,10 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
 import mfl.com.ui.home.fragment.news.NewsFragment;
-import mfl.com.ui.home.fragment.offer.OfferFragment;
+import mfl.com.ui.home.fragment.offer.main.OfferFragment;
 import mfl.com.ui.home.fragment.profile.ProfileFragment;
-import mfl.com.ui.home.fragment.schedule.SecheduleFragment;
-import mfl.com.ui.home.fragment.setting.SettingFragment;
+import mfl.com.ui.home.fragment.schedule.mainSchedule.ScheduleFragment;
+import mfl.com.ui.home.fragment.setting.mainSetting.SettingFragment;
 
 public class HomeSectionPagerAdapter extends FragmentStateAdapter {
     public HomeSectionPagerAdapter(FragmentActivity fm) {
@@ -25,7 +25,7 @@ public class HomeSectionPagerAdapter extends FragmentStateAdapter {
             case 0:
                 return new NewsFragment();
             case 1:
-                return new SecheduleFragment();
+                return new ScheduleFragment();
             case 2:
                 return new OfferFragment();
             case 3:

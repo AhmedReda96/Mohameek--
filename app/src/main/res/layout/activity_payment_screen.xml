@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/mainLin"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        tools:context=".ui.home.fragment.offer.payment.PaymentScreen">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <ImageButton
+                    android:id="@+id/backBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_gravity="left"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:background="@mipmap/back_btn_ic"
+                    android:contentDescription="@string/backBtn" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:gravity="center"
+
+                    android:orientation="vertical">
+
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_200sdp"
+                        android:contentDescription="@string/logo"
+                        android:scaleType="fitCenter"
+                        app:srcCompat="@drawable/payment_pic"
+                        tools:srcCompat="@drawable/payment_pic">
+
+                    </ImageView>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/_5sdp"
+                            android:fontFamily="@font/cairo_semibold"
+                            android:text="@string/payment"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/_20sdp"
+                            android:textStyle="bold" />
+
+                        <TextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/cairo_semibold"
+                            android:text="@string/payment_purpose1"
+                            android:textColor="@android:color/darker_gray"
+                            android:textSize="@dimen/_10sdp" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/cairo_semibold"
+                            android:text="@string/paymentValue"
+                            android:textColor="@android:color/darker_gray"
+                            android:textSize="@dimen/_12sdp" />
+
+
+                        <TextView
+                            android:paddingStart="@dimen/_5sdp"
+                            android:paddingEnd="@dimen/_5sdp"
+                            android:id="@+id/paymentValue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/cairo_semibold"
+                            android:text="20"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/_12sdp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/cairo_semibold"
+                            android:text="@string/le"
+                            android:textColor="@android:color/darker_gray"
+                            android:textSize="@dimen/_12sdp" />
+
+
+                    </LinearLayout>
+
+
+                    <Button
+                        android:id="@+id/nextBtn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:background="@drawable/curves_yellow_bg"
+                        android:contentDescription="@string/signIn"
+                        android:fontFamily="@font/cairo_semibold"
+                        android:text="@string/next"
+                        android:textAllCaps="false"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/_16sdp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+        </androidx.core.widget.NestedScrollView>
+
+
+    </RelativeLayout>
+</layout>

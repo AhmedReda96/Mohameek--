@@ -10,7 +10,7 @@
     <string name="signUp">Sign Up</string>
     <string name="id">Id</string>
     <string name="termsAndConditions">Terms And Conditions</string>
-    <string name="languageBtn">lang</string>
+    <string name="languageBtn">Language</string>
     <string name="doForgetPassword">Forget Password ?</string>
 
     <!-- Sign Up -->
@@ -25,10 +25,18 @@
     <string name="subscribe_purpose2">All data is reviewed to ensure the validity of this data.</string>
     <string name="uploadCard">Upload card image</string>
     <string name="card_purpose">"put clear image for your card "</string>
-    <string name="email_purpose">Please put valid email to communicate through it.</string>
+    <string name="phone_purpose">Please put valid number to communicate through it.</string>
     <string name="logo">logo</string>
     <string name="name_purpose">Write your full name as it appears on the membership card.</string>
     <string name="phone">Phone number</string>
+    <string name="invalidFN">Invalid first name</string>
+    <string name="invalidLN">Invalid last name</string>
+    <string name="invalidEmail">Invalid email</string>
+    <string name="invalidPhone">Invalid phone</string>
+    <string name="invalidId">Invalid id</string>
+    <string name="invalidCardImage">Not found card image</string>
+    <string name="loading">Loading…</string>
+
 
 
     <!-- Change Password Screen  -->
@@ -40,36 +48,49 @@
 
     <!-- Forget Password Screen  -->
     <string name="forgetPassword">Forget Password</string>
-    <string name="forgetPassword_purpose1">Write down your email and </string>
+    <string name="forgetPassword_purpose1">Write down your phone and </string>
     <string name="forgetPassword_purpose2">wait for reset code</string>
-    <string name="emailDoseNotExist">*Email dose not exist</string>
+    <string name="emailDoseNotExist">error</string>
+    <string name="sendCode">Send Code</string>
 
 
     <!-- Reset Password Screen  -->
     <string name="resetPassword">Reset Password</string>
+    <string name="verify">Verify Code</string>
     <string name="resetPassword_purpose1">Write down the code you have </string>
-    <string name="resetPassword_purpose2">received in your inbox</string>
+    <string name="resetPassword_purpose2">received in message</string>
     <string name="codeIsNotCorrect">*Code is not correct</string>
 
-    <!-- Success Password Screen  -->
-    <string name="yourPassHasBeenReset">Your Password Has Been Reset Successfully</string>
-    <string name="sendCode">Send Code</string>
 
-
-    <!-- Add Profile Pic Screen  -->
+    <!-- Add Profile Info Screen  -->
     <string name="addYourProfilePic">Add your profile picture</string>
     <string name="addYourProfilePic_purpose1">Select a clear picture for your self</string>
     <string name="addYourProfilePic_purpose2">to avoid conflicts</string>
-    <string name="briefSummary">Brief summary...</string>
+    <string name="briefSummary">Brief summary…</string>
     <string name="max">Maximum of 300 characters.</string>
     <string name="selectYourSpecialty">Select your specialty</string>
+    <string name="gender">Gender : </string>
+    <string name="aqarat">عقارات</string>
+    <string name="aam">عام</string>
+    <string name="meras">ميراث</string>
+    <string name="genyat">جنايات</string>
+    <string name="zawagWTalaq">زواج و طلاق</string>
+    <string name="hadana">حضانة واستشارات اسرية</string>
+    <string name="estsharatQanonya">استشارات قانونية</string>
+    <string name="sharekat">شركات</string>
+    <string name="defaa">دفاع</string>
+    <string name="sharaay">شرعى</string>
+    <string name="qadayaAllamaya">قضايا عالمية</string>
+    <string name="qadayaBenook">قضايا بنوك</string>
+    <string name="hegra">هجرة</string>
+    <string name="darayeb">ضرايب</string>
+    <string name="dawlyCB">دولى</string>
 
 
     <!-- Add Location Screen -->
     <string name="selectLocation">Select location on map</string>
     <string name="updateLocation">Update location on map</string>
     <string name="country">Country</string>
-    <string name="state">State</string>
     <string name="city">City</string>
     <string name="area">Area</string>
     <string name="building">Building</string>
@@ -86,11 +107,11 @@
     <string name="buildingNumber">Building number</string>
     <string name="floorNumber">Floor number</string>
     <string name="unitNumber">Office number</string>
-    <string name="addressInDetails_purpose1">Choose the governorate first, then Carefully fill in the address of the workplace</string>
+    <string name="addressInDetails_purpose1">Choose the governorate first, then Carefully fill in the address of the work place</string>
     <string name="zone">Zone name</string>
-    <string name="profile">Profile</string>
-    <string name="officeTime">Office time</string>
-    <string name="payment">Payment</string>
+
+    <!-- Add Time Screen -->
+    <string name="officeTime">Office Working Hours</string>
     <string name="officeTime_purpose1">These are the times that will appear to the customer and during which they will be booked</string>
     <string name="officeTime_purpose2">So choose the official working hours for your office carefully</string>
     <string name="saturday">Saturday</string>
@@ -103,9 +124,109 @@
     <string name="wednesday">Wednesday</string>
     <string name="thursday">Thursday</string>
     <string name="friday">Friday</string>
+
+
+    <!-- Booking Price Screen -->
+    <string name="bookingPrice">Booking Price</string>
+    <string name="bookingPrice_purpose1">put the fixed price to book an interview with you.</string>
+    <string name="price">ex: 100</string>
+    <string name="priceOfPhoneService">ex: 20</string>
+    <string name="bookingVoiceCall">Booking a voice call</string>
+    <string name="bookingVoiceCall_purpose1">The client can book an appointment for a consultation , he put his phone number and you must call him at the specified time, client pays the amount electronically and the amount is added to your bank account</string>
+    <string name="cardNum">Bank Account number…</string>
+    <string name="le">L.E</string>
+
+    <!-- Payment Screen -->
+    <string name="payment">Payment</string>
     <string name="payment_purpose1">Choose your payment method</string>
     <string name="payment_purpose2">Pay now to activate the account</string>
-    <string name="verify">Verify Code</string>
+
+    <!-- Home Screen -->
     <string name="news">News</string>
     <string name="offer">Offers</string>
+    <string name="timesSchedule">Times Schedule</string>
+    <string name="profile">Profile</string>
+    <string name="setting">Setting</string>
+    <string name="source">Source : </string>
+    <string name="date">date</string>
+    <string name="appointments">Appointments</string>
+    <string name="archive">Archive</string>
+
+    <!-- Profile Screen -->
+    <string name="personalInfo">Personal Information</string>
+    <string name="addressOnMap">Address on map</string>
+    <string name="bookingInOffice">Booking in office :</string>
+
+
+    <!-- Setting Screen -->
+    <string name="accountSetting">Account Setting</string>
+    <string name="helpCenter">Help Center</string>
+    <string name="rateApp">Rate Application</string>
+    <string name="shareApp">Share Application</string>
+    <string name="changeLanguage">Change Language</string>
+    <string name="logout">Logout</string>
+
+
+    <!-- Disable Account Screen -->
+    <string name="disableAccount">Disable Account</string>
+    <string name="disableAccount_purpose1">When the account disabled Clients cannot book an appointment until you return activate the account again</string>
+
+
+    <!-- Edit Profile Screen -->
+    <string name="editAccountInfo">"Edit Profile "</string>
+    <string name="chooseImage">Choose image</string>
+
+
+    <!-- Edit Password Screen -->
+    <string name="oldPass">Old Password</string>
+    <string name="newPass">New Password</string>
+
+    <!-- Main Account Setting Screen -->
+    <string name="editYourProfilePic">Edit your profile picture</string>
+    <string name="editOfficeTime">Edit office Working Hours</string>
+    <string name="editWorkLocation">Edit office Location</string>
+    <string name="editAddressInDetails_purpose1">Carefully fill in the address of the work place</string>
+    <string name="editBookingPrice">Edit booking price</string>
+    <string name="editPassword">Edit Password</string>
+    <string name="arabic">Arabic</string>
+    <string name="english">English</string>
+    <string name="currentOffer">Current Offer</string>
+    <string name="myOffer">My Offers</string>
+    <string name="days">day</string>
+    <string name="subscribeNow">Subscribe Now</string>
+    <string name="addOffer">Add Offer</string>
+    <string name="offerTitle">Offer Title</string>
+    <string name="offerDescription">Offer description…</string>
+    <string name="putOldPrice">put the price before the discount</string>
+    <string name="putDiscount">put the discount percentage</string>
+    <string name="percentage">%</string>
+    <string name="discountEx">40</string>
+    <string name="priceAfterDiscount">The price after discount is calculated automatically</string>
+    <string name="paymentValue">Payment Value =</string>
+    <string name="offerDetails">Offer Details</string>
+    <string name="offerPrice">Offer Price</string>
+    <string name="priceBefor">Price Before</string>
+    <string name="percentageValue">Percentage Value</string>
+    <string name="priceAfter">Price After</string>
+    <string name="numOfClients">"Number Of Clients: "</string>
+    <string name="deleteOffer">Delete Offer</string>
+    <string name="offerTime">Offer Time: </string>
+    <string name="clientName">Client Name :</string>
+    <string name="typeOfCounseling">Type of counseling :</string>
+    <string name="clientPhone">Client phone :</string>
+    <string name="orderDetails">Order Details</string>
+    <string name="orderInfo"> Information</string>
+    <string name="orderTime">Order time :</string>
+    <string name="orderDate">Order date :</string>
+    <string name="orderStatus">Order status :</string>
+    <string name="finished">Finished</string>
+    <string name="male">male</string>
+    <string name="clientRate">Client rate :</string>
+    <string name="paymentType">Payment Type :</string>
+    <string name="visa">credit</string>
+    <string name="applicationSuccessfully">The request has been sent successfully</string>
+    <string name="applicationSuccessfully_purpose1">If your request is approved, you will receive a message within 48 hours containing your id and password in order to be able to access your account.</string>
+
+    <string name="ok">Ok</string>
+
 </resources>

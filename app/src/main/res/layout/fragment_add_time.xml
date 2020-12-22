@@ -81,7 +81,7 @@
                     <androidx.cardview.widget.CardView
                         android:id="@+id/saturdayCard"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_margin="@dimen/_5sdp"
                         android:background="@android:color/white"
                         app:cardCornerRadius="@dimen/_5sdp"
@@ -271,7 +271,7 @@
                     <androidx.cardview.widget.CardView
                         android:id="@+id/sundayCard"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_margin="@dimen/_5sdp"
                         android:background="@android:color/white"
                         app:cardCornerRadius="@dimen/_5sdp"
@@ -655,7 +655,7 @@
                     <androidx.cardview.widget.CardView
                         android:id="@+id/tuesdayCard"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_margin="@dimen/_5sdp"
                         android:background="@android:color/white"
                         app:cardCornerRadius="@dimen/_5sdp"
@@ -847,7 +847,7 @@
                     <androidx.cardview.widget.CardView
                         android:id="@+id/wednesdayCard"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_margin="@dimen/_5sdp"
                         android:background="@android:color/white"
                         app:cardCornerRadius="@dimen/_5sdp"
@@ -1040,7 +1040,7 @@
                     <androidx.cardview.widget.CardView
                         android:id="@+id/thursdayCard"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_margin="@dimen/_5sdp"
                         android:background="@android:color/white"
                         app:cardCornerRadius="@dimen/_5sdp"
@@ -1232,7 +1232,7 @@
                     <androidx.cardview.widget.CardView
                         android:id="@+id/fridayCard"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_margin="@dimen/_5sdp"
                         android:background="@android:color/white"
                         app:cardCornerRadius="@dimen/_5sdp"
@@ -1422,12 +1422,24 @@
                     </androidx.cardview.widget.CardView>
 
 
+                    <TextView
+                        android:gravity="center"
+                        android:id="@+id/error"
+                        android:layout_marginTop="@dimen/_10sdp"
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:fontFamily="@font/cairo_semibold"
+                        android:text="Error"
+                        android:textColor="@android:color/holo_red_light"
+                        android:textSize="@dimen/_10sdp"
+                        android:visibility="visible" />
                     <Button
                         android:fontFamily="@font/cairo_semibold"
                         android:id="@+id/nextBtn"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_10sdp"
                         android:layout_marginBottom="@dimen/_10sdp"
                         android:background="@drawable/curves_yellow_bg"
                         android:contentDescription="@string/signIn"

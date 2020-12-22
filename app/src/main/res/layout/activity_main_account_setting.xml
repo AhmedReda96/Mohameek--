@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:background="@android:color/white"
+        android:id="@+id/mainLin"
+        android:layout_height="match_parent"
+        tools:context=".ui.home.fragment.setting.accountSetting.mainAccountSetting.MainAccountSetting">
+
+        <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+
+            <ImageButton
+                android:id="@+id/backBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_gravity="left"
+                android:layout_margin="@dimen/_5sdp"
+                android:background="@mipmap/back_btn_ic"
+                android:contentDescription="@string/backBtn" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:fontFamily="@font/cairo_semibold"
+                android:text="@string/accountSetting"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/_20sdp"
+                android:textStyle="bold" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/_5sdp">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:background="@android:color/white"
+                    app:cardCornerRadius="@dimen/_5sdp"
+                    app:cardElevation="@dimen/_6sdp">
+                    <TextView
+                        android:id="@+id/editProfileInfoLin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@drawable/curves_white_bg"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:fontFamily="@font/cairo_semibold"
+                        android:padding="@dimen/_10sdp"
+                        android:text="@string/editAccountInfo"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/_14sdp"
+                        android:textStyle="bold" />
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:background="@android:color/white"
+                    app:cardCornerRadius="@dimen/_5sdp"
+                    app:cardElevation="@dimen/_6sdp">
+
+                    <TextView
+                        android:id="@+id/editWorkLocationLin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@drawable/curves_white_bg"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:fontFamily="@font/cairo_semibold"
+                        android:padding="@dimen/_10sdp"
+                        android:text="@string/editWorkLocation"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/_14sdp"
+                        android:textStyle="bold" />
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:background="@android:color/white"
+                    app:cardCornerRadius="@dimen/_5sdp"
+                    app:cardElevation="@dimen/_6sdp">
+                    <TextView
+                        android:id="@+id/editOfficeTimeLin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@drawable/curves_white_bg"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:fontFamily="@font/cairo_semibold"
+                        android:padding="@dimen/_10sdp"
+                        android:text="@string/editOfficeTime"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/_14sdp"
+                        android:textStyle="bold" />
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:background="@android:color/white"
+                    app:cardCornerRadius="@dimen/_5sdp"
+                    app:cardElevation="@dimen/_6sdp">
+
+                    <TextView
+                        android:id="@+id/editBookingPriceLin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@drawable/curves_white_bg"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:fontFamily="@font/cairo_semibold"
+                        android:padding="@dimen/_10sdp"
+                        android:text="@string/editBookingPrice"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/_14sdp"
+                        android:textStyle="bold" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:background="@android:color/white"
+                    app:cardCornerRadius="@dimen/_5sdp"
+                    app:cardElevation="@dimen/_6sdp">
+
+                    <TextView
+                        android:id="@+id/editPasswordLin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@drawable/curves_white_bg"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:fontFamily="@font/cairo_semibold"
+                        android:padding="@dimen/_10sdp"
+                        android:text="@string/editPassword"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/_14sdp"
+                        android:textStyle="bold" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:background="@android:color/white"
+                    app:cardCornerRadius="@dimen/_5sdp"
+                    app:cardElevation="@dimen/_6sdp">
+
+                    <TextView
+                        android:id="@+id/disableAccountLin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@drawable/curves_white_bg"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:fontFamily="@font/cairo_semibold"
+                        android:padding="@dimen/_10sdp"
+                        android:text="@string/disableAccount"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/_14sdp"
+                        android:textStyle="bold" />
+
+
+                </androidx.cardview.widget.CardView>
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+    </RelativeLayout>
+</layout>

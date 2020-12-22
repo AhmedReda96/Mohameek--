@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/mainLin"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        tools:context=".ui.home.fragment.setting.accountSetting.editStatus.EditAccountStatus">
+
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/backBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_gravity="left"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:background="@mipmap/back_btn_ic"
+                    android:contentDescription="@string/backBtn" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:fontFamily="@font/cairo_semibold"
+                        android:text="@string/disableAccount"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/_20sdp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:fontFamily="@font/cairo_semibold"
+                        android:gravity="center"
+                        android:text="@string/disableAccount_purpose1"
+                        android:textColor="@android:color/darker_gray"
+                        android:textSize="@dimen/_10sdp" />
+
+
+                    <LinearLayout
+                        android:id="@+id/switchLin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start"
+                            android:layout_marginBottom="@dimen/_5sdp"
+                            android:layout_weight=".5"
+                            android:fontFamily="@font/cairo_semibold"
+                            android:paddingStart="@dimen/_5sdp"
+                            android:text="@string/disableAccount"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/_14sdp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight=".5"
+                            android:gravity="end">
+
+                            <com.suke.widget.SwitchButton
+                                android:id="@+id/disableAccountSwitch"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:checked="false" />
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/saveBtn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:background="@drawable/curves_yellow_bg"
+                        android:contentDescription="@string/next"
+                        android:fontFamily="@font/cairo_semibold"
+                        android:text="@string/save"
+                        android:textAllCaps="false"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/_16sdp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+
+    </RelativeLayout>
+</layout>

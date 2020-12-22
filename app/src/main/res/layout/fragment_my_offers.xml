@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/mainLin"
+        android:layout_width="match_parent"
+        android:background="@android:color/transparent"
+        android:layout_height="match_parent"
+        tools:context=".ui.home.fragment.offer.fragments.myOffer.MyOffersFragment">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/lin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <include
+                    layout="@layout/my_offer_item_model"
+                    android:id="@+id/newsItem" />
+
+                <include layout="@layout/my_offer_item_model" />
+
+                <include layout="@layout/my_offer_item_model" />
+
+                <include layout="@layout/my_offer_item_model" />
+
+                <include layout="@layout/my_offer_item_model" />
+
+                <include layout="@layout/my_offer_item_model" />
+
+                <include layout="@layout/my_offer_item_model" />
+
+
+            </LinearLayout>
+
+
+        </androidx.core.widget.NestedScrollView>
+    </RelativeLayout>
+</layout>

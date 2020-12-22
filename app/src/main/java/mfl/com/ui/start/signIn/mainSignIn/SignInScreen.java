@@ -6,8 +6,15 @@ import androidx.databinding.DataBindingUtil;
 import android.content.Intent;
 import android.graphics.Paint;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.os.Handler;
 import android.view.View;
+import android.widget.Toast;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Locale;
+import java.util.TimeZone;
 
 import mfl.com.R;
 import mfl.com.databinding.ActivitySignInScreenBinding;
@@ -40,7 +47,7 @@ public class SignInScreen extends AppCompatActivity implements View.OnClickListe
         binding.setLifecycleOwner(this);
 
 
-        binding.termsAndConditions.setPaintFlags(binding.termsAndConditions.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
+        //    binding.termsAndConditions.setPaintFlags(binding.termsAndConditions.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
         binding.signUpBtn.setPaintFlags(binding.signUpBtn.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
 
         storeLanguageData = new StoreLanguageData(this);
@@ -48,11 +55,13 @@ public class SignInScreen extends AppCompatActivity implements View.OnClickListe
         binding.signInBtn.setOnClickListener(this);
         binding.forgetPassword.setOnClickListener(this);
         binding.signUpBtn.setOnClickListener(this);
-        binding.termsAndConditions.setOnClickListener(this);
+        // binding.termsAndConditions.setOnClickListener(this);
 
 
         generalMethods.setDirection(binding.mainLin);
         checkLanguage();
+
+
 
     }
 
