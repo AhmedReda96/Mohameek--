@@ -42,6 +42,7 @@ public class NewsDetailsScreen extends AppCompatActivity implements View.OnClick
             binding.favoriteBtn.setBackgroundResource(R.drawable.ic_full_favorite);
         }
 
+
         if (binding.backBtn.equals(v)) {
             onBackPressed();
         }

@@ -57,7 +57,7 @@
                         android:layout_height="@dimen/_130sdp"
                         android:background="@android:color/white"
                         app:cardCornerRadius="@dimen/_20sdp"
-                        android:layout_margin="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
                         app:cardElevation="@dimen/_6sdp">
 
                         <ImageView
@@ -110,7 +110,7 @@
                                 android:layout_margin="@dimen/_5sdp"
                                 android:background="@android:color/white"
                                 app:cardCornerRadius="@dimen/_5sdp"
-                                app:cardElevation="@dimen/_6sdp">
+                                app:cardElevation="@dimen/_2sdp">
 
                                 <TextView
                                     android:id="@+id/accountSettingLin"
@@ -134,7 +134,7 @@
                                 android:layout_margin="@dimen/_5sdp"
                                 android:background="@android:color/white"
                                 app:cardCornerRadius="@dimen/_5sdp"
-                                app:cardElevation="@dimen/_6sdp">
+                                app:cardElevation="@dimen/_2sdp">
 
                                 <TextView
                                     android:id="@+id/languageLin"
@@ -159,7 +159,7 @@
                                 android:layout_margin="@dimen/_5sdp"
                                 android:background="@android:color/white"
                                 app:cardCornerRadius="@dimen/_5sdp"
-                                app:cardElevation="@dimen/_6sdp">
+                                app:cardElevation="@dimen/_2sdp">
 
                                 <TextView
                                     android:id="@+id/payLin"
@@ -185,7 +185,7 @@
                                 android:layout_margin="@dimen/_5sdp"
                                 android:background="@android:color/white"
                                 app:cardCornerRadius="@dimen/_5sdp"
-                                app:cardElevation="@dimen/_6sdp">
+                                app:cardElevation="@dimen/_2sdp">
 
                                 <TextView
                                     android:id="@+id/helpLin"
@@ -210,7 +210,7 @@
                                 android:layout_margin="@dimen/_5sdp"
                                 android:background="@android:color/white"
                                 app:cardCornerRadius="@dimen/_5sdp"
-                                app:cardElevation="@dimen/_6sdp">
+                                app:cardElevation="@dimen/_2sdp">
 
                                 <TextView
                                     android:id="@+id/rateLin"
@@ -235,7 +235,7 @@
                                 android:layout_margin="@dimen/_5sdp"
                                 android:background="@android:color/white"
                                 app:cardCornerRadius="@dimen/_5sdp"
-                                app:cardElevation="@dimen/_6sdp">
+                                app:cardElevation="@dimen/_2sdp">
 
                                 <TextView
                                     android:id="@+id/shareLin"

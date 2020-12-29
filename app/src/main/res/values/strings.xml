@@ -12,6 +12,9 @@
     <string name="termsAndConditions">Terms And Conditions</string>
     <string name="languageBtn">Language</string>
     <string name="doForgetPassword">Forget Password ?</string>
+    <string name="invalidPassword">Invalid password</string>
+    <string name="invalidIdOrPassword">Invalid id or password</string>
+
 
     <!-- Sign Up -->
     <string name="backBtn">backBtn</string>
@@ -36,6 +39,8 @@
     <string name="invalidId">Invalid id</string>
     <string name="invalidCardImage">Not found card image</string>
     <string name="loading">Loading…</string>
+    <string name="noInternetConnection">No internet connection</string>
+    <string name="ok">Ok</string>
 
 
 
@@ -227,6 +232,5 @@
     <string name="applicationSuccessfully">The request has been sent successfully</string>
     <string name="applicationSuccessfully_purpose1">If your request is approved, you will receive a message within 48 hours containing your id and password in order to be able to access your account.</string>
 
-    <string name="ok">Ok</string>
 
 </resources>

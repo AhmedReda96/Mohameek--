@@ -2,6 +2,8 @@ package mfl.com.ui.start.signIn.mainSignIn;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Intent;
 import android.graphics.Paint;
@@ -23,6 +25,7 @@ import mfl.com.session.sp.StoreLanguageData;
 import mfl.com.ui.start.signIn.forgetPassword.ForgetPasswordScreen;
 import mfl.com.ui.start.signIn.signInSteps.stepsHome.SignInStepsHome;
 import mfl.com.ui.start.signUp.SignUpScreen;
+import mfl.com.ui.start.signUp.SignUpScreenVM;
 
 public class SignInScreen extends AppCompatActivity implements View.OnClickListener {
 
@@ -30,6 +33,7 @@ public class SignInScreen extends AppCompatActivity implements View.OnClickListe
     private StoreLanguageData storeLanguageData;
     private GeneralMethods generalMethods;
     private boolean doubleBackToExitPressedOnce = false;
+    private SignInScreenVM viewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,8 +50,9 @@ public class SignInScreen extends AppCompatActivity implements View.OnClickListe
         binding = DataBindingUtil.setContentView(this, R.layout.activity_sign_in_screen);
         binding.setLifecycleOwner(this);
 
+        viewModel = new ViewModelProvider(this).get(SignInScreenVM.class);
+        viewModel.initVM(this);
 
-        //    binding.termsAndConditions.setPaintFlags(binding.termsAndConditions.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
         binding.signUpBtn.setPaintFlags(binding.signUpBtn.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
 
         storeLanguageData = new StoreLanguageData(this);
@@ -55,12 +60,37 @@ public class SignInScreen extends AppCompatActivity implements View.OnClickListe
         binding.signInBtn.setOnClickListener(this);
         binding.forgetPassword.setOnClickListener(this);
         binding.signUpBtn.setOnClickListener(this);
-        // binding.termsAndConditions.setOnClickListener(this);
 
 
         generalMethods.setDirection(binding.mainLin);
         checkLanguage();
 
+        listenerOnLiveData();
+    }
+
+
+    private void listenerOnLiveData() {
+        viewModel.resultLD.observe(this, new Observer<String>() {
+            @Override
+            public void onChanged(String result) {
+                binding.error.setVisibility(View.VISIBLE);
+                switch (result) {
+                    case "invalid id":
+                        binding.error.setText(getResources().getString(R.string.invalidId));
+                        break;
+                    case "invalid password":
+                        binding.error.setText(getResources().getString(R.string.invalidPassword));
+                        break;
+                    case "invalid idOrPass":
+                        binding.error.setText(getResources().getString(R.string.invalidIdOrPassword));
+                        break;
+                    case "noInternetConnection":
+                        binding.error.setText(getResources().getString(R.string.noInternetConnection));
+                        break;
+
+                }
+            }
+        });
 
 
     }
@@ -82,8 +112,8 @@ public class SignInScreen extends AppCompatActivity implements View.OnClickListe
         }
 
         if (binding.signInBtn.equals(view)) {
-
-            startActivity(new Intent(this, SignInStepsHome.class));
+            binding.error.setText("");
+            viewModel.checkData(binding.id.getText().toString().trim(), binding.password.getText().toString().trim());
         }
         if (binding.signUpBtn.equals(view)) {
 

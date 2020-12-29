@@ -14,6 +14,7 @@ import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.theartofdev.edmodo.cropper.CropImage;
@@ -35,6 +36,7 @@ public class SignUpScreen extends AppCompatActivity implements View.OnClickListe
     private Bitmap bitmap = null;
     private SignUpScreenVM viewModel;
     private StoreLanguageData storeLanguageData;
+    private String imgExtension;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +55,6 @@ public class SignUpScreen extends AppCompatActivity implements View.OnClickListe
 
         viewModel = new ViewModelProvider(this).get(SignUpScreenVM.class);
         viewModel.initVM(this);
-
 
 
         binding.backBtn.setOnClickListener(this::onClick);
@@ -99,6 +100,9 @@ public class SignUpScreen extends AppCompatActivity implements View.OnClickListe
                     case "invalid card Image":
                         binding.error.setText(getResources().getString(R.string.invalidCardImage));
                         break;
+                    case "noInternetConnection":
+                        binding.error.setText(getResources().getString(R.string.noInternetConnection));
+                        break;
 
                 }
             }
@@ -123,12 +127,13 @@ public class SignUpScreen extends AppCompatActivity implements View.OnClickListe
 
         }
         if (binding.signUpBtn.equals(v)) {
+            binding.error.setText("");
             viewModel.checkData(binding.firstName.getText().toString().trim(),
                     binding.lastName.getText().toString().trim(),
                     binding.email.getText().toString().trim(),
                     binding.phone.getText().toString().trim(),
                     binding.id.getText().toString().trim(),
-                    bitmap);
+                    bitmap,imgExtension);
         }
 
     }
@@ -149,9 +154,9 @@ public class SignUpScreen extends AppCompatActivity implements View.OnClickListe
                     imageUri = result.getUri();
                     Glide.with(getApplicationContext()).load(imageUri).into(binding.cardImg);
                     binding.cardImg.setScaleType(ImageView.ScaleType.FIT_XY);
-
+                    String path = imageUri.getLastPathSegment();
+                    imgExtension = path.substring(path.lastIndexOf(".") + 1); // Without dot jpg, png
                     bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), imageUri);
-
 
 
                 } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {

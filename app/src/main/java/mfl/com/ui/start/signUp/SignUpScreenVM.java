@@ -8,16 +8,24 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.util.Base64;
 import android.util.Log;
+import android.webkit.MimeTypeMap;
 
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 import java.io.ByteArrayOutputStream;
+import java.io.File;
 
 import cn.pedant.SweetAlert.SweetAlertDialog;
+import io.reactivex.Single;
+import io.reactivex.SingleObserver;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.schedulers.Schedulers;
 import mfl.com.R;
 import mfl.com.api.Client;
 import mfl.com.api.Services;
+import mfl.com.pojo.signup.SignUpRequest;
 import mfl.com.session.checkNetwork.ConnectionDetector;
 import mfl.com.ui.start.signIn.mainSignIn.SignInScreen;
 
@@ -30,12 +38,12 @@ public class SignUpScreenVM extends ViewModel {
     private ProgressDialog progressDialog;
     private Services services;
     private String userFirstName, userLastName, userEmail, userPhone, userId, userCardImage;
-    private String imgInBase64;
     private ByteArrayOutputStream outputStream;
     private SweetAlertDialog sweetAlertDialog;
     private byte[] byteArray;
+    private Single<SignUpRequest> sendRequestObservable;
+    private SingleObserver<SignUpRequest> sendRequestObserver;
 
-    //BuildConfig.THE_MOVIE_DB_API_TOKEN
 
 
     public void initVM(Activity activity) {
@@ -58,7 +66,7 @@ public class SignUpScreenVM extends ViewModel {
     }
 
 
-    public void checkData(String firstName, String lastName, String email, String phone, String id, Bitmap imageUri) {
+    public void checkData(String firstName, String lastName, String email, String phone, String id, Bitmap imageUri, String imgExtension) {
         if (firstName.isEmpty() || firstName.length() <= 2) {
             resultLD.setValue("invalid FirstName");
             Log.d(TAG, "Mohameek checkData: invalid FirstName");
@@ -70,7 +78,7 @@ public class SignUpScreenVM extends ViewModel {
 
             } else {
 
-                if (email.isEmpty() || email.length() <= 10 || !email.contains("@")) {
+                if (email.isEmpty() || email.length() <= 10 || !email.contains("@") || !email.contains(".")) {
                     resultLD.setValue("invalid Email");
                     Log.d(TAG, "Mohameek checkData: invalid Email");
 
@@ -92,12 +100,17 @@ public class SignUpScreenVM extends ViewModel {
                                 Log.d(TAG, "Mohameek checkData: invalid card Image");
 
                             } else {
+                                this.userEmail = email;
+                                this.userFirstName = firstName;
+                                this.userLastName = lastName;
+                                this.userPhone = phone;
+                                this.userId = id;
                                 imageUri.compress(Bitmap.CompressFormat.PNG, 100, outputStream);
                                 byteArray = outputStream.toByteArray();
-                                imgInBase64 = Base64.encodeToString(byteArray, Base64.DEFAULT);
-                                Log.d(TAG, "Mohameek  imgInBase64=" + imgInBase64);
+                                this.userCardImage = "data:image/"+imgExtension+";base64,"+ Base64.encodeToString(byteArray, Base64.DEFAULT);
+                                Log.d(TAG, "Mohameek  imgInBase64=" + userCardImage);
 
-                                checkInternetConnection();
+                                 checkInternetConnection();
 
                             }
 
@@ -120,18 +133,65 @@ public class SignUpScreenVM extends ViewModel {
 
         if (!isInternetPresent) {
             Log.d(TAG, "Mohameek checkInternetConnection:  !isInternetPresent");
-            //  progressDialog.dismiss();
-            // checkMutableLiveData.setValue("noInternetConnection");
+            resultLD.setValue("noInternetConnection");
         } else {
-            // progressDialog.show();
-            showDialog();
+            progressDialog.show();
+
 
             Log.d(TAG, "Mohameek checkInternetConnection:  isInternetPresent");
-            //checkDataFounded();
+            sendRequest();
 
 
         }
     }
+
+    private void sendRequest() {
+
+        sendRequestObservable = services.getSignUpRequest(userFirstName, userLastName, userEmail, userPhone, userId, userCardImage)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread());
+
+
+        sendRequestObserver = new SingleObserver<SignUpRequest>() {
+            @Override
+            public void onSubscribe(Disposable d) {
+                Log.d(TAG, "Mohameek sendRequest:  subscribe Successfully");
+
+            }
+
+            @Override
+            public void onSuccess(SignUpRequest result) {
+
+                if (result.getStatus()) {
+                    progressDialog.dismiss();
+                    showDialog();
+                    Log.d(TAG, "Mohameek sendRequest: true: "+result.getMessage());
+
+                } else {
+                    progressDialog.dismiss();
+
+                    Log.d(TAG, "Mohameek sendRequest: false: "+result.getMessage());
+
+                }
+
+
+
+            }
+
+            @Override
+            public void onError(Throwable e) {
+                progressDialog.dismiss();
+
+                Log.d(TAG, "Mohameek sendRequest:error request : "+e.getStackTrace().toString());
+
+
+            }
+
+        };
+        sendRequestObservable.subscribe(sendRequestObserver);
+
+
+}
 
     private void showDialog() {
 

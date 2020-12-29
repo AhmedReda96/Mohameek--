@@ -73,7 +73,6 @@ public class ScheduleFragment extends Fragment implements AppBarLayout.OnOffsetC
         if (percentage == 1f && isHideToolbarView) {
             binding.titleAppbar.setVisibility(View.VISIBLE);
             binding.toolbar.setVisibility(View.VISIBLE);
-
             binding.toolbar.setBackgroundColor(getResources().getColor(R.color.mainColor));
             binding.dayToolbar.setText(selectedDate);
             isHideToolbarView = !isHideToolbarView;

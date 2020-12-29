@@ -16,6 +16,10 @@
     <string name="doForgetPassword">هل نسيت كلمة المرور ؟</string>
     <string name="logo">logo</string>
     <string name="backBtn">backBtn</string>
+    <string name="invalidPassword">كلمة المرور غير صحيحة</string>
+    <string name="invalidIdOrPassword">رقم العضوية او كلمة المرور غير صحيحة</string>
+
+
 
     <!-- Sign Up -->
     <string name="yourId">رقم العضوية</string>
@@ -37,7 +41,11 @@
     <string name="invalidPhone">رقم التليفون غير صحيح</string>
     <string name="invalidId">رقم العضوية غير صحيح</string>
     <string name="invalidCardImage">لايوجد صورة كارينه</string>
-    <string name="loading">انتظار…</string>
+    <string name="loading">تحميل…</string>
+    <string name="noInternetConnection">لا يوجد اتصال بالانترنت </string>
+    <string name="ok">موافق</string>
+    <string name="applicationSuccessfully">تم إرسال الطلب بنجاح</string>
+    <string name="applicationSuccessfully_purpose1"> في حالة الموافقة على طلبك سوف تصلك رسالة في خلال ٤٨ ساعة تحتوى على الرقم الخاص بك وكلمة المرور لكي تستطيع الدخول الى حسابك.</string>
 
 
     <!-- Change Password Screen  -->
@@ -230,12 +238,6 @@
     <string name="clientRate">تقييم العميل :</string>
     <string name="paymentType">نوع الدفع :</string>
     <string name="visa">دفع الكترونى</string>
-    <string name="ok">موافق</string>
-
-    <string name="applicationSuccessfully">تم إرسال الطلب بنجاح</string>
-    <string name="applicationSuccessfully_purpose1"> في حالة الموافقة على طلبك سوف تصلك رسالة في خلال ٤٨ ساعة تحتوى على الرقم الخاص بك وكلمة المرور لكي تستطيع الدخول الى حسابك.</string>
-
-
 
 </resources>
 

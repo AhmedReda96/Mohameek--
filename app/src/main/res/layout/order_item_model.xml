@@ -89,7 +89,7 @@
                     android:layout_marginBottom="@dimen/_5sdp"
                     android:background="@android:color/white"
                     app:cardCornerRadius="@dimen/_5sdp"
-                    app:cardElevation="@dimen/_6sdp">
+                    app:cardElevation="@dimen/_3sdp">
 
                     <LinearLayout
                         android:padding="@dimen/_5sdp"
