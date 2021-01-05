@@ -72,6 +72,11 @@
 
 
     <!-- Add Profile Info Screen  -->
+    <string name="age">تاريخ الميلاد</string>
+    <string name="invalidDate">تاريخ الميلاد غير صحيح</string>
+    <string name="invalidYear">يجب ان يكون السن اكبر من 20 سنة.</string>
+    <string name="invalidSpecialises">"يجب اختيار تخصصك."</string>
+    <string name="invalidBio">النبذة المختصرة غير صحيحة</string>
     <string name="addYourProfilePic">اضف صورتك الشخصية</string>
     <string name="addYourProfilePic_purpose1">اختر صورتك واضحة</string>
     <string name="addYourProfilePic_purpose2">لتجنب التناقض</string>
@@ -79,6 +84,7 @@
     <string name="max">الحد الاقصى 300 حرف.</string>
     <string name="selectYourSpecialty">اختر التخصص الخاص بك</string>
     <string name="gender">النوع : </string>
+    <string name="female">انثى</string>
     <string name="source">المصدر : </string>
     <string name="date">التاريخ : </string>
     <string name="aqarat">عقارات</string>
@@ -238,6 +244,17 @@
     <string name="clientRate">تقييم العميل :</string>
     <string name="paymentType">نوع الدفع :</string>
     <string name="visa">دفع الكترونى</string>
+    <string name="invalidConfirmPassword">تأكيد كلمة المرور غير صحيح</string>
+    <string name="confirmPasswordNotMatched">تأكيد كلمة المرور غير متشابه</string>
+    <string name="doYouWantToExit">هل تريد الخروج ؟</string>
+    <string name="doYouWantToExit_purpose1">لن يتم انشاء الحساب حتي تستكمل البيانات.</string>
+    <string name="stay">البقاء</string>
+    <string name="exitNow">الخروج الان</string>
+    <string name="serverError">خطأ في الاتصال بالسرفر حاول مرة اخرى.</string>
+    <string name="dontReceiveTheCode">الكود لم يصلك؟</string>
+    <string name="resendCode">ارسل الكود</string>
+    <string name="invalidImage">لا يوجد صورة شخصية</string>
+
 
 </resources>
 

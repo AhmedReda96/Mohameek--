@@ -8,9 +8,11 @@ import android.util.Log;
 import android.view.View;
 import android.widget.RelativeLayout;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
+import java.util.TimeZone;
 
 import mfl.com.session.checkNetwork.ConnectionDetector;
 import mfl.com.session.sp.StoreLanguageData;
@@ -61,12 +63,20 @@ public class GeneralMethods {
         return true;
     }
 
+    public String getDate(String dateString) {
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
+        formatter.setTimeZone(TimeZone.getTimeZone("UTC"));
+        Date value = null;
+        try {
+            value = formatter.parse(dateString);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        SimpleDateFormat dateFormatter = new SimpleDateFormat("dd/MM/yyyy hh:mmaa");
+        dateFormatter.setTimeZone(TimeZone.getDefault());
+        String dt = dateFormatter.format(value);
 
-    public String getDate() {
-
-        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy h:mm aa", Locale.getDefault());
-        return sdf.format(new Date());
-
+        return dt;
     }
 
 

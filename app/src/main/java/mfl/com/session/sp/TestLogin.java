@@ -6,7 +6,8 @@ import android.content.SharedPreferences;
 public class TestLogin {
 
     private Context context;
-    private String auth = "null";
+    private String auth = null;
+    private String token = null;
 
 
     private SharedPreferences sharedPreferences;
@@ -18,7 +19,8 @@ public class TestLogin {
     }
 
     public void remove() {
-        setLoginType("null");
+        setLoginType(null);
+        setToken(null);
     }
 
 
@@ -30,6 +32,16 @@ public class TestLogin {
     public String getLoginType() {
         auth = sharedPreferences.getString("Auth", auth);
         return auth;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+        sharedPreferences.edit().putString("Token", token).commit();
+    }
+
+    public String getToken() {
+        token = sharedPreferences.getString("Token", token);
+        return token;
     }
 
 

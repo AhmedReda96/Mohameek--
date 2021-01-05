@@ -10,6 +10,7 @@ import mfl.com.R;
 import mfl.com.ui.home.fragment.news.details.NewsDetailsScreen;
 import mfl.com.ui.home.mainHome.HomeActivity;
 import mfl.com.ui.start.signIn.mainSignIn.SignInScreen;
+import mfl.com.ui.start.signIn.signInSteps.stepsHome.SignInStepsHome;
 
 public class SplashScreen extends AppCompatActivity {
 

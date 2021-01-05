@@ -5,16 +5,13 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.net.Uri;
 import android.util.Base64;
 import android.util.Log;
-import android.webkit.MimeTypeMap;
 
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 import java.io.ByteArrayOutputStream;
-import java.io.File;
 
 import cn.pedant.SweetAlert.SweetAlertDialog;
 import io.reactivex.Single;
@@ -25,7 +22,7 @@ import io.reactivex.schedulers.Schedulers;
 import mfl.com.R;
 import mfl.com.api.Client;
 import mfl.com.api.Services;
-import mfl.com.pojo.signup.SignUpRequest;
+import mfl.com.pojo.signup.SignUpResponse;
 import mfl.com.session.checkNetwork.ConnectionDetector;
 import mfl.com.ui.start.signIn.mainSignIn.SignInScreen;
 
@@ -41,8 +38,8 @@ public class SignUpScreenVM extends ViewModel {
     private ByteArrayOutputStream outputStream;
     private SweetAlertDialog sweetAlertDialog;
     private byte[] byteArray;
-    private Single<SignUpRequest> sendRequestObservable;
-    private SingleObserver<SignUpRequest> sendRequestObserver;
+    private Single<SignUpResponse> sendRequestObservable;
+    private SingleObserver<SignUpResponse> sendRequestObserver;
 
 
 
@@ -56,7 +53,7 @@ public class SignUpScreenVM extends ViewModel {
         services = Client.getClient().create(Services.class);
 
         outputStream = new ByteArrayOutputStream();
-
+        cd = new ConnectionDetector(context);
         sweetAlertDialog = new SweetAlertDialog(context, SweetAlertDialog.SUCCESS_TYPE);
         sweetAlertDialog.setTitle(context.getResources().getString(R.string.applicationSuccessfully));
         sweetAlertDialog.setContentText(context.getResources().getString(R.string.applicationSuccessfully_purpose1));
@@ -67,6 +64,9 @@ public class SignUpScreenVM extends ViewModel {
 
 
     public void checkData(String firstName, String lastName, String email, String phone, String id, Bitmap imageUri, String imgExtension) {
+        resultLD.setValue("error");
+
+
         if (firstName.isEmpty() || firstName.length() <= 2) {
             resultLD.setValue("invalid FirstName");
             Log.d(TAG, "Mohameek checkData: invalid FirstName");
@@ -128,7 +128,7 @@ public class SignUpScreenVM extends ViewModel {
     }
 
     private void checkInternetConnection() {
-        cd = new ConnectionDetector(context);
+
         isInternetPresent = cd.isConnectingToInternet();
 
         if (!isInternetPresent) {
@@ -152,7 +152,7 @@ public class SignUpScreenVM extends ViewModel {
                 .observeOn(AndroidSchedulers.mainThread());
 
 
-        sendRequestObserver = new SingleObserver<SignUpRequest>() {
+        sendRequestObserver = new SingleObserver<SignUpResponse>() {
             @Override
             public void onSubscribe(Disposable d) {
                 Log.d(TAG, "Mohameek sendRequest:  subscribe Successfully");
@@ -160,7 +160,7 @@ public class SignUpScreenVM extends ViewModel {
             }
 
             @Override
-            public void onSuccess(SignUpRequest result) {
+            public void onSuccess(SignUpResponse result) {
 
                 if (result.getStatus()) {
                     progressDialog.dismiss();

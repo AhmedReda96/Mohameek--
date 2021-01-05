@@ -87,6 +87,9 @@ public class SignInScreen extends AppCompatActivity implements View.OnClickListe
                     case "noInternetConnection":
                         binding.error.setText(getResources().getString(R.string.noInternetConnection));
                         break;
+                    case "error":
+                        binding.error.setText("");
+                        break;
 
                 }
             }

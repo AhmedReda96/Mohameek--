@@ -62,7 +62,7 @@
     <!-- Reset Password Screen  -->
     <string name="resetPassword">Reset Password</string>
     <string name="verify">Verify Code</string>
-    <string name="resetPassword_purpose1">Write down the code you have </string>
+    <string name="resetPassword_purpose1">Write down the code you have</string>
     <string name="resetPassword_purpose2">received in message</string>
     <string name="codeIsNotCorrect">*Code is not correct</string>
 
@@ -231,6 +231,23 @@
     <string name="visa">credit</string>
     <string name="applicationSuccessfully">The request has been sent successfully</string>
     <string name="applicationSuccessfully_purpose1">If your request is approved, you will receive a message within 48 hours containing your id and password in order to be able to access your account.</string>
+    <string name="invalidConfirmPassword">Invalid Confirm Password</string>
+    <string name="confirmPasswordNotMatched">Confirm password not matched</string>
+    <string name="doYouWantToExit">Do you want to exit ?</string>
+    <string name="doYouWantToExit_purpose1">The account will not be created until the data is completed.</string>
+    <string name="stay">Stay</string>
+    <string name="exitNow">Exit Now</string>
+    <string name="serverError">Server connection error, try again.</string>
+    <string name="dontReceiveTheCode">Don\'t receive the code?</string>
+    <string name="resendCode">Resend code</string>
+    <string name="female">Female</string>
+    <string name="age">Date of birth: </string>
+
+    <string name="invalidDate">Invalid date</string>
+    <string name="invalidYear">The age must be bigger than 20 years old</string>
+    <string name="invalidSpecialises">"Must be choose your specialty "</string>
+    <string name="invalidBio">Invalid bio</string>
+    <string name="invalidImage">Invalid profile image</string>
 
 
 </resources>

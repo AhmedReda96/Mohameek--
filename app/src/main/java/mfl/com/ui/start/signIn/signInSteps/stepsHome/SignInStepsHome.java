@@ -5,18 +5,26 @@ import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager2.widget.ViewPager2;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
+import cn.pedant.SweetAlert.SweetAlertDialog;
 import mfl.com.R;
 import mfl.com.databinding.ActivitySignInStepsHomeBinding;
 import mfl.com.helper.SignInSectionPagerAdapter;
 import mfl.com.session.GeneralMethods;
+import mfl.com.ui.start.signIn.mainSignIn.SignInScreen;
 
 public class SignInStepsHome extends AppCompatActivity implements View.OnClickListener {
     private ActivitySignInStepsHomeBinding binding;
     private GeneralMethods generalMethods;
+    private Intent intent;
+    private static final String TAG = SignInStepsHome.class.getSimpleName();
+    private ProgressDialog progressDialog;
+    private SweetAlertDialog sweetAlertDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +40,18 @@ public class SignInStepsHome extends AppCompatActivity implements View.OnClickLi
         generalMethods = new GeneralMethods(this);
         generalMethods.changeLanguage();
         generalMethods.setDirection(binding.mainLin);
-        binding.backBtn.setOnClickListener(this::onClick);
+
+        progressDialog = new ProgressDialog(this);
+        progressDialog.setMessage(getResources().getString(R.string.loading));
+        progressDialog.setCancelable(false);
+       // progressDialog.show();
+
+        sweetAlertDialog = new SweetAlertDialog(this, SweetAlertDialog.WARNING_TYPE);
+        sweetAlertDialog.setTitle(this.getResources().getString(R.string.doYouWantToExit));
+        sweetAlertDialog.setContentText(this.getResources().getString(R.string.doYouWantToExit_purpose1));
+        sweetAlertDialog.setConfirmText(this.getResources().getString(R.string.stay));
+        sweetAlertDialog.setCancelText(this.getResources().getString(R.string.exitNow));
+        sweetAlertDialog.setCancelable(false);
 
 
         binding.viewPager.setAdapter(new SignInSectionPagerAdapter(this));
@@ -52,24 +71,58 @@ public class SignInStepsHome extends AppCompatActivity implements View.OnClickLi
             }
         });
 
+        binding.backBtn.setOnClickListener(this::onClick);
 
+    //    getStepScreen();
+        selectIndex(1);
+
+
+    }
+
+    private void showDialog() {
+        sweetAlertDialog.show();
+
+
+        sweetAlertDialog.setCancelClickListener(new SweetAlertDialog.OnSweetClickListener() {
+            @Override
+            public void onClick(SweetAlertDialog sweetAlertDialog) {
+                finishAffinity();
+
+
+            }
+        });
+
+        sweetAlertDialog.setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                                                     @Override
+                                                     public void onClick(SweetAlertDialog sDialog) {
+                                                         sweetAlertDialog.dismiss();
+                                                     }
+                                                 }
+        );
+
+    }
+
+    private void getStepScreen() {
+        intent = getIntent();
+        Log.d(TAG, "Mohameek getStepScreen: false: " + intent.getStringExtra("step"));
+        selectIndex(Integer.parseInt(intent.getStringExtra("step")));
     }
 
     public void selectIndex(int newIndex) {
         binding.viewPager.setCurrentItem(newIndex);
+        progressDialog.dismiss();
     }
 
     @Override
     public void onClick(View v) {
         if (binding.backBtn.equals(v)) {
-            onBackPressed();
+            showDialog();
         }
     }
 
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
-        finish();
+        showDialog();
     }
 
 
@@ -80,5 +133,12 @@ public class SignInStepsHome extends AppCompatActivity implements View.OnClickLi
         for (Fragment fragment : getSupportFragmentManager().getFragments()) {
             fragment.onActivityResult(requestCode, resultCode, data);
         }
+    }
+
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    sweetAlertDialog.dismiss();
     }
 }
