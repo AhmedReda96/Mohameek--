@@ -13,6 +13,8 @@ import android.os.Handler;
 import android.view.View;
 import android.widget.Toast;
 
+import com.google.android.material.snackbar.Snackbar;
+
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
@@ -42,6 +44,7 @@ public class SignInScreen extends AppCompatActivity implements View.OnClickListe
         init();
 
     }
+
 
     private void init() {
         generalMethods = new GeneralMethods(this);
@@ -77,15 +80,19 @@ public class SignInScreen extends AppCompatActivity implements View.OnClickListe
                 switch (result) {
                     case "invalid id":
                         binding.error.setText(getResources().getString(R.string.invalidId));
+                        Snackbar.make(binding.mainLin, getResources().getString(R.string.invalidId), Snackbar.LENGTH_LONG).show();
                         break;
                     case "invalid password":
                         binding.error.setText(getResources().getString(R.string.invalidPassword));
+                        Snackbar.make(binding.mainLin, getResources().getString(R.string.invalidPassword), Snackbar.LENGTH_LONG).show();
                         break;
                     case "invalid idOrPass":
                         binding.error.setText(getResources().getString(R.string.invalidIdOrPassword));
+                        Snackbar.make(binding.mainLin, getResources().getString(R.string.invalidIdOrPassword), Snackbar.LENGTH_LONG).show();
                         break;
                     case "noInternetConnection":
                         binding.error.setText(getResources().getString(R.string.noInternetConnection));
+                        Snackbar.make(binding.mainLin,getResources().getString(R.string.noInternetConnection), Snackbar.LENGTH_LONG).show();
                         break;
                     case "error":
                         binding.error.setText("");

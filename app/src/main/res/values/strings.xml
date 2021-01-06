@@ -63,7 +63,7 @@
     <string name="resetPassword">Reset Password</string>
     <string name="verify">Verify Code</string>
     <string name="resetPassword_purpose1">Write down the code you have</string>
-    <string name="resetPassword_purpose2">received in message</string>
+    <string name="resetPassword_purpose2">received in cities</string>
     <string name="codeIsNotCorrect">*Code is not correct</string>
 
 
@@ -97,7 +97,6 @@
     <string name="updateLocation">Update location on map</string>
     <string name="country">Country</string>
     <string name="city">City</string>
-    <string name="area">Area</string>
     <string name="building">Building</string>
     <string name="floor">Floor</string>
     <string name="unit">Unit  name / No.</string>
@@ -113,7 +112,7 @@
     <string name="floorNumber">Floor number</string>
     <string name="unitNumber">Office number</string>
     <string name="addressInDetails_purpose1">Choose the governorate first, then Carefully fill in the address of the work place</string>
-    <string name="zone">Zone name</string>
+    <string name="area">Area name</string>
 
     <!-- Add Time Screen -->
     <string name="officeTime">Office Working Hours</string>
@@ -230,7 +229,7 @@
     <string name="paymentType">Payment Type :</string>
     <string name="visa">credit</string>
     <string name="applicationSuccessfully">The request has been sent successfully</string>
-    <string name="applicationSuccessfully_purpose1">If your request is approved, you will receive a message within 48 hours containing your id and password in order to be able to access your account.</string>
+    <string name="applicationSuccessfully_purpose1">If your request is approved, you will receive a cities within 48 hours containing your id and password in order to be able to access your account.</string>
     <string name="invalidConfirmPassword">Invalid Confirm Password</string>
     <string name="confirmPasswordNotMatched">Confirm password not matched</string>
     <string name="doYouWantToExit">Do you want to exit ?</string>
@@ -248,6 +247,15 @@
     <string name="invalidSpecialises">"Must be choose your specialty "</string>
     <string name="invalidBio">Invalid bio</string>
     <string name="invalidImage">Invalid profile image</string>
+    <string name="mapLatLng">wrong into get location on map</string>
+    <string name="mapAddress">Wrong into get map address</string>
+    <string name="invalidCityId">must choose a city</string>
+    <string name="invalidArea">Invalid area name</string>
+    <string name="invalidStreet">Invalid street name</string>
+    <string name="invalidBuild">Invalid build number</string>
+    <string name="invalidFloor">Invalid floor number</string>
+    <string name="invalidOffice">Invalid office number</string>
+    <string name="invalidAddress">Invalid office address</string>
 
 
 </resources>

@@ -109,7 +109,7 @@ public class SignInScreenVM extends ViewModel {
 
                     intent = new Intent(context, SignInStepsHome.class);
                     //intent.putExtra("step", String.valueOf(result.getStep()));
-                    intent.putExtra("step", String.valueOf(1));
+                    intent.putExtra("step", String.valueOf(3));
                     testLogin.setToken(result.getAccessToken());
                     Log.d(TAG, "Mohameek sendRequest: token: " + testLogin.getToken());
                     progressDialog.dismiss();

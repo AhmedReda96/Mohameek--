@@ -26,6 +26,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.google.android.material.snackbar.Snackbar;
 import com.theartofdev.edmodo.cropper.CropImage;
 import com.theartofdev.edmodo.cropper.CropImageView;
 
@@ -39,7 +40,6 @@ import mfl.com.session.GeneralMethods;
 
 
 import static android.app.Activity.RESULT_OK;
-
 
 public class AccountInfoFragment extends Fragment implements View.OnClickListener {
     private FragmentAccountInfoBinding binding;
@@ -119,28 +119,44 @@ public class AccountInfoFragment extends Fragment implements View.OnClickListene
                 switch (result) {
                     case "invalid card Image":
                         binding.error.setText(getResources().getString(R.string.invalidImage));
+                        Snackbar.make(binding.mainLin, getResources().getString(R.string.invalidImage), Snackbar.LENGTH_LONG).show();
+
                         break;
                     case "invalid FirstName":
                         binding.error.setText(getResources().getString(R.string.invalidFN));
+                        Snackbar.make(binding.mainLin, getResources().getString(R.string.invalidFN), Snackbar.LENGTH_LONG).show();
+
                         break;
                     case "invalid LastName":
                         binding.error.setText(getResources().getString(R.string.invalidLN));
+                        Snackbar.make(binding.mainLin, getResources().getString(R.string.invalidLN), Snackbar.LENGTH_LONG).show();
+
                         break;
 
                     case "invalid Phone":
                         binding.error.setText(getResources().getString(R.string.invalidPhone));
+                        Snackbar.make(binding.mainLin, getResources().getString(R.string.invalidPhone), Snackbar.LENGTH_LONG).show();
+
                         break;
                     case "invalid date":
                         binding.error.setText(getResources().getString(R.string.invalidDate));
+                        Snackbar.make(binding.mainLin, getResources().getString(R.string.invalidDate), Snackbar.LENGTH_LONG).show();
+
                         break;
                     case "invalid year":
                         binding.error.setText(getResources().getString(R.string.invalidYear));
+                        Snackbar.make(binding.mainLin, getResources().getString(R.string.invalidYear), Snackbar.LENGTH_LONG).show();
+
                         break;
                     case "invalid specialises":
                         binding.error.setText(getResources().getString(R.string.invalidSpecialises));
+                        Snackbar.make(binding.mainLin, getResources().getString(R.string.invalidSpecialises), Snackbar.LENGTH_LONG).show();
+
                         break;
                     case "invalid bio":
                         binding.error.setText(getResources().getString(R.string.invalidBio));
+                        Snackbar.make(binding.mainLin, getResources().getString(R.string.invalidBio), Snackbar.LENGTH_LONG).show();
+
                         break;
                     case "resetError":
                         binding.error.setText("");
@@ -148,9 +164,13 @@ public class AccountInfoFragment extends Fragment implements View.OnClickListene
 
                     case "noInternetConnection":
                         binding.error.setText(getResources().getString(R.string.noInternetConnection));
+                        Snackbar.make(binding.mainLin, getResources().getString(R.string.noInternetConnection), Snackbar.LENGTH_LONG).show();
+
                         break;
                     case "ServerError":
                         binding.error.setText(getResources().getString(R.string.serverError));
+                        Snackbar.make(binding.mainLin, getResources().getString(R.string.serverError), Snackbar.LENGTH_LONG).show();
+
                         break;
 
                 }

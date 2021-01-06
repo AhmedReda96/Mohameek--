@@ -7,6 +7,8 @@ import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProviders;
 
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -23,6 +25,7 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.material.snackbar.Snackbar;
 import com.jaredrummler.materialspinner.MaterialSpinner;
 
 import java.util.ArrayList;
@@ -35,21 +38,19 @@ import mfl.com.ui.start.signIn.signInSteps.stepsHome.SignInStepsHome;
 
 import static android.app.Activity.RESULT_OK;
 
-/*
-المدني جنائي  عسكر اداري اسرة
-*/
 public class AddLocationFragment extends Fragment implements View.OnClickListener {
     private final String TAG = AddLocationFragment.class.getSimpleName();
     private FragmentAddLocationBinding binding;
     private GeneralMethods generalMethods;
     private GoogleMap mMap;
-    private double latitude = 31.2357;
-    private double longitude = 31.2357;
-    private String address = null, getLat, getLong, governorateName = "", cityName = "", zoneName = "", streetName = "", buildNumber = "", floorNumber = "", unitNumber = "";
+    private double latitude = 0.0;
+    private double longitude = 0.0;
+    private int cityIndex = 0;
+    private String mapAddress = null, getLat, getLong, governorateName = "", cityName = "", zoneName = "", streetName = "", buildNumber = "", floorNumber = "", unitNumber = "";
     private CameraUpdate center;
     private CameraUpdate zoom;
     private List<String> governorate = new ArrayList<>();
-    private List<String> cities = new ArrayList<>();
+    private AddLocationVM viewModel;
 
 
     @Override
@@ -67,18 +68,96 @@ public class AddLocationFragment extends Fragment implements View.OnClickListene
     }
 
     private void init() {
+        viewModel = ViewModelProviders.of(getActivity()).get(AddLocationVM.class);
         generalMethods = new GeneralMethods(getActivity());
         generalMethods.changeLanguage();
         generalMethods.setDirection(binding.mainLin);
 
-
+        viewModel.initVM(getActivity());
         binding.selectLocationBtn.setOnClickListener(this::onClick);
         binding.nextBtn.setOnClickListener(this::onClick);
         binding.mapLin.setOnClickListener(this::onClick);
 
         setupSpinners();
         addressListener();
+        listenerOnLiveData();
 
+
+    }
+
+    private void listenerOnLiveData() {
+        viewModel.resultLD.observe(getActivity(), new Observer<String>() {
+            @Override
+            public void onChanged(String result) {
+                binding.error.setVisibility(View.VISIBLE);
+                switch (result) {
+                    case "invalid mapLatLng":
+                        binding.error.setText(getResources().getString(R.string.mapLatLng));
+                        Snackbar.make(binding.mainLin, getResources().getString(R.string.mapLatLng), Snackbar.LENGTH_LONG).show();
+                        break;
+                    case "invalid mapAddress":
+                        binding.error.setText(getResources().getString(R.string.mapAddress));
+                        Snackbar.make(binding.mainLin, getResources().getString(R.string.mapAddress), Snackbar.LENGTH_LONG).show();
+                        break;
+                    case "invalid cityId":
+                        binding.error.setText(getResources().getString(R.string.invalidCityId));
+                        Snackbar.make(binding.mainLin, getResources().getString(R.string.invalidCityId), Snackbar.LENGTH_LONG).show();
+                        break;
+                    case "invalid area":
+                        binding.error.setText(getResources().getString(R.string.invalidArea));
+                        Snackbar.make(binding.mainLin, getResources().getString(R.string.invalidArea), Snackbar.LENGTH_LONG).show();
+                        break;
+                    case "invalid street":
+                        binding.error.setText(getResources().getString(R.string.invalidStreet));
+                        Snackbar.make(binding.mainLin, getResources().getString(R.string.invalidStreet), Snackbar.LENGTH_LONG).show();
+                        break;
+                    case "invalid build":
+                        binding.error.setText(getResources().getString(R.string.invalidBuild));
+                        Snackbar.make(binding.mainLin, getResources().getString(R.string.invalidBuild), Snackbar.LENGTH_LONG).show();
+                        break;
+                    case "invalid floor":
+                        binding.error.setText(getResources().getString(R.string.invalidFloor));
+                        Snackbar.make(binding.mainLin, getResources().getString(R.string.invalidFloor), Snackbar.LENGTH_LONG).show();
+                        break;
+                    case "invalid office":
+                        binding.error.setText(getResources().getString(R.string.invalidOffice));
+                        Snackbar.make(binding.mainLin, getResources().getString(R.string.invalidOffice), Snackbar.LENGTH_LONG).show();
+                        break;
+                    case "invalid address":
+                        binding.error.setText(getResources().getString(R.string.invalidAddress));
+                        Snackbar.make(binding.mainLin, getResources().getString(R.string.invalidAddress), Snackbar.LENGTH_LONG).show();
+                        break;
+                    case "error":
+                        binding.error.setText("");
+                        break;
+                    case "noInternetConnection":
+                        binding.error.setText(getResources().getString(R.string.noInternetConnection));
+                        Snackbar.make(binding.mainLin, getResources().getString(R.string.noInternetConnection), Snackbar.LENGTH_LONG).show();
+                        break;
+                    case "ServerError":
+                        binding.error.setText(getResources().getString(R.string.serverError));
+                        Snackbar.make(binding.mainLin, getResources().getString(R.string.serverError), Snackbar.LENGTH_LONG).show();
+                        break;
+                    case "noInternetConnectionSpinner":
+                        Log.d(TAG, "Mohameek checkInternetConnection:  !isInternetPresent");
+                        binding.progress.setVisibility(View.GONE);
+                        binding.noInternetLin.setVisibility(View.VISIBLE);
+                        break;
+
+
+                }
+            }
+        });
+
+        viewModel.citesResultLD.observe(getActivity(), new Observer<List<String>>() {
+            @Override
+            public void onChanged(List<String> cities) {
+                binding.citySpinner.setItems(cities);
+                binding.progress.setVisibility(View.GONE);
+                binding.zoneLin.setVisibility(View.VISIBLE);
+
+            }
+        });
     }
 
     private void addressListener() {
@@ -86,10 +165,13 @@ public class AddLocationFragment extends Fragment implements View.OnClickListene
 
             @Override
             public void onItemSelected(MaterialSpinner view, int position, long id, String item) {
-                //Snackbar.make(view, "Clicked " + String.valueOf(position+1), Snackbar.LENGTH_LONG).show();
                 governorateName = item;
+                binding.progress.setVisibility(View.VISIBLE);
+                binding.noInternetLin.setVisibility(View.GONE);
+                binding.zoneLin.setVisibility(View.INVISIBLE);
                 binding.address.setText(governorateName + cityName + streetName + buildNumber + floorNumber + unitNumber);
-                binding.zoneLin.setVisibility(View.VISIBLE);
+                viewModel.getCites(position + 1);
+
             }
         });
 
@@ -97,14 +179,14 @@ public class AddLocationFragment extends Fragment implements View.OnClickListene
 
             @Override
             public void onItemSelected(MaterialSpinner view, int position, long id, String item) {
-                //Snackbar.make(view, "Clicked " + String.valueOf(position+1), Snackbar.LENGTH_LONG).show();
                 cityName = " -" + item;
+                cityIndex = position + 1;
                 binding.address.setText(governorateName + cityName + zoneName + streetName + buildNumber + floorNumber + unitNumber);
 
             }
         });
 
-        binding.zoneName.addTextChangedListener(new TextWatcher() {
+        binding.areaName.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
@@ -162,32 +244,27 @@ public class AddLocationFragment extends Fragment implements View.OnClickListene
         binding.floorNumber.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
             }
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 floorNumber = " -رقم الدور " + s;
                 binding.address.setText(governorateName + cityName + zoneName + streetName + buildNumber + floorNumber + unitNumber);
-
             }
 
             @Override
             public void afterTextChanged(Editable s) {
-
             }
         });
         binding.unitNumber.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
             }
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 unitNumber = " -رقم المكتب " + s;
                 binding.address.setText(governorateName + cityName + zoneName + streetName + buildNumber + floorNumber + unitNumber);
-
             }
 
             @Override
@@ -224,30 +301,8 @@ public class AddLocationFragment extends Fragment implements View.OnClickListene
         governorate.add("شمال سيناء");
         governorate.add("سوهاج");
 
-        cities.add("سوهاج");
-        cities.add("سوهاج");
-        cities.add("سوهاج");
-        cities.add("سوهاج");
-        cities.add("سوهاج");
-        cities.add("سوهاج");
-        cities.add("سوهاج");
-        cities.add("سوهاج");
-        cities.add("سوهاج");
-        cities.add("سوهاج");
-        cities.add("سوهاج");
-        cities.add("سوهاج");
-        cities.add("سوهاج");
-        cities.add("سوهاج");
-        cities.add("سوهاج");
-        cities.add("سوهاج");
-        cities.add("سوهاج");
-        cities.add("سوهاج");
-        cities.add("سوهاج");
-        cities.add("سوهاج");
-
 
         binding.governorateSpinner.setItems(governorate);
-        binding.citySpinner.setItems(cities);
 
 
     }
@@ -260,11 +315,15 @@ public class AddLocationFragment extends Fragment implements View.OnClickListene
             startActivityForResult(i, 1);
 
         }
-
-
-
         if (binding.nextBtn.equals(v)) {
-            ((SignInStepsHome) getActivity()).selectIndex(3);
+            viewModel.checkData(String.valueOf(latitude), String.valueOf(longitude), mapAddress, cityIndex,
+                    binding.citySpinner.getText().toString(),
+                    binding.areaName.getText().toString().trim(),
+                    binding.streetName.getText().toString().trim(),
+                    binding.buildingNumber.getText().toString().trim(),
+                    binding.floorNumber.getText().toString().trim(),
+                    binding.unitNumber.getText().toString().trim(),
+                    binding.address.getText().toString().trim());
 
         }
 
@@ -292,7 +351,7 @@ public class AddLocationFragment extends Fragment implements View.OnClickListene
                         mMap.getUiSettings().setMyLocationButtonEnabled(false);
                         mMap.getUiSettings().setIndoorLevelPickerEnabled(false);
 
-                        address = data.getStringExtra("address");
+                        mapAddress = data.getStringExtra("address");
                         getLat = data.getStringExtra("latitude");
                         getLong = data.getStringExtra("longitude");
 
@@ -318,14 +377,14 @@ public class AddLocationFragment extends Fragment implements View.OnClickListene
 
         mMap.moveCamera(center);
         mMap.animateCamera(zoom);
-        mMap.addMarker(new MarkerOptions().position(position).title(address)).showInfoWindow();
+        mMap.addMarker(new MarkerOptions().position(position).title(mapAddress)).showInfoWindow();
 
 
         binding.mapLin.setVisibility(View.VISIBLE);
         binding.selectLocationBtn.setText(R.string.updateLocation);
         binding.addressLin.setVisibility(View.VISIBLE);
-        binding.mapAddress.setText(address);
-        Log.d(TAG, "Mohameek setMapData:" + address + "," + String.valueOf(getLat + "+" + getLong));
+        binding.mapAddress.setText(mapAddress);
+        Log.d(TAG, "Mohameek setMapData:" + mapAddress + "," + String.valueOf(getLat + "+" + getLong));
 
 
     }

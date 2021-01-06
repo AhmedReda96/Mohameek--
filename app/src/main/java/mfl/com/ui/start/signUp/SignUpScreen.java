@@ -17,6 +17,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.google.android.material.snackbar.Snackbar;
 import com.theartofdev.edmodo.cropper.CropImage;
 import com.theartofdev.edmodo.cropper.CropImageView;
 
@@ -56,7 +57,6 @@ public class SignUpScreen extends AppCompatActivity implements View.OnClickListe
         viewModel = new ViewModelProvider(this).get(SignUpScreenVM.class);
         viewModel.initVM(this);
 
-
         binding.backBtn.setOnClickListener(this::onClick);
         binding.cardImg.setOnClickListener(this::onClick);
         binding.addCardBtn.setOnClickListener(this::onClick);
@@ -84,24 +84,41 @@ public class SignUpScreen extends AppCompatActivity implements View.OnClickListe
                 switch (result) {
                     case "invalid FirstName":
                         binding.error.setText(getResources().getString(R.string.invalidFN));
+                        Snackbar.make(binding.mainLin, getResources().getString(R.string.invalidFN), Snackbar.LENGTH_LONG).show();
+
                         break;
                     case "invalid LastName":
                         binding.error.setText(getResources().getString(R.string.invalidLN));
+                        Snackbar.make(binding.mainLin, getResources().getString(R.string.invalidLN), Snackbar.LENGTH_LONG).show();
+
                         break;
                     case "invalid Email":
                         binding.error.setText(getResources().getString(R.string.invalidEmail));
+                        Snackbar.make(binding.mainLin, getResources().getString(R.string.invalidEmail), Snackbar.LENGTH_LONG).show();
+
                         break;
                     case "invalid Phone":
                         binding.error.setText(getResources().getString(R.string.invalidPhone));
+                        Snackbar.make(binding.mainLin, getResources().getString(R.string.invalidPhone), Snackbar.LENGTH_LONG).show();
+
                         break;
                     case "invalid Id":
                         binding.error.setText(getResources().getString(R.string.invalidId));
+                        Snackbar.make(binding.mainLin, getResources().getString(R.string.invalidId), Snackbar.LENGTH_LONG).show();
+
                         break;
                     case "invalid card Image":
                         binding.error.setText(getResources().getString(R.string.invalidCardImage));
+                        Snackbar.make(binding.mainLin, getResources().getString(R.string.invalidCardImage), Snackbar.LENGTH_LONG).show();
+
                         break;
                     case "noInternetConnection":
                         binding.error.setText(getResources().getString(R.string.noInternetConnection));
+                        Snackbar.make(binding.mainLin, getResources().getString(R.string.noInternetConnection), Snackbar.LENGTH_LONG).show();
+
+                        break;
+                    case "error":
+                        binding.error.setText("");
                         break;
 
                 }
@@ -133,7 +150,7 @@ public class SignUpScreen extends AppCompatActivity implements View.OnClickListe
                     binding.email.getText().toString().trim(),
                     binding.phone.getText().toString().trim(),
                     binding.id.getText().toString().trim(),
-                    bitmap,imgExtension);
+                    bitmap, imgExtension);
         }
 
     }

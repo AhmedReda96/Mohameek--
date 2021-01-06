@@ -11,6 +11,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.google.android.material.snackbar.Snackbar;
+
 import mfl.com.R;
 import mfl.com.databinding.FragmentChangePasswordBinding;
 import mfl.com.session.GeneralMethods;
@@ -67,21 +69,31 @@ public class ChangePasswordFragment extends Fragment implements View.OnClickList
 
                     case "invalid password":
                         binding.error.setText(getResources().getString(R.string.invalidPassword));
+                        Snackbar.make(binding.mainLin, getResources().getString(R.string.invalidPassword), Snackbar.LENGTH_LONG).show();
+
                         break;
                     case "invalid confirmPassword1":
                         binding.error.setText(getResources().getString(R.string.invalidConfirmPassword));
+                        Snackbar.make(binding.mainLin, getResources().getString(R.string.invalidConfirmPassword), Snackbar.LENGTH_LONG).show();
+
                         break;
                     case "invalid confirmPassword2":
                         binding.error.setText(getResources().getString(R.string.confirmPasswordNotMatched));
+                        Snackbar.make(binding.mainLin, getResources().getString(R.string.confirmPasswordNotMatched), Snackbar.LENGTH_LONG).show();
+
                         break;
                     case "noInternetConnection":
                         binding.error.setText(getResources().getString(R.string.noInternetConnection));
+                        Snackbar.make(binding.mainLin, getResources().getString(R.string.noInternetConnection), Snackbar.LENGTH_LONG).show();
+
                         break;
                     case "resetError":
                         binding.error.setText("");
                         break;
                     case "ServerError":
                         binding.error.setText(getResources().getString(R.string.serverError));
+                        Snackbar.make(binding.mainLin, getResources().getString(R.string.serverError), Snackbar.LENGTH_LONG).show();
+
                         break;
 
                 }

@@ -219,10 +219,10 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginBottom="@dimen/_10sdp"
-                                android:autofillHints="@string/zone"
+                                android:autofillHints="@string/area"
                                 android:background="@drawable/curves_gray_bg"
                                 android:fontFamily="@font/cairo_semibold"
-                                android:hint="@string/zone"
+                                android:hint="@string/area"
                                 android:inputType="text"
 
                                 android:maxEms="60"

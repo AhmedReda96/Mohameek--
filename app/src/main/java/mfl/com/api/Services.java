@@ -6,6 +6,8 @@ import mfl.com.pojo.accountInfo.get.GetProfileResponse;
 import mfl.com.pojo.accountInfo.put.EditAccountInfoResponse;
 import mfl.com.pojo.accountInfo.put.EditAccountInfoRequest;
 import mfl.com.pojo.changePassword.ChangePasswordResponse;
+import mfl.com.pojo.location.AddLocationResponse;
+import mfl.com.pojo.location.CitesResponse;
 import mfl.com.pojo.news.NewNewsResponse;
 import mfl.com.pojo.signin.SignInResponse;
 import mfl.com.pojo.signup.SignUpResponse;
@@ -53,5 +55,20 @@ public interface Services {
 
     @GET("lawyer/profile")
     Single<GetProfileResponse> getProfileResponse(@Query("token") String token);
+
+
+    @GET("governorate/cities")
+    Single<CitesResponse> getCitesResponse(@Query("token") String token,@Query("governorate_id") int governorate_id);
+
+
+
+    @POST("lawyer/office")
+    @FormUrlEncoded
+    Single<AddLocationResponse> setOfficeLocationRequest(
+            @Field("city_id") int city_id,
+            @Field("lat") String lat,
+            @Field("long") String lng,
+            @Field("location") String location,
+            @Field("token") String token);
 
 }

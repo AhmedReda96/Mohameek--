@@ -109,7 +109,6 @@
     <string name="updateLocation">تحديث الموقع على الخريطة</string>
     <string name="country">البلد</string>
     <string name="city">اختر المدينة</string>
-    <string name="area">المنطقة</string>
     <string name="building">مبني</string>
     <string name="floor">طابق</string>
     <string name="unit">اسم الشقة / الرقم</string>
@@ -124,7 +123,7 @@
     <string name="buildingNumber">رقم العمارة</string>
     <string name="unitNumber">رقم المكتب</string>
     <string name="addressInDetails_purpose1">اختر المحافظة اولا, ثم املاء عنوان مكان العمل بعناية</string>
-    <string name="zone">اسم المنطقة</string>
+    <string name="area">اسم المنطقة</string>
     <string name="floorNumber">رقم الدور</string>
 
 
@@ -254,6 +253,15 @@
     <string name="dontReceiveTheCode">الكود لم يصلك؟</string>
     <string name="resendCode">ارسل الكود</string>
     <string name="invalidImage">لا يوجد صورة شخصية</string>
+    <string name="mapLatLng">خطأ الحصول علي المكان في الخريطه</string>
+    <string name="mapAddress">خطأ الحصول علي عنوان الخريطه</string>
+    <string name="invalidCityId">يجب اختيار المدينة</string>
+    <string name="invalidArea">اسم المنطقة غير صحيح</string>
+    <string name="invalidStreet">اسم الشارع غير صحيح</string>
+    <string name="invalidBuild">رقم العمارة غير صحيح</string>
+    <string name="invalidFloor">رقم الدور غير صحيح</string>
+    <string name="invalidOffice">رقم المكتب غير صحيح</string>
+    <string name="invalidAddress">عنوان المكتب غير صحيح</string>
 
 
 </resources>

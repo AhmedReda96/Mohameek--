@@ -199,6 +199,33 @@
 
 
                         </androidx.cardview.widget.CardView>
+                        <FrameLayout
+                            android:visibility="gone"
+                            android:id="@+id/noInternetLin"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/holo_red_dark"
+                            >
+                            <TextView
+                                android:padding="@dimen/_2sdp"
+                                android:gravity="center"
+                                android:textColor="@android:color/white"
+                                android:fontFamily="@font/cairo_semibold"
+                                android:textSize="@dimen/_10sdp"
+                                android:text="@string/noInternetConnection"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                />
+
+
+                        </FrameLayout>
+
+                        <ProgressBar
+                            android:id="@+id/progress"
+                            style="@android:style/Widget.DeviceDefault.Light.ProgressBar.Inverse"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone" />
 
 
                         <LinearLayout
@@ -238,16 +265,15 @@
                             </androidx.cardview.widget.CardView>
 
                             <EditText
-                                android:id="@+id/zoneName"
+                                android:id="@+id/areaName"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginBottom="@dimen/_10sdp"
-                                android:autofillHints="@string/zone"
+                                android:autofillHints="@string/area"
                                 android:background="@drawable/curves_gray_bg"
                                 android:fontFamily="@font/cairo_semibold"
-                                android:hint="@string/zone"
+                                android:hint="@string/area"
                                 android:inputType="text"
-
                                 android:maxEms="60"
                                 android:maxLength="60"
                                 android:padding="@dimen/_10sdp"
@@ -354,7 +380,6 @@
                                 android:layout_marginBottom="@dimen/_10sdp"
                                 android:fontFamily="@font/cairo_semibold"
                                 android:gravity="center"
-                                android:text="@string/emailDoseNotExist"
                                 android:textColor="@android:color/holo_red_light"
                                 android:textSize="@dimen/_10sdp"
                                 android:visibility="visible" />
