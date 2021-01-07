@@ -5,13 +5,18 @@ import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProviders;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
+import com.google.android.material.snackbar.Snackbar;
+import com.jaredrummler.materialspinner.MaterialSpinner;
 import com.suke.widget.SwitchButton;
 
 import java.text.ParseException;
@@ -22,19 +27,23 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
+import mfl.com.R;
 import mfl.com.databinding.FragmentAddTimeBinding;
+import mfl.com.pojo.workTimes.WorkTimesModel;
+import mfl.com.pojo.workTimes.WorkTimesRequest;
 import mfl.com.session.GeneralMethods;
 import mfl.com.session.sp.StoreLanguageData;
-import mfl.com.ui.start.signIn.signInSteps.stepsHome.SignInStepsHome;
 
 public class AddTime extends Fragment implements View.OnClickListener {
-
+    private AddTimesVM viewModel;
     private FragmentAddTimeBinding binding;
     private GeneralMethods generalMethods;
     private List<String> durationTimesList = new ArrayList<>();
     private StoreLanguageData storeLanguageData;
     private String time = "";
-
+    private List<WorkTimesRequest> workTimesModels = new ArrayList<>();
+    private List<Integer> daysCheckedList = new ArrayList<>();
+    private int satDuration = 0, sunDuration = 0, monDuration = 0, tueDuration = 0, wedDuration = 0, thuDuration = 0, friDuration = 0;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -50,6 +59,8 @@ public class AddTime extends Fragment implements View.OnClickListener {
     }
 
     private void init() {
+        viewModel = ViewModelProviders.of(getActivity()).get(AddTimesVM.class);
+        viewModel.initVM(getActivity());
         generalMethods = new GeneralMethods(getActivity());
         generalMethods.changeLanguage();
         generalMethods.setDirection(binding.mainLin);
@@ -57,6 +68,7 @@ public class AddTime extends Fragment implements View.OnClickListener {
         setSpinner();
         listenOnSwitchers();
         setTextTime();
+        listenOnSpinners();
 
         binding.saturdayCard.setOnClickListener(this::onClick);
         binding.sundayCard.setOnClickListener(this::onClick);
@@ -85,6 +97,105 @@ public class AddTime extends Fragment implements View.OnClickListener {
 
 
         binding.nextBtn.setOnClickListener(this::onClick);
+        listenerOnLiveData();
+
+    }
+
+    private void listenerOnLiveData() {
+
+        viewModel.resultLD.observe(getActivity(), new Observer<String>() {
+            @Override
+            public void onChanged(String result) {
+                binding.error.setVisibility(View.VISIBLE);
+                switch (result) {
+
+                    case "invalid duration":
+                        binding.error.setText(getResources().getString(R.string.invalidDuration));
+                        Snackbar.make(binding.mainLin, getResources().getString(R.string.invalidDuration), Snackbar.LENGTH_LONG).show();
+
+                        break;
+                    case "resetError":
+                        binding.error.setText("");
+                        break;
+                    case "invalid time":
+                        binding.error.setText(getResources().getString(R.string.invalidTime));
+                        Snackbar.make(binding.mainLin, getResources().getString(R.string.invalidTime), Snackbar.LENGTH_LONG).show();
+
+                        break;
+                    case "noInternetConnection":
+                        binding.error.setText(getResources().getString(R.string.noInternetConnection));
+                        Snackbar.make(binding.mainLin, getResources().getString(R.string.noInternetConnection), Snackbar.LENGTH_LONG).show();
+
+                        break;
+                    case "invalid ServerError":
+                        binding.error.setText(getResources().getString(R.string.serverError));
+                        Snackbar.make(binding.mainLin, getResources().getString(R.string.serverError), Snackbar.LENGTH_LONG).show();
+
+                        break;
+
+                }
+            }
+        });
+
+
+    }
+
+
+    private void listenOnSpinners() {
+        binding.saturdayBookTimeSpinner.setOnItemSelectedListener(new MaterialSpinner.OnItemSelectedListener<String>() {
+
+            @Override
+            public void onItemSelected(MaterialSpinner view, int position, long id, String item) {
+                satDuration = Integer.parseInt(item.substring(0, item.indexOf(" ")));
+
+
+            }
+        });
+        binding.sundayBookTimeSpinner.setOnItemSelectedListener(new MaterialSpinner.OnItemSelectedListener<String>() {
+
+            @Override
+            public void onItemSelected(MaterialSpinner view, int position, long id, String item) {
+                sunDuration = Integer.parseInt(item.substring(0, item.indexOf(" ")));
+            }
+        });
+        binding.mondayBookTimeSpinner.setOnItemSelectedListener(new MaterialSpinner.OnItemSelectedListener<String>() {
+
+            @Override
+            public void onItemSelected(MaterialSpinner view, int position, long id, String item) {
+                monDuration = Integer.parseInt(item.substring(0, item.indexOf(" ")));
+            }
+        });
+        binding.thursdayBookTimeSpinner.setOnItemSelectedListener(new MaterialSpinner.OnItemSelectedListener<String>() {
+
+            @Override
+            public void onItemSelected(MaterialSpinner view, int position, long id, String item) {
+                thuDuration = Integer.parseInt(item.substring(0, item.indexOf(" ")));
+            }
+        });
+        binding.wednesdayBookTimeSpinner.setOnItemSelectedListener(new MaterialSpinner.OnItemSelectedListener<String>() {
+
+            @Override
+            public void onItemSelected(MaterialSpinner view, int position, long id, String item) {
+                wedDuration = Integer.parseInt(item.substring(0, item.indexOf(" ")));
+
+            }
+        });
+        binding.thursdayBookTimeSpinner.setOnItemSelectedListener(new MaterialSpinner.OnItemSelectedListener<String>() {
+
+            @Override
+            public void onItemSelected(MaterialSpinner view, int position, long id, String item) {
+                thuDuration = Integer.parseInt(item.substring(0, item.indexOf(" ")));
+            }
+        });
+        binding.fridayBookTimeSpinner.setOnItemSelectedListener(new MaterialSpinner.OnItemSelectedListener<String>() {
+
+            @Override
+            public void onItemSelected(MaterialSpinner view, int position, long id, String item) {
+                friDuration =Integer.parseInt(item.substring(0, item.indexOf(" ")));
+
+            }
+        });
+
 
     }
 
@@ -137,9 +248,11 @@ public class AddTime extends Fragment implements View.OnClickListener {
 
                 if (isChecked) {
                     binding.saturdayTimeLin.setVisibility(View.VISIBLE);
+                    daysCheckedList.add(1);
 
                 } else {
                     binding.saturdayTimeLin.setVisibility(View.GONE);
+                    daysCheckedList.remove(Integer.valueOf(1));
 
                 }
             }
@@ -152,9 +265,11 @@ public class AddTime extends Fragment implements View.OnClickListener {
 
                 if (isChecked) {
                     binding.sundayTimeLin.setVisibility(View.VISIBLE);
+                    daysCheckedList.add(2);
 
                 } else {
                     binding.sundayTimeLin.setVisibility(View.GONE);
+                    daysCheckedList.remove(Integer.valueOf(2));
 
                 }
             }
@@ -167,9 +282,12 @@ public class AddTime extends Fragment implements View.OnClickListener {
 
                 if (isChecked) {
                     binding.mondayTimeLin.setVisibility(View.VISIBLE);
+                    daysCheckedList.add(3);
+
 
                 } else {
                     binding.mondayTimeLin.setVisibility(View.GONE);
+                    daysCheckedList.remove(Integer.valueOf(3));
 
                 }
             }
@@ -182,14 +300,15 @@ public class AddTime extends Fragment implements View.OnClickListener {
 
                 if (isChecked) {
                     binding.tuesdayTimeLin.setVisibility(View.VISIBLE);
+                    daysCheckedList.add(4);
 
                 } else {
                     binding.tuesdayTimeLin.setVisibility(View.GONE);
+                    daysCheckedList.remove(Integer.valueOf(4));
 
                 }
             }
         });
-
 
         binding.wednesdaySwitch.setOnCheckedChangeListener(new SwitchButton.OnCheckedChangeListener() {
             @Override
@@ -197,9 +316,11 @@ public class AddTime extends Fragment implements View.OnClickListener {
 
                 if (isChecked) {
                     binding.wednesdayTimeLin.setVisibility(View.VISIBLE);
+                    daysCheckedList.add(5);
 
                 } else {
                     binding.wednesdayTimeLin.setVisibility(View.GONE);
+                    daysCheckedList.remove(Integer.valueOf(5));
 
                 }
             }
@@ -211,9 +332,11 @@ public class AddTime extends Fragment implements View.OnClickListener {
 
                 if (isChecked) {
                     binding.thursdayTimeLin.setVisibility(View.VISIBLE);
+                    daysCheckedList.add(6);
 
                 } else {
                     binding.thursdayTimeLin.setVisibility(View.GONE);
+                    daysCheckedList.remove(Integer.valueOf(6));
 
                 }
             }
@@ -225,9 +348,11 @@ public class AddTime extends Fragment implements View.OnClickListener {
 
                 if (isChecked) {
                     binding.fridayTimeLin.setVisibility(View.VISIBLE);
+                    daysCheckedList.add(7);
 
                 } else {
                     binding.fridayTimeLin.setVisibility(View.GONE);
+                    daysCheckedList.remove(Integer.valueOf(7));
 
                 }
             }
@@ -237,17 +362,29 @@ public class AddTime extends Fragment implements View.OnClickListener {
     }
 
     private void setSpinner() {
-
-        durationTimesList.add("10 دقائق");
-        durationTimesList.add("15 دقيقة");
-        durationTimesList.add("20 دقيقة");
-        durationTimesList.add("25 دقيقة");
-        durationTimesList.add("30 دقيقة");
-        durationTimesList.add("35 دقيقة");
-        durationTimesList.add("40 دقيقة");
-        durationTimesList.add("45 دقيقة");
-        durationTimesList.add("50 دقيقة");
-        durationTimesList.add("60 دقيقة");
+        if (storeLanguageData.getAppLanguage().equals("ar")) {
+            durationTimesList.add("10 دقائق");
+            durationTimesList.add("15 دقيقة");
+            durationTimesList.add("20 دقيقة");
+            durationTimesList.add("25 دقيقة");
+            durationTimesList.add("30 دقيقة");
+            durationTimesList.add("35 دقيقة");
+            durationTimesList.add("40 دقيقة");
+            durationTimesList.add("45 دقيقة");
+            durationTimesList.add("50 دقيقة");
+            durationTimesList.add("60 دقيقة");
+        } else {
+            durationTimesList.add("10 Minute");
+            durationTimesList.add("15 Minute");
+            durationTimesList.add("20 Minute");
+            durationTimesList.add("25 Minute");
+            durationTimesList.add("30 Minute");
+            durationTimesList.add("35 Minute");
+            durationTimesList.add("40 Minute");
+            durationTimesList.add("45 Minute");
+            durationTimesList.add("50 Minute");
+            durationTimesList.add("60 Minute");
+        }
         binding.saturdayBookTimeSpinner.setItems(durationTimesList);
         binding.sundayBookTimeSpinner.setItems(durationTimesList);
         binding.mondayBookTimeSpinner.setItems(durationTimesList);
@@ -262,8 +399,14 @@ public class AddTime extends Fragment implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         if (binding.nextBtn.equals(v)) {
-            ((SignInStepsHome) getActivity()).selectIndex(4);
+            if (daysCheckedList.size() > 0) {
+                addValuesOfDays();
+            } else {
 
+                binding.error.setText(getActivity().getResources().getString(R.string.chooseAppointemnt));
+                Snackbar.make(binding.mainLin, getResources().getString(R.string.chooseAppointemnt), Snackbar.LENGTH_LONG).show();
+
+            }
         }
 
         if (binding.saturdayCard.equals(v)) {
@@ -356,6 +499,46 @@ public class AddTime extends Fragment implements View.OnClickListener {
 
     }
 
+    private void addValuesOfDays() {
+        workTimesModels.clear();
+        for (int i = 0; i < daysCheckedList.size(); i++) {
+            switch (daysCheckedList.get(i)) {
+                case 1:
+                    workTimesModels.add(new WorkTimesRequest(1, binding.saturdayFromHourBtn.getText().toString().trim(),
+                            binding.saturdayToHourBtn.getText().toString().trim(), satDuration));
+                    break;
+                case 2:
+                    workTimesModels.add(new WorkTimesRequest(2, binding.sundayFromHourBtn.getText().toString().trim(),
+                            binding.sundayToHourBtn.getText().toString().trim(), sunDuration));
+                    break;
+                case 3:
+                    workTimesModels.add(new WorkTimesRequest(3, binding.mondayFromHourBtn.getText().toString().trim(),
+                            binding.mondayToHourBtn.getText().toString().trim(), monDuration));
+                    break;
+                case 4:
+                    workTimesModels.add(new WorkTimesRequest(4, binding.tuesdayFromHourBtn.getText().toString().trim(),
+                            binding.tuesdayToHourBtn.getText().toString().trim(), tueDuration));
+                    break;
+                case 5:
+                    workTimesModels.add(new WorkTimesRequest(5, binding.wednesdayFromHourBtn.getText().toString().trim(),
+                            binding.wednesdayToHourBtn.getText().toString().trim(), wedDuration));
+                    break;
+                case 6:
+                    workTimesModels.add(new WorkTimesRequest(6, binding.thursdayFromHourBtn.getText().toString().trim(),
+                            binding.thursdayToHourBtn.getText().toString().trim(), thuDuration));
+                    break;
+                case 7:
+                    workTimesModels.add(new WorkTimesRequest(1, binding.fridayFromHourBtn.getText().toString().trim(),
+                            binding.fridayToHourBtn.getText().toString().trim(), friDuration));
+                    break;
+            }
+
+
+        }
+
+        viewModel.checkData(workTimesModels);
+    }
+
     private void setTimePicker(String dayNum) {
         time = "";
         TimePickerDialog timePickerDialog = new TimePickerDialog(getActivity(), android.R.style.Theme_DeviceDefault_Dialog, new TimePickerDialog.OnTimeSetListener() {
@@ -427,8 +610,6 @@ public class AddTime extends Fragment implements View.OnClickListener {
         );
         timePickerDialog.show();
     }
-
-
 
 
 }

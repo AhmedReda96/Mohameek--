@@ -1423,26 +1423,25 @@
 
 
                     <TextView
-                        android:gravity="center"
                         android:id="@+id/error"
-                        android:layout_marginTop="@dimen/_10sdp"
-
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
                         android:layout_marginBottom="@dimen/_10sdp"
                         android:fontFamily="@font/cairo_semibold"
-                        android:text="Error"
+                        android:gravity="center"
                         android:textColor="@android:color/holo_red_light"
                         android:textSize="@dimen/_10sdp"
                         android:visibility="visible" />
+
                     <Button
-                        android:fontFamily="@font/cairo_semibold"
                         android:id="@+id/nextBtn"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="@dimen/_10sdp"
                         android:background="@drawable/curves_yellow_bg"
                         android:contentDescription="@string/signIn"
+                        android:fontFamily="@font/cairo_semibold"
                         android:text="@string/next"
                         android:textAllCaps="false"
                         android:textColor="@android:color/black"

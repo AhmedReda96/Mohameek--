@@ -256,6 +256,9 @@
     <string name="invalidFloor">Invalid floor number</string>
     <string name="invalidOffice">Invalid office number</string>
     <string name="invalidAddress">Invalid office address</string>
+    <string name="chooseAppointemnt">Must be select an appointment</string>
+    <string name="invalidDuration">Must be choose a duration</string>
+    <string name="invalidTime">Time selection error</string>
 
 
 </resources>

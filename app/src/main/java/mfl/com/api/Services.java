@@ -11,6 +11,8 @@ import mfl.com.pojo.location.CitesResponse;
 import mfl.com.pojo.news.NewNewsResponse;
 import mfl.com.pojo.signin.SignInResponse;
 import mfl.com.pojo.signup.SignUpResponse;
+import mfl.com.pojo.workTimes.AddWorkTimesRequest;
+import mfl.com.pojo.workTimes.AddWorkTimesResponse;
 import retrofit2.http.Body;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
@@ -70,5 +72,12 @@ public interface Services {
             @Field("long") String lng,
             @Field("location") String location,
             @Field("token") String token);
+
+
+    @POST("lawyer/times")
+    Single<AddWorkTimesResponse> setWorkTimesRequest(@Body AddWorkTimesRequest addWorkTimesRequest);
+
+
+
 
 }

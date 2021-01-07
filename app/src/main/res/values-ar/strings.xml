@@ -134,7 +134,7 @@
     <string name="saturday">السبت</string>
     <string name="from">من</string>
     <string name="to">الى</string>
-    <string name="durationOfTheConsultation">فترة الاسستشارة</string>
+    <string name="durationOfTheConsultation">فترة الاستشارة</string>
     <string name="sunday">الاحد</string>
     <string name="monday">الاثنين</string>
     <string name="tuesday">الثلاثاء</string>
@@ -249,7 +249,7 @@
     <string name="doYouWantToExit_purpose1">لن يتم انشاء الحساب حتي تستكمل البيانات.</string>
     <string name="stay">البقاء</string>
     <string name="exitNow">الخروج الان</string>
-    <string name="serverError">خطأ في الاتصال بالسرفر حاول مرة اخرى.</string>
+    <string name="serverError">خطأ في الاتصال بالسيرفر حاول مرة اخرى.</string>
     <string name="dontReceiveTheCode">الكود لم يصلك؟</string>
     <string name="resendCode">ارسل الكود</string>
     <string name="invalidImage">لا يوجد صورة شخصية</string>
@@ -262,6 +262,9 @@
     <string name="invalidFloor">رقم الدور غير صحيح</string>
     <string name="invalidOffice">رقم المكتب غير صحيح</string>
     <string name="invalidAddress">عنوان المكتب غير صحيح</string>
+    <string name="chooseAppointemnt">يجب اختيار موعد</string>
+    <string name="invalidDuration">يجب اختيار فترة الاستشارة</string>
+    <string name="invalidTime">خطأ في اختيار الوقت</string>
 
 
 </resources>
