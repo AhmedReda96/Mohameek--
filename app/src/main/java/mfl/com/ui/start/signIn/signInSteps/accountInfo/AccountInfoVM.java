@@ -61,45 +61,62 @@ public class AccountInfoVM extends ViewModel {
 
 
     public void checkData(Bitmap imageUri, String imgExtension, String fistName, String lastName, int gender, String date, int currentYear, int choiceYear, String phone, List<Integer> specialises, String bio) {
-
+        this.userImage = "";
+        progressDialog.show();
         Log.d(TAG, "Mohameek checkData: " + testLogin.getToken());
 
         resultLD.setValue("resetError");
         if (imageUri == null) {
             resultLD.setValue("invalid card Image");
+            progressDialog.dismiss();
+
             Log.d(TAG, "Mohameek checkData: invalid card Image");
 
         } else {
             if (fistName.length() < 2 || fistName.isEmpty()) {
                 resultLD.setValue("invalid firstName");
+                progressDialog.dismiss();
+
                 Log.d(TAG, "Mohameek checkData: invalid firstName");
 
             } else {
 
                 if (lastName.length() < 2 || lastName.isEmpty()) {
                     resultLD.setValue("invalid lastName");
+                    progressDialog.dismiss();
+
                     Log.d(TAG, "Mohameek checkData: invalid lastName");
 
                 } else {
                     if (phone.length() < 11) {
                         resultLD.setValue("invalid Phone");
+                        progressDialog.dismiss();
+
                         Log.d(TAG, "Mohameek checkData: invalid phone");
                     } else {
                         if (date == null) {
                             resultLD.setValue("invalid date");
+                            progressDialog.dismiss();
+
                             Log.d(TAG, "Mohameek checkData: invalid specialises");
                         } else {
                             if ((currentYear - choiceYear) <= 20) {
                                 resultLD.setValue("invalid year");
+                                progressDialog.dismiss();
+
                                 Log.d(TAG, "Mohameek checkData: invalid year c=" + String.valueOf(currentYear) + "-ch=" + choiceYear);
                             } else {
                                 if (specialises.size() == 0) {
                                     resultLD.setValue("invalid specialises");
+                                    progressDialog.dismiss();
+
                                     Log.d(TAG, "Mohameek checkData: invalid specialises");
                                 } else {
 
                                     if (bio.length() < 5 || bio.isEmpty()) {
                                         resultLD.setValue("invalid bio");
+                                        progressDialog.dismiss();
+
                                         Log.d(TAG, "Mohameek checkData: invalid bio");
                                     } else {
                                         this.userFirstName = fistName;
@@ -134,12 +151,13 @@ public class AccountInfoVM extends ViewModel {
         } else {
             Log.d(TAG, "Mohameek checkInternetConnection:  !isInternetPresent");
             resultLD.setValue("noInternetConnection");
+            progressDialog.dismiss();
+
         }
 
     }
 
     private void sendRequest() {
-        Log.d(TAG, "Mohameek sendRequest token: " + testLogin.getToken());
 
         services.getAccountInfoRequest(new EditAccountInfoRequest(userGender, userSpecialises, userImage, userPhone, userDate, testLogin.getToken(), userBio))
                 .subscribeOn(Schedulers.io())

@@ -55,7 +55,9 @@ public class ChangePasswordFragment extends Fragment implements View.OnClickList
     public void onClick(View v) {
 
         if (binding.nextBtn.equals(v)) {
-            viewModel.checkData(binding.Password.getText().toString().trim(), binding.confirmPassword.getText().toString().trim());
+           // viewModel.checkData(binding.Password.getText().toString().trim(), binding.confirmPassword.getText().toString().trim());
+            ((SignInStepsHome) getActivity()).selectIndex(1);
+
         }
     }
 

@@ -39,7 +39,6 @@ public class AddLocationVM extends ViewModel {
     private Intent intent;
     private List<String> citesListName = new ArrayList<>();
     private List<Cities> citesListItem = new ArrayList<>();
-
     public MutableLiveData<List<String>> citesResultLD = new MutableLiveData<>();
 
     public void initVM(Activity activity) {

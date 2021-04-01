@@ -166,11 +166,15 @@ public class AddLocationFragment extends Fragment implements View.OnClickListene
             @Override
             public void onItemSelected(MaterialSpinner view, int position, long id, String item) {
                 governorateName = item;
-                binding.progress.setVisibility(View.VISIBLE);
+//                binding.progress.setVisibility(View.VISIBLE);
+//                binding.noInternetLin.setVisibility(View.GONE);
+//                binding.zoneLin.setVisibility(View.INVISIBLE);
+//                binding.address.setText(governorateName + cityName + streetName + buildNumber + floorNumber + unitNumber);
+//                viewModel.getCites(position + 1);
+                binding.progress.setVisibility(View.GONE);
                 binding.noInternetLin.setVisibility(View.GONE);
-                binding.zoneLin.setVisibility(View.INVISIBLE);
+                binding.zoneLin.setVisibility(View.VISIBLE);
                 binding.address.setText(governorateName + cityName + streetName + buildNumber + floorNumber + unitNumber);
-                viewModel.getCites(position + 1);
 
             }
         });
@@ -316,14 +320,16 @@ public class AddLocationFragment extends Fragment implements View.OnClickListene
 
         }
         if (binding.nextBtn.equals(v)) {
-            viewModel.checkData(String.valueOf(latitude), String.valueOf(longitude), mapAddress, cityIndex,
-                    binding.citySpinner.getText().toString(),
-                    binding.areaName.getText().toString().trim(),
-                    binding.streetName.getText().toString().trim(),
-                    binding.buildingNumber.getText().toString().trim(),
-                    binding.floorNumber.getText().toString().trim(),
-                    binding.unitNumber.getText().toString().trim(),
-                    binding.address.getText().toString().trim());
+//            viewModel.checkData(String.valueOf(latitude), String.valueOf(longitude), mapAddress, cityIndex,
+//                    binding.citySpinner.getText().toString(),
+//                    binding.areaName.getText().toString().trim(),
+//                    binding.streetName.getText().toString().trim(),
+//                    binding.buildingNumber.getText().toString().trim(),
+//                    binding.floorNumber.getText().toString().trim(),
+//                    binding.unitNumber.getText().toString().trim(),
+//                    binding.address.getText().toString().trim());
+            ((SignInStepsHome) getActivity()).selectIndex(3);
+
 
         }
 

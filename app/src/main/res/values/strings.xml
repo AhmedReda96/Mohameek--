@@ -63,7 +63,7 @@
     <string name="resetPassword">Reset Password</string>
     <string name="verify">Verify Code</string>
     <string name="resetPassword_purpose1">Write down the code you have</string>
-    <string name="resetPassword_purpose2">received in cities</string>
+    <string name="resetPassword_purpose2">received in your box</string>
     <string name="codeIsNotCorrect">*Code is not correct</string>
 
 

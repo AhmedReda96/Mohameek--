@@ -45,7 +45,6 @@ public class SignUpScreenVM extends ViewModel {
 
     public void initVM(Activity activity) {
         this.context = activity;
-
         progressDialog = new ProgressDialog(activity);
         progressDialog.setMessage(activity.getResources().getString(R.string.loading));
         progressDialog.setCancelable(false);
@@ -109,6 +108,7 @@ public class SignUpScreenVM extends ViewModel {
                                 byteArray = outputStream.toByteArray();
                                 this.userCardImage = "data:image/"+imgExtension+";base64,"+ Base64.encodeToString(byteArray, Base64.DEFAULT);
                                 Log.d(TAG, "Mohameek  imgInBase64=" + userCardImage);
+                                progressDialog.show();
 
                                  checkInternetConnection();
 
@@ -134,9 +134,8 @@ public class SignUpScreenVM extends ViewModel {
         if (!isInternetPresent) {
             Log.d(TAG, "Mohameek checkInternetConnection:  !isInternetPresent");
             resultLD.setValue("noInternetConnection");
+            progressDialog.dismiss();
         } else {
-            progressDialog.show();
-
 
             Log.d(TAG, "Mohameek checkInternetConnection:  isInternetPresent");
             sendRequest();
@@ -169,7 +168,6 @@ public class SignUpScreenVM extends ViewModel {
 
                 } else {
                     progressDialog.dismiss();
-
                     Log.d(TAG, "Mohameek sendRequest: false: "+result.getMessage());
 
                 }
@@ -181,7 +179,7 @@ public class SignUpScreenVM extends ViewModel {
             @Override
             public void onError(Throwable e) {
                 progressDialog.dismiss();
-
+                resultLD.setValue("serverError");
                 Log.d(TAG, "Mohameek sendRequest:error request : "+e.getStackTrace().toString());
 
 

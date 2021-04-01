@@ -33,6 +33,7 @@ import mfl.com.pojo.workTimes.WorkTimesModel;
 import mfl.com.pojo.workTimes.WorkTimesRequest;
 import mfl.com.session.GeneralMethods;
 import mfl.com.session.sp.StoreLanguageData;
+import mfl.com.ui.start.signIn.signInSteps.stepsHome.SignInStepsHome;
 
 public class AddTime extends Fragment implements View.OnClickListener {
     private AddTimesVM viewModel;
@@ -407,6 +408,8 @@ public class AddTime extends Fragment implements View.OnClickListener {
                 Snackbar.make(binding.mainLin, getResources().getString(R.string.chooseAppointemnt), Snackbar.LENGTH_LONG).show();
 
             }
+            ((SignInStepsHome) getActivity()).selectIndex(4);
+
         }
 
         if (binding.saturdayCard.equals(v)) {

@@ -120,6 +120,11 @@ public class SignUpScreen extends AppCompatActivity implements View.OnClickListe
                     case "error":
                         binding.error.setText("");
                         break;
+                    case "serverError":
+                        binding.error.setText(getResources().getString(R.string.serverError));
+                        Snackbar.make(binding.mainLin, getResources().getString(R.string.serverError), Snackbar.LENGTH_LONG).show();
+
+                        break;
 
                 }
             }

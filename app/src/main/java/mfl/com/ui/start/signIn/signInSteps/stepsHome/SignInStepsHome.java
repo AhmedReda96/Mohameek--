@@ -44,7 +44,7 @@ public class SignInStepsHome extends AppCompatActivity implements View.OnClickLi
         progressDialog = new ProgressDialog(this);
         progressDialog.setMessage(getResources().getString(R.string.loading));
         progressDialog.setCancelable(false);
-        progressDialog.show();
+      //  progressDialog.show();
 
         sweetAlertDialog = new SweetAlertDialog(this, SweetAlertDialog.WARNING_TYPE);
         sweetAlertDialog.setTitle(this.getResources().getString(R.string.doYouWantToExit));
@@ -73,7 +73,7 @@ public class SignInStepsHome extends AppCompatActivity implements View.OnClickLi
 
         binding.backBtn.setOnClickListener(this::onClick);
 
-       getStepScreen();
+    //   getStepScreen();
 
 
     }

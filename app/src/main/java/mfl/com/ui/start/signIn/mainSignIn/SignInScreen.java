@@ -122,8 +122,10 @@ public class SignInScreen extends AppCompatActivity implements View.OnClickListe
         }
 
         if (binding.signInBtn.equals(view)) {
-            binding.error.setText("");
-            viewModel.checkData(binding.id.getText().toString().trim(), binding.password.getText().toString().trim());
+            //binding.error.setText("");
+          //  viewModel.checkData(binding.id.getText().toString().trim(), binding.password.getText().toString().trim());
+            startActivity(new Intent(this, SignInStepsHome.class));
+
         }
         if (binding.signUpBtn.equals(view)) {
 

@@ -74,8 +74,6 @@ public class SignInScreenVM extends ViewModel {
     }
 
     private void checkInternetConnection() {
-
-
         if (!generalMethods.checkInternet(context)) {
             Log.d(TAG, "Mohameek checkInternetConnection:  !isInternetPresent");
             resultLD.setValue("noInternetConnection");
@@ -109,7 +107,7 @@ public class SignInScreenVM extends ViewModel {
 
                     intent = new Intent(context, SignInStepsHome.class);
                     //intent.putExtra("step", String.valueOf(result.getStep()));
-                    intent.putExtra("step", String.valueOf(3));
+                    intent.putExtra("step", String.valueOf(0));
                     testLogin.setToken(result.getAccessToken());
                     Log.d(TAG, "Mohameek sendRequest: token: " + testLogin.getToken());
                     progressDialog.dismiss();

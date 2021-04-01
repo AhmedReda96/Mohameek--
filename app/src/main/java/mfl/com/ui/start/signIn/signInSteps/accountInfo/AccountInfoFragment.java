@@ -37,6 +37,7 @@ import java.util.List;
 import mfl.com.R;
 import mfl.com.databinding.FragmentAccountInfoBinding;
 import mfl.com.session.GeneralMethods;
+import mfl.com.ui.start.signIn.signInSteps.stepsHome.SignInStepsHome;
 
 
 import static android.app.Activity.RESULT_OK;
@@ -79,9 +80,8 @@ public class AccountInfoFragment extends Fragment implements View.OnClickListene
 
         binding.nextBtn.setOnClickListener(this::onClick);
         binding.lawyerImg.setOnClickListener(this::onClick);
-        binding.lawyerImg.setOnClickListener(this::onClick);
 
-        viewModel.getProfileData();
+        //viewModel.getProfileData();
         listeners();
         listenerOnLiveData();
 
@@ -369,7 +369,10 @@ public class AccountInfoFragment extends Fragment implements View.OnClickListene
         if (binding.nextBtn.equals(v)) {
             currentYear = Calendar.getInstance().get(Calendar.YEAR);
             choiceYear = binding.datePicker.getYear();
-            viewModel.checkData(bitmap, imgExtension, binding.firstName.getText().toString().trim(), binding.lastName.getText().toString().trim(), gender, date, currentYear, choiceYear, binding.phone.getText().toString().trim(), specialises, binding.bio.getText().toString().trim());
+           // viewModel.checkData(bitmap, imgExtension, binding.firstName.getText().toString().trim(), binding.lastName.getText().toString().trim(), gender, date, currentYear, choiceYear, binding.phone.getText().toString().trim(), specialises, binding.bio.getText().toString().trim());
+
+            ((SignInStepsHome) getActivity()).selectIndex(2);
+
         }
 
         if (binding.lawyerImg.equals(v)) {
@@ -381,7 +384,6 @@ public class AccountInfoFragment extends Fragment implements View.OnClickListene
     }
 
     public void onActivityResult(int requestCode, int resultCode, Intent imageReturnedIntent) {
-
         super.onActivityResult(requestCode, resultCode, imageReturnedIntent);
 
         try {
